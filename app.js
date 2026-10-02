@@ -431,7 +431,7 @@
       list.push({
         id: c[0], p: c[7] == null ? 3 : c[7], lob: lobs[0], lobs, track: tr, kind: 'catalog',
         title: c[4], sub: c[1] + ' \u00B7 ' + c[2] + (c[3] ? ' \u00B7 ' + c[3] : ''), desc: c[5],
-        status: c[3], tools: [c[1]].concat(c[8] || []), src: c[9] || 'Business Apps catalog'
+        status: c[3], tools: [c[1]].concat(c[8] || []), src: c[9] || 'Business Apps catalog', guideIm: c[10] || null
       });
     });
 
@@ -523,6 +523,11 @@
   };
 
   function tagImpacts(u) {
+    if (u.guideIm && u.guideIm.length) {
+      u.im = IMPACTS.map((i) => i.k).filter((k) => u.guideIm.indexOf(k) !== -1);
+      u.imNamed = true;
+      return;
+    }
     const text = [u.title, u.sub, u.desc, u.output].join(' ');
     const prior = [].concat(...u.lobs.map((id) => LOB_IMPACT[id] || ['capacity']));
     const score = {};
@@ -542,13 +547,14 @@
 
   const USE_CASES = buildUseCases();
   const PRODUCT_PATTERN = { 'Microsoft 365 Copilot': 0, 'Copilot Cowork': 1, 'Copilot Studio': 2 };
-  const patternOfProduct = (name) => (name in PRODUCT_PATTERN ? PRODUCT_PATTERN[name] : 3);
+  const SUPPORTING_PRODUCTS = ['Power Automate', 'Dataverse'];
+  const patternOfProduct = (name) => (name in PRODUCT_PATTERN ? PRODUCT_PATTERN[name] : SUPPORTING_PRODUCTS.indexOf(name) !== -1 ? -1 : 3);
   USE_CASES.forEach((u) => {
     const text = [u.desc, u.output, (u.agents || []).map((a) => a.n + ' ' + (a.d || '')).join(' ')].join(' ');
     const products = u.tools.slice();
     PRODUCT_TERMS.filter((term) => term !== 'Contact Center' && term !== 'Customer Service').forEach((term) => { if (text.indexOf(term) !== -1 && !products.some((p) => p.indexOf(term) !== -1)) products.push(term); });
     u.tools = products;
-    u.ps = [u.p].concat(products.map(patternOfProduct).filter((n) => n !== u.p)).filter((n, i, a) => a.indexOf(n) === i).sort((a, b) => a - b);
+    u.ps = [u.p].concat(products.map(patternOfProduct).filter((n) => n !== u.p && n >= 0)).filter((n, i, a) => a.indexOf(n) === i).sort((a, b) => a - b);
     tagImpacts(u);
     u.hay = [u.title, u.sub, u.desc, u.output, u.review, u.lobs.map((id) => lobById.get(id).name).join(' '), (u.agents || []).map((a) => a.n).join(' '), u.im.map((k) => IMPACT_BY_KEY.get(k).label).join(' ')].join(' ').toLowerCase();
   });
