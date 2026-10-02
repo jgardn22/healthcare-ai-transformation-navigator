@@ -730,3 +730,10 @@ h1 { font-size: clamp(2.2rem, 4.4vw, 3.9rem); line-height: 1.05; letter-spacing:
 }
 .details > .detail.uses ul { column-gap: 30px; }
 .details > .detail.uses li { break-inside: avoid; padding-right: 4px; }
+.video-cta { display: flex; align-items: center; gap: 16px; max-width: 1060px; margin: clamp(10px, 1.8vh, 18px) auto 0; padding: 14px clamp(16px, 2.4vw, 26px); border-radius: 20px; border-left: 4px solid var(--s4); }
+.vc-icon { flex: none; display: grid; place-items: center; width: 48px; height: 48px; border-radius: 50%; color: #06101f; background: linear-gradient(135deg, var(--s3), var(--s4)); box-shadow: 0 8px 22px rgba(var(--s4-rgb), .35); }
+.vc-copy { flex: 1; display: grid; gap: 2px; min-width: 0; }
+.vc-copy b { font-size: clamp(1rem, 1.4vw, 1.18rem); letter-spacing: -.01em; }
+.vc-copy span { color: var(--muted); font-size: .9rem; line-height: 1.4; }
+.video-cta .btn { flex: none; }
+@media (max-width: 700px) { .video-cta { flex-direction: column; align-items: flex-start; } .video-cta .btn { width: 100%; justify-content: center; text-align: center; } }
