@@ -31,7 +31,9 @@
       tech: ['Microsoft 365 Copilot', 'Outlook', 'Teams', 'Word', 'Excel', 'PowerPoint'],
       value: 'Broad individual productivity, less time spent drafting and searching, and lower cognitive load. Value depends on adoption and skills.',
       role: 'Practitioner with an assistant',
-      aiRole: 'Assistant, on request'
+      aiRole: 'Assistant, on request',
+      humans: 'The task itself, with judgment and decisions staying with the person.',
+      aiTakes: 'Drafting, summarizing, searching and first-pass analysis around the task.'
     },
     {
       short: 'Delegation',
@@ -53,7 +55,9 @@
       tech: ['Copilot Cowork', 'Researcher and Analyst agents', 'Microsoft 365 Copilot', 'Work IQ', 'Microsoft Graph'],
       value: 'The unit of value moves from minutes saved to hours or days of finished work returned, so leaders review more and draft less.',
       role: 'Manager of AI contributors',
-      aiRole: 'Contributor owning assigned work'
+      aiRole: 'Contributor owning assigned work',
+      humans: 'Setting the outcome, reviewing the result and deciding what happens next.',
+      aiTakes: 'The multi-step legwork: research, gathering, analysis and the first full deliverable.'
     },
     {
       short: 'Agentic teams',
@@ -76,7 +80,9 @@
       tech: ['Copilot Studio', 'Multi-agent orchestration', 'Microsoft Foundry', 'Power Automate', 'Dataverse', 'Entra, Purview, and Defender', 'Agent governance and identity'],
       value: 'Process-level redesign: shorter cycle times, higher service levels, extended coverage, and people redeployed to higher-value work. Requires governance maturity.',
       role: 'Governor of agent teams',
-      aiRole: 'Agent team running the process'
+      aiRole: 'Agent team running the process',
+      humans: 'Goals, policy, approvals and the exceptions that need real expertise.',
+      aiTakes: 'Routine coordination across systems: intake, routing, status chasing and handoffs.'
     },
     {
       short: 'In the app',
@@ -99,7 +105,9 @@
       tech: ['Dragon Copilot', 'Dynamics 365', 'Power Apps', 'Power BI', 'Power Automate', 'Azure AI services'],
       value: 'Fast time to value with limited change management, because people stay in familiar tools. Better consistency, fewer clicks, and cleaner data.',
       role: 'Application user',
-      aiRole: 'Intelligence inside the app'
+      aiRole: 'Intelligence inside the app',
+      humans: 'The work on screen, with clinical and business judgment at the decision.',
+      aiTakes: 'Data entry, summaries, suggestions and clean-up inside the application.'
     }
   ];
 
@@ -310,6 +318,10 @@
         <div class="stage-more" id="stage-more-${i}" role="region" aria-label="${s.name} details">
           <div class="stage-more-in">
             <p class="desc">${s.desc}</p>
+            <div class="shift-strip" aria-label="How the work shifts">
+              <p class="ss-h"><span>People focus on</span>${s.humans}</p>
+              <p class="ss-a"><span>AI takes on</span>${s.aiTakes}</p>
+            </div>
             <ul class="assists" aria-label="AI helps with">${s.assists.map(a => `<li>${a}</li>`).join('')}</ul>
             <div class="details">
               <section class="detail"><h4>What it is</h4><p>${s.what}</p></section>
@@ -801,14 +813,14 @@
         ? `<p>Specialist agents work with the business operation systems your teams already use.</p>${chips(team.systems)}`
         : '<p>Specialist agents work inside the business operation systems your teams already use, through governed integrations, with every action logged.</p>';
       const humanBody = team
-        ? `<p>People approve, resolve exceptions and own outcomes. The assist agent hands off to the right team with a case summary.</p>${chips(team.humans)}<h5>Governance control plane</h5>${chips(team.governance)}`
+        ? `<p>Agents handle the routine coordination. People spend their time on approvals, exceptions and judgment calls that need real expertise, and the assist agent hands off with a case summary.</p>${chips(team.humans)}<h5>Governance control plane</h5>${chips(team.governance)}`
         : `<p>${esc(lob.name)} professionals approve actions, resolve exceptions and own outcomes. Agents hand off with a case summary when expertise or authority is needed.</p>`;
       return `
         <div class="tm-cards">
           <section class="tm-card s1"><span class="tm-num">1</span><h4>${esc(name)}</h4><p class="tm-role">Orchestrator agent</p>${assistBody}</section>
           <section class="tm-card s2"><span class="tm-num">2</span><h4>Specialist agents</h4><p class="tm-role">Autonomous domain agents</p>${specBody}</section>
           <section class="tm-card s3"><span class="tm-num">3</span><h4>Business systems</h4><p class="tm-role">Where the work happens</p>${sysBody}</section>
-          <section class="tm-card s4"><span class="tm-num">4</span><h4>Humans in the loop</h4><p class="tm-role">Governance and escalation</p>${humanBody}</section>
+          <section class="tm-card s4"><span class="tm-num">4</span><h4>Humans in the loop</h4><p class="tm-role">Where expertise is concentrated</p>${humanBody}</section>
         </div>`;
     }
 
