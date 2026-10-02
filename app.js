@@ -935,6 +935,9 @@
       slides.forEach((el, k) => { if (k === i) el.removeAttribute('inert'); else el.setAttribute('inert', ''); });
       dots.forEach((d, k) => { if (k === i) d.setAttribute('aria-current', 'true'); else d.removeAttribute('aria-current'); });
       navLinks.forEach((a) => { if (a.getAttribute('href') === '#' + ids[i]) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current'); });
+      const activeLink = navLinks.find((a) => a.getAttribute('aria-current') === 'true');
+      const navBox = activeLink && activeLink.parentElement;
+      if (navBox && navBox.scrollWidth > navBox.clientWidth) { const nb = navBox.getBoundingClientRect(); const ab = activeLink.getBoundingClientRect(); navBox.scrollTo({ left: navBox.scrollLeft + (ab.left - nb.left) - (nb.width - ab.width) / 2, behavior: reduceMotion ? 'auto' : 'smooth' }); }
       prevBtn.disabled = i === 0;
       nextBtn.disabled = i === last;
       dock.dataset.index = String(i);
