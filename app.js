@@ -812,24 +812,6 @@
         </div>`;
     }
 
-    function flowDiagram(lob) {
-      const agents = lob.ag.slice(0, 8);
-      return `
-        <div class="tm-flow glass" role="img" aria-label="Illustrative agentic team for ${esc(lob.name)}: a requestor, the ${esc(lob.name)} Assist agent, specialist agents, and human escalation.">
-          <div class="tm-flow-top">
-            <div class="tm-node"><b>Requestor</b><span>A ${esc(lob.name)} question or task</span></div>
-            <i aria-hidden="true">&rarr;</i>
-            <div class="tm-node tm-assist"><b>${esc(lob.name)} Assist</b><span>Understands, routes, orchestrates and returns one answer</span></div>
-            <i aria-hidden="true">&rarr;</i>
-            <div class="tm-node tm-done"><b>Resolved</b><span>Or routed to the right person with context</span></div>
-          </div>
-          <p class="tm-flow-label">Specialist agents</p>
-          <div class="tm-flow-agents">${agents.length ? agents.map((a) => `<div class="tm-fa"><b>${esc(a.n)}</b>${a.d ? `<span>${esc(a.d)}</span>` : ''}</div>`).join('') : '<div class="tm-fa tm-fa-empty"><b>Specialist agents to be defined</b><span>No named agents for this line of business in the Executive Guide yet.</span></div>'}</div>
-          <p class="tm-flow-label">Human escalation</p>
-          <div class="tm-flow-humans">${esc(lob.name)} professionals approve actions and handle exceptions.</div>
-        </div>`;
-    }
-
     function renderPanel() {
       const lob = LOBS.find((l) => l.id === current);
       const team = hasTeam(current) ? TEAMS[current] : null;
@@ -847,10 +829,8 @@
           <div class="tm-outcomes glass"><h4>Outcomes that matter</h4>${chips(team.outcomes)}</div>`;
       } else {
         html = `
-          <header class="tm-ph"><p class="eyebrow">${esc(lob.name)}</p><h3>${esc(lob.name)} Assist team</h3>
-            <p class="tm-sub">An illustrative agentic team built from the agents named in the Executive Guide. A full architecture diagram for this line of business is on the way.</p></header>
-          ${flowDiagram(lob)}
-          ${howCards(lob, null)}`;
+          <header class="tm-ph"><p class="eyebrow">${esc(lob.name)}</p><h3>${esc(lob.name)} agentic team</h3></header>
+          <div class="tm-empty glass"><p>The agentic team for this line of business is coming soon.</p></div>`;
       }
       panel.innerHTML = html;
       panel.scrollTop = 0;
