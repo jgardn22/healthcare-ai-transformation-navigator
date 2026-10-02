@@ -753,6 +753,152 @@
   /* Takeaway ladder                                                    */
   /* ------------------------------------------------------------------ */
 
+
+  /* ------------------------------------------------------------------ */
+  /* Agentic teams                                                       */
+  /* ------------------------------------------------------------------ */
+
+  function buildTeams() {
+    const listEl = $('#tmList');
+    const selEl = $('#tmSelect');
+    const panel = $('#tmPanel');
+    const dlg = $('#tmDialog');
+    if (!listEl || !panel) return;
+    const TEAMS = window.HAIN_TEAMS || {};
+    let current = TEAMS.finance ? 'finance' : LOBS[0].id;
+    const hasTeam = (id) => Object.prototype.hasOwnProperty.call(TEAMS, id);
+    const chips = (items) => `<div class="tm-chips">${items.map((x) => `<span>${esc(x)}</span>`).join('')}</div>`;
+
+    function renderList() {
+      const row = (l) => `
+        <button type="button" class="domain-tab" role="radio" data-id="${l.id}" aria-checked="${l.id === current}" tabindex="${l.id === current ? 0 : -1}">
+          <span class="ico" aria-hidden="true">${l.icon}</span><span class="nm">${esc(l.name)}</span>${hasTeam(l.id) ? '<span class="tm-badge" title="Architecture diagram available">Diagram</span>' : ''}
+        </button>`;
+      listEl.innerHTML = GROUPS.map((g) => {
+        const items = LOBS.filter((l) => l.t === g.key);
+        return items.length ? `<p class="dg-label" role="presentation">${g.label}</p>` + items.map(row).join('') : '';
+      }).join('');
+      selEl.innerHTML = GROUPS.map((g) => {
+        const items = LOBS.filter((l) => l.t === g.key);
+        return items.length ? `<optgroup label="${g.label}">${items.map((l) => `<option value="${l.id}">${esc(l.name)}${hasTeam(l.id) ? ' (diagram)' : ''}</option>`).join('')}</optgroup>` : '';
+      }).join('');
+      selEl.value = current;
+      $('#tmCount').textContent = `${LOBS.length} lines`;
+    }
+
+    function howCards(lob, team) {
+      const name = team ? team.assist.name : lob.name + ' Assist';
+      const assistBody = team
+        ? `<p>${esc(team.assist.line)}.</p><ol class="tm-steps">${team.assist.steps.map((s) => `<li>${esc(s)}</li>`).join('')}</ol>
+           <details class="tm-more"><summary>Intake and discovery before routing</summary><ul>${team.assist.intake.map((s) => `<li>${esc(s)}</li>`).join('')}</ul></details>`
+        : `<p>People work with one assist agent. It understands the request, checks policy, routes the work to the right specialist agent, orchestrates the steps and returns a single answer.</p>`;
+      const specBody = team
+        ? team.agents.map((a) => `<details class="tm-agent"><summary>${esc(a[0])}</summary><ul>${a[1].map((s) => `<li>${esc(s)}</li>`).join('')}</ul></details>`).join('')
+        : (lob.ag.length
+          ? `<p>Named in the Executive Guide for this line of business. Each agent owns a domain task and works autonomously.</p>${chips(lob.ag.map((a) => a.n))}`
+          : '<p>Specialist agents each own a domain task and work autonomously. No named agents are listed for this line of business in the Executive Guide yet. The Explorer shows the use cases that could become agents.</p>');
+      const sysBody = team
+        ? `<p>Specialist agents work with the business operation systems your teams already use.</p>${chips(team.systems)}`
+        : '<p>Specialist agents work inside the business operation systems your teams already use, through governed integrations, with every action logged.</p>';
+      const humanBody = team
+        ? `<p>People approve, resolve exceptions and own outcomes. The assist agent hands off to the right team with a case summary.</p>${chips(team.humans)}<h5>Governance control plane</h5>${chips(team.governance)}`
+        : `<p>${esc(lob.name)} professionals approve actions, resolve exceptions and own outcomes. Agents hand off with a case summary when expertise or authority is needed.</p>`;
+      return `
+        <div class="tm-cards">
+          <section class="tm-card s1"><span class="tm-num">1</span><h4>${esc(name)}</h4><p class="tm-role">Orchestrator agent</p>${assistBody}</section>
+          <section class="tm-card s2"><span class="tm-num">2</span><h4>Specialist agents</h4><p class="tm-role">Autonomous domain agents</p>${specBody}</section>
+          <section class="tm-card s3"><span class="tm-num">3</span><h4>Business systems</h4><p class="tm-role">Where the work happens</p>${sysBody}</section>
+          <section class="tm-card s4"><span class="tm-num">4</span><h4>Humans in the loop</h4><p class="tm-role">Governance and escalation</p>${humanBody}</section>
+        </div>`;
+    }
+
+    function flowDiagram(lob) {
+      const agents = lob.ag.slice(0, 8);
+      return `
+        <div class="tm-flow glass" role="img" aria-label="Illustrative agentic team for ${esc(lob.name)}: a requestor, the ${esc(lob.name)} Assist agent, specialist agents, and human escalation.">
+          <div class="tm-flow-top">
+            <div class="tm-node"><b>Requestor</b><span>A ${esc(lob.name)} question or task</span></div>
+            <i aria-hidden="true">&rarr;</i>
+            <div class="tm-node tm-assist"><b>${esc(lob.name)} Assist</b><span>Understands, routes, orchestrates and returns one answer</span></div>
+            <i aria-hidden="true">&rarr;</i>
+            <div class="tm-node tm-done"><b>Resolved</b><span>Or routed to the right person with context</span></div>
+          </div>
+          <p class="tm-flow-label">Specialist agents</p>
+          <div class="tm-flow-agents">${agents.length ? agents.map((a) => `<div class="tm-fa"><b>${esc(a.n)}</b>${a.d ? `<span>${esc(a.d)}</span>` : ''}</div>`).join('') : '<div class="tm-fa tm-fa-empty"><b>Specialist agents to be defined</b><span>No named agents for this line of business in the Executive Guide yet.</span></div>'}</div>
+          <p class="tm-flow-label">Human escalation</p>
+          <div class="tm-flow-humans">${esc(lob.name)} professionals approve actions and handle exceptions.</div>
+        </div>`;
+    }
+
+    function renderPanel() {
+      const lob = LOBS.find((l) => l.id === current);
+      const team = hasTeam(current) ? TEAMS[current] : null;
+      let html;
+      if (team) {
+        html = `
+          <header class="tm-ph"><p class="eyebrow">${esc(lob.name)}</p><h3>${esc(team.title)}</h3><p class="tm-sub">${esc(team.subtitle)}</p></header>
+          <figure class="tm-fig">
+            <button type="button" class="tm-zoom" data-act="zoom" aria-label="Enlarge the ${esc(team.title)} architecture diagram">
+              <img src="${esc(team.image)}" alt="${esc(team.alt)}" width="${team.width}" height="${team.height}">
+              <span class="tm-zoom-hint" aria-hidden="true">Click to enlarge</span>
+            </button>
+          </figure>
+          ${howCards(lob, team)}
+          <div class="tm-outcomes glass"><h4>Outcomes that matter</h4>${chips(team.outcomes)}</div>`;
+      } else {
+        html = `
+          <header class="tm-ph"><p class="eyebrow">${esc(lob.name)}</p><h3>${esc(lob.name)} Assist team</h3>
+            <p class="tm-sub">An illustrative agentic team built from the agents named in the Executive Guide. A full architecture diagram for this line of business is on the way.</p></header>
+          ${flowDiagram(lob)}
+          ${howCards(lob, null)}`;
+      }
+      panel.innerHTML = html;
+      panel.scrollTop = 0;
+    }
+
+    function select(id, focus) {
+      current = id;
+      renderList();
+      renderPanel();
+      if (focus) { const el = $('.domain-tab[data-id="' + id + '"]', listEl); if (el) el.focus(); }
+    }
+
+    listEl.addEventListener('click', (e) => {
+      const b = e.target.closest('.domain-tab');
+      if (b) select(b.dataset.id);
+    });
+    listEl.addEventListener('keydown', (e) => {
+      const keys = ['ArrowDown', 'ArrowUp', 'ArrowRight', 'ArrowLeft', 'Home', 'End'];
+      if (!keys.includes(e.key)) return;
+      e.preventDefault();
+      const ids = $$('.domain-tab', listEl).map((t) => t.dataset.id);
+      const idx = Math.max(0, ids.indexOf(current));
+      let n = idx;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowRight') n = Math.min(ids.length - 1, idx + 1);
+      if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') n = Math.max(0, idx - 1);
+      if (e.key === 'Home') n = 0;
+      if (e.key === 'End') n = ids.length - 1;
+      select(ids[n], true);
+    });
+    selEl.addEventListener('change', () => select(selEl.value));
+
+    panel.addEventListener('click', (e) => {
+      const z = e.target.closest('[data-act="zoom"]');
+      if (!z || !dlg || !dlg.showModal) return;
+      const img = z.querySelector('img');
+      const big = $('#tmDialogImg');
+      big.src = img.src; big.alt = img.alt;
+      dlg.showModal();
+    });
+    if (dlg) {
+      $('#tmDialogClose').addEventListener('click', () => dlg.close());
+      dlg.addEventListener('click', (e) => { if (e.target === dlg) dlg.close(); });
+    }
+
+    renderList();
+    renderPanel();
+  }
+
   function buildLadder() {
     $('#ladder').innerHTML = STAGES.map((s, i) => `
       <article class="rung s${i + 1}" style="--lvl:2">
@@ -787,7 +933,7 @@
     let wheelLock = 0;
 
     $('#dockDots').innerHTML = slides.map((el, i) => `
-      <li><button type="button" class="dock-dot s${i + 1}" data-i="${i}" title="${el.dataset.label}" aria-label="Go to slide ${i + 1} of ${slides.length}: ${el.dataset.label}">
+      <li><button type="button" class="dock-dot s${(i % 4) + 1}" data-i="${i}" title="${el.dataset.label}" aria-label="Go to slide ${i + 1} of ${slides.length}: ${el.dataset.label}">
         <i aria-hidden="true"></i><span class="dock-label">${el.dataset.label}</span>
       </button></li>`).join('');
     const dots = $$('.dock-dot', dock);
@@ -860,6 +1006,7 @@
 
     document.addEventListener('keydown', (e) => {
       if (e.defaultPrevented || e.altKey || e.ctrlKey || e.metaKey || e.shiftKey) return;
+      if (document.querySelector('dialog[open]')) return;
       const t = e.target;
       if (t && (/^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName) || t.isContentEditable)) return;
       if (e.key === 'ArrowRight') { e.preventDefault(); goTo(index + 1); }
@@ -899,5 +1046,6 @@
   setActive(0);
   buildExplorer();
   buildLadder();
+  buildTeams();
   initSlides();
 })();

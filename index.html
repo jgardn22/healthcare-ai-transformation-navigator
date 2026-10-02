@@ -16,7 +16,7 @@
       } catch (e) {}
     })();
   </script>
-  <link rel="stylesheet" href="styles.css?v=17">
+  <link rel="stylesheet" href="styles.css?v=18">
 </head>
 <body>
   <a class="skip-link" href="#slides">Skip to main content</a>
@@ -32,6 +32,7 @@
       <a href="#top" data-nav="top">Welcome</a>
       <a href="#journey" data-nav="journey">Journey</a>
       <a href="#explorer" data-nav="explorer">Explorer</a>
+      <a href="#teams" data-nav="teams">Teams</a>
       <a href="#takeaway" data-nav="takeaway">Takeaway</a>
     </nav>
     <button class="theme-toggle" id="themeToggle" type="button" aria-pressed="false" aria-label="Switch to dark mode">
@@ -151,6 +152,26 @@
       </div>
     </section>
 
+    <!-- AGENTIC TEAMS -->
+    <section class="screen" id="teams" data-label="Teams" tabindex="-1" aria-labelledby="teamsTitle">
+      <div class="container wide tm-wrap">
+        <header class="section-head tm-head reveal">
+          <p class="eyebrow">Agentic teams</p>
+          <h2 id="teamsTitle">Meet the agentic team for your line of business</h2>
+          <p class="section-lede">One assist agent is the front door. It calls specialist agents that work autonomously in your business systems, with people in the loop for approvals and exceptions. Choose a line of business to see its team.</p>
+        </header>
+
+        <div class="tm reveal">
+          <aside class="tm-side glass" aria-label="Choose a line of business">
+            <h3 class="f-label" id="tmLobLabel">Line of business <span class="f-hint" id="tmCount"></span></h3>
+            <select class="f-select" id="tmSelect" aria-labelledby="tmLobLabel"></select>
+            <div class="domain-list" id="tmList" role="radiogroup" aria-labelledby="tmLobLabel"></div>
+          </aside>
+          <article class="tm-panel" id="tmPanel" aria-live="polite"></article>
+        </div>
+      </div>
+    </section>
+
     <!-- TAKEAWAY -->
     <section class="screen takeaway" id="takeaway" data-label="Takeaway" tabindex="-1" aria-labelledby="takeawayTitle">
       <div class="container wide">
@@ -182,8 +203,14 @@
   </nav>
   <p class="sr-only" id="slideStatus" role="status" aria-live="polite"></p>
 
-  <script src="usecases.js?v=17"></script>
-  <script src="catalog.js?v=17"></script>
-  <script src="app.js?v=17"></script>
+  <dialog class="tm-dialog" id="tmDialog" aria-label="Architecture diagram">
+    <button type="button" class="tm-dclose" id="tmDialogClose" aria-label="Close diagram">Close</button>
+    <img id="tmDialogImg" alt="">
+  </dialog>
+
+  <script src="usecases.js?v=18"></script>
+  <script src="catalog.js?v=18"></script>
+  <script src="teams.js?v=18"></script>
+  <script src="app.js?v=18"></script>
 </body>
 </html>
