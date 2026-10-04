@@ -898,16 +898,7 @@
   }
 
   function buildLadder() {
-    $('#ladder').innerHTML = STAGES.map((s, i) => `
-      <article class="rung s${i + 1}" style="--lvl:2">
-        <span class="num" aria-hidden="true">${i + 1}</span>
-        <h3>${s.short}</h3>
-        <dl>
-          <div><dt>Your role</dt><dd>${s.role}</dd></div>
-          <div><dt>AI\u2019s role</dt><dd>${s.aiRole}</dd></div>
-          <div><dt>Core idea</dt><dd>${s.tag}</dd></div>
-        </dl>
-      </article>`).join('');
+    $('#tkChain').innerHTML = STAGES.map((s, i) => `<li class="s${i + 1}"><span class="dot" aria-hidden="true">${i + 1}</span>${s.short}</li>`).join('');
   }
 
   /* ------------------------------------------------------------------ */
