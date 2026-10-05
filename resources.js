@@ -1,11 +1,21 @@
 window.HAIN_RESOURCES = [
   {
+    id: 'mcs',
+    title: 'Microsoft Copilot Agents Labs',
+    kind: 'Hands-on labs',
+    icon: 'flask',
+    url: 'https://microsoft.github.io/mcs-labs/',
+    desc: 'Guided hands-on labs for building agents in Copilot Studio, organized into bootcamps, buildathons and one-day workshops across 51 modules.',
+    inside: ['51 modules and 33 labs', 'Architecture Bootcamp', 'Agent Buildathon (1 day or 1 month)', 'Agent in a Day workshops', 'MCS in a Day', 'Azure AI Workshop', 'Request a lab account'],
+    kw: 'mcs labs copilot agents labs copilot studio architecture bootcamp buildathon workshop agent in a day advanced multi-agent azure ai declarative autonomous governance hands-on module lab assistant'
+  },
+  {
     id: 'aa',
     title: 'Copilot Studio Agent Academy',
     kind: 'Free training',
     icon: 'cap',
     url: 'https://microsoft.github.io/agent-academy/',
-    desc: 'A free, open-source training program that takes you from your first Copilot Studio agent to production-ready agents with MCP integrations and multi-agent orchestration, plus labs for Copilot Cowork.',
+    desc: 'A free, open-source course that takes you from your first Copilot Studio agent to production-ready agents with MCP integrations and multi-agent orchestration.',
     inside: ['Recruit and Operative ranks', 'Special Ops standalone labs', 'Cowork Collective labs', 'MCP servers and YAML', 'Multi-agent orchestration', 'Live events and workshops'],
     kw: 'agent academy copilot studio training course labs recruit operative commander special ops cowork collective mcp yaml hackathon workshops open source learn build agents'
   },
@@ -15,7 +25,7 @@ window.HAIN_RESOURCES = [
     kind: 'Hands-on labs',
     icon: 'hand',
     url: 'https://microsoft.github.io/agent-academy/cowork-collective/',
-    desc: 'Hands-on missions for Copilot Cowork, where you describe a task, review each step and approve actions before they happen. Includes official docs and demo videos.',
+    desc: 'Hands-on missions for Copilot Cowork, such as a compliance packet and an out-of-office handoff, with official docs and demo videos.',
     inside: ['Badge Check', 'The Compliance Packet', 'Out of Office Vacation Handoff', 'Filters by product and industry', 'Official documentation', 'Demo videos', 'Frontier preview access needed'],
     kw: 'cowork collective copilot cowork missions labs delegation frontier preview anthropic outlook teams word excel onedrive compliance finance custom skills document generation automation'
   },
@@ -25,7 +35,7 @@ window.HAIN_RESOURCES = [
     kind: 'Learning hub',
     icon: 'book',
     url: 'https://microsoft.github.io/power-platform-resources/',
-    desc: 'A curated, regularly updated library of Power Platform links, organized by journey stage so you can find the next thing to learn or use.',
+    desc: 'A curated library of Power Platform links covering training, adoption, architecture, governance, building with AI, samples and customer stories.',
     inside: ['Get started', 'Products and news', 'Adoption', 'Training and certification', 'Building with AI', 'Architecture', 'Governance', 'Tools and samples', 'Customer stories', 'Events and community'],
     kw: 'power apps power automate copilot studio dataverse learning training certification adoption architecture governance samples community podcasts'
   },
@@ -35,7 +45,7 @@ window.HAIN_RESOURCES = [
     kind: 'Framework',
     icon: 'badge',
     url: 'https://jgardn22.github.io/certified-maker-framework/#1',
-    desc: 'A 23-step click-through story on how to design, launch and scale a governed path that takes any employee from responsible AI user to trusted maker.',
+    desc: 'A 23-step click-through story on how to build a governed path from responsible AI user to trusted maker, with risk zones and a Novice-to-Gold ladder.',
     inside: ['Responsible AI pledge', 'Guardrails over gates', 'Novice to Gold ladder', 'Six maker tracks', 'Risk zones: green, yellow, red', 'Checkpoints at each rung'],
     kw: 'certified maker responsible ai pledge governance guardrails citizen developer power apps copilot studio agent builder cowork pro-code enablement training'
   },
@@ -45,7 +55,7 @@ window.HAIN_RESOURCES = [
     kind: 'Visual explainer',
     icon: 'spark',
     url: 'https://jgardn22.github.io/work-iq-whiteboard/#1',
-    desc: 'A 25-build, click-by-click whiteboard that explains why the same AI model gives different results once it can use your business context. A visual summary of a public explanation by Charles Lamanna.',
+    desc: 'A 25-build visual whiteboard that explains why the same AI model gives better answers once it can use your business context through Work IQ.',
     inside: ['Why context matters', 'How work creates context', 'Assembling context', 'Connecting the model to your work', 'Microsoft 365 Copilot'],
     kw: 'work iq context microsoft 365 copilot whiteboard grounding memory data model charles lamanna'
   },
@@ -55,7 +65,7 @@ window.HAIN_RESOURCES = [
     kind: 'Template',
     icon: 'rocket',
     url: 'https://martycarreras-psnl.github.io/managed-apps-template/',
-    desc: 'A GitHub template for building a Microsoft Managed App with AI, then growing it from a personal app into a governed dev, test and prod pipeline. Includes a short story and an advanced solution track.',
+    desc: 'A GitHub template for building a Microsoft Managed App with AI and growing it from a personal app into a governed dev, test and prod pipeline.',
     inside: ['Grow your app', 'Dev, test and prod pipeline', 'Dataverse solution ALM', 'Copilot Cowork App skill', 'Microsoft Learn docs'],
     kw: 'managed apps template github alm pipeline dev test prod copilot cowork app skill dataverse solutions power platform pro-dev'
   }
