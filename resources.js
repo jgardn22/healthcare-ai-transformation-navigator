@@ -20,6 +20,26 @@ window.HAIN_RESOURCES = [
     kw: 'ai skills navigator microsoft learn training courses curriculum career skills credentials certification learning partner instructor-led labs videos role learning path'
   },
   {
+    id: 'da',
+    title: 'Digital Accelerator',
+    kind: 'Guided program',
+    icon: 'rocket',
+    url: 'https://adoption.microsoft.com/en-gb/digital-accelerator/',
+    desc: 'A program for Microsoft Unified customers to learn Copilot and agents with Microsoft experts, through live sessions in your time zone, actionable guidance, resources and recordings.',
+    inside: ['Live sessions in your time zone', 'Choose the journey that fits your organization', 'Actionable guidance and resources', 'Session recordings', 'Peer community working on similar challenges', 'Upcoming cohorts'],
+    kw: 'digital accelerator microsoft unified customers copilot agents adoption cohorts community experts live sessions recordings journey ai adoption business value'
+  },
+  {
+    id: 'vtd',
+    title: 'Microsoft Virtual Training Days',
+    kind: 'Free training',
+    icon: 'play',
+    url: 'https://www.microsoft.com/en-us/events/category/microsoft-virtual-training-days',
+    desc: 'Free, instructor-led virtual training events from Microsoft that help you build skills in AI, Copilot, Azure and Power Platform.',
+    inside: ['Free virtual events', 'Instructor-led sessions', 'AI and Copilot topics', 'Azure and Power Platform topics'],
+    kw: 'virtual training days microsoft events free training instructor-led live webinar skills ai copilot azure power platform'
+  },
+  {
     id: 'mcs',
     title: 'Microsoft Copilot Agents Labs',
     kind: 'Hands-on labs',
