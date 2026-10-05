@@ -1,5 +1,15 @@
 window.HAIN_RESOURCES = [
   {
+    id: 'yt',
+    title: 'Microsoft Healthcare AI BPS video library',
+    kind: 'Demo videos',
+    icon: 'play',
+    url: 'https://www.youtube.com/@Microsoft-Healthcare-AI-BPS/videos',
+    desc: 'Short, practical demos of how health plans and providers use Copilot, Copilot Studio agents, Power Platform and Dynamics 365 across sales, service, finance, supply chain, HR and more.',
+    inside: ['Use case demos by business line', 'For Health Plans (Payers) playlist', 'For Providers playlist', 'Webinars playlist'],
+    kw: 'youtube videos demos healthcare ai business process solutions payers providers health plans webinars sales customer service contact center field service marketing finance supply chain project management commerce hr employee experience copilot studio power platform dynamics 365'
+  },
+  {
     id: 'asn',
     title: 'Microsoft AI Skills Navigator',
     kind: 'Learning platform',
