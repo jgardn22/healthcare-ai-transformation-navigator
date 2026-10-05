@@ -1,5 +1,15 @@
 window.HAIN_RESOURCES = [
   {
+    id: 'asn',
+    title: 'Microsoft AI Skills Navigator',
+    kind: 'Learning platform',
+    icon: 'path',
+    url: 'https://aiskillsnavigator.microsoft.com/',
+    desc: 'An AI-powered learning platform with Microsoft Official Curriculum, role-based learner journeys, hands-on labs, earnable credentials and instructor-led classes through Microsoft Learning Partners.',
+    inside: ['Microsoft Official Curriculum', 'Role-based learner journeys', 'Videos and hands-on labs', 'Credentials you can earn', 'Instructor-led classes'],
+    kw: 'ai skills navigator microsoft learn training courses curriculum career skills credentials certification learning partner instructor-led labs videos role learning path'
+  },
+  {
     id: 'mcs',
     title: 'Microsoft Copilot Agents Labs',
     kind: 'Hands-on labs',
