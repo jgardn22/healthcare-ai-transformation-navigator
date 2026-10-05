@@ -901,6 +901,50 @@
     $('#tkChain').innerHTML = STAGES.map((s, i) => `<li class="s${i + 1}"><span class="dot" aria-hidden="true">${i + 1}</span>${s.short}</li>`).join('');
   }
 
+  const RS_ICONS = {
+    book: '<path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H6.5A2.5 2.5 0 0 0 4 21.5z"/><path d="M4 21.5V5.5M8 7h8M8 11h6"/>',
+    badge: '<circle cx="12" cy="9" r="6"/><path d="M8.5 14.5L7 21l5-3 5 3-1.5-6.5M9.5 9l2 2 3-3.5"/>',
+    spark: '<path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8zM19 16l.8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8z"/>',
+    cap: '<path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-4.5M22 9v6"/>',
+    hand: '<path d="M8 13V5.5a1.5 1.5 0 0 1 3 0V11M11 10V4a1.5 1.5 0 0 1 3 0v6M14 10V5.5a1.5 1.5 0 0 1 3 0V12M17 9.5a1.5 1.5 0 0 1 3 0V15a7 7 0 0 1-7 7h-1a7 7 0 0 1-5.6-2.8L3 14.5a1.6 1.6 0 0 1 2.5-2L8 15"/>',
+    rocket: '<path d="M5 15c-1.5 1.3-2 5-2 5s3.7-.5 5-2M14 4c3-1.5 6-1.5 6-1.5s0 3-1.5 6l-6 6-5-5z"/><circle cx="15" cy="9" r="1.4"/>'
+  };
+
+  function buildResources() {
+    const data = window.HAIN_RESOURCES || [];
+    const grid = $('#rsGrid');
+    const input = $('#rsSearch');
+    const count = $('#rsCount');
+    const hay = data.map((r) => [r.title, r.kind, r.desc, r.inside.join(' '), r.kw].join(' ').toLowerCase());
+
+    function render() {
+      const q = input.value.trim().toLowerCase();
+      const words = q ? q.split(/\s+/) : [];
+      const list = data.filter((r, i) => words.every((w) => hay[i].indexOf(w) !== -1));
+      count.textContent = list.length === data.length && !q ? data.length + ' resources' : list.length + ' of ' + data.length + ' resources';
+      if (!list.length) {
+        grid.innerHTML = '<div class="uc-empty"><b>No resources match your search.</b><span>Try a different word, or clear the search to see everything.</span><button type="button" class="btn ghost small" id="rsClear">Clear search</button></div>';
+        $('#rsClear').addEventListener('click', () => { input.value = ''; render(); input.focus(); });
+        return;
+      }
+      grid.innerHTML = list.map((r) => `
+        <a class="rs-card" href="${esc(r.url)}" target="_blank" rel="noopener noreferrer">
+          <span class="rs-ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${RS_ICONS[r.icon] || RS_ICONS.book}</svg></span>
+          <span class="rs-body">
+            <span class="rs-kind">${esc(r.kind)}</span>
+            <b class="rs-title">${esc(r.title)}</b>
+            <span class="rs-desc">${esc(r.desc)}</span>
+            <span class="rs-inside"><em>What is inside</em>${r.inside.map((t) => `<i>${esc(t)}</i>`).join('')}</span>
+          </span>
+          <span class="rs-go">Open resource<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg><span class="sr-only"> (opens in a new tab)</span></span>
+        </a>`).join('');
+    }
+
+    let timer;
+    input.addEventListener('input', () => { clearTimeout(timer); timer = setTimeout(render, 120); });
+    render();
+  }
+
   /* ------------------------------------------------------------------ */
   /* Horizontal slides                                                  */
   /* ------------------------------------------------------------------ */
@@ -1039,5 +1083,6 @@
   buildExplorer();
   buildLadder();
   buildTeams();
+  buildResources();
   initSlides();
 })();

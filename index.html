@@ -16,7 +16,7 @@
       } catch (e) {}
     })();
   </script>
-  <link rel="stylesheet" href="styles.css?v=33">
+  <link rel="stylesheet" href="styles.css?v=40">
 </head>
 <body>
   <a class="skip-link" href="#slides">Skip to main content</a>
@@ -34,6 +34,7 @@
       <a href="#explorer" data-nav="explorer">Use Case Explorer</a>
       <a href="#teams" data-nav="teams">Agent Teams</a>
       <a href="#takeaway" data-nav="takeaway">Takeaway</a>
+      <a href="#resources" data-nav="resources">Resources</a>
     </nav>
     <button class="theme-toggle" id="themeToggle" type="button" aria-pressed="false" aria-label="Switch to dark mode">
       <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.6M12 18.9v2.6M2.5 12h2.6M18.9 12h2.6M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"/></svg>
@@ -221,10 +222,28 @@
           <nav class="tk-links" aria-label="Keep exploring">
             <a href="#explorer">Explore the use cases</a>
             <a href="#journey">Revisit the AI patterns</a>
+            <a href="#resources">Keep learning: resources</a>
             <a href="#top">Back to the start</a>
           </nav>
         </div>
         <p class="fine disclaimer reveal">This guide is an illustrative conversation tool, not a Microsoft product commitment or a statement of results. Product names, capabilities, and availability change; confirm current details with your Microsoft account team and Microsoft documentation. Clinicians remain accountable for clinical decisions.</p>
+      </div>
+    </section>
+
+    <!-- RESOURCES -->
+    <section class="screen" id="resources" data-label="Resources" tabindex="-1" aria-labelledby="resourcesTitle">
+      <div class="container wide">
+        <header class="section-head reveal">
+          <p class="eyebrow">Keep learning</p>
+          <h2 id="resourcesTitle">Resources to accelerate your AI journey</h2>
+          <p class="section-lede">Hand-picked guides, frameworks and templates. Each button tells you what you will find inside.</p>
+        </header>
+        <div class="rs-bar reveal">
+          <label class="sr-only" for="rsSearch">Search resources</label>
+          <input class="f-search rs-search" type="search" id="rsSearch" placeholder="Search resources, for example governance, training or Copilot" autocomplete="off">
+          <p class="rs-count" id="rsCount" role="status" aria-live="polite"></p>
+        </div>
+        <div class="rs-grid" id="rsGrid"></div>
       </div>
     </section>
   </main>
@@ -245,9 +264,10 @@
     <img id="tmDialogImg" alt="">
   </dialog>
 
-  <script src="usecases.js?v=33"></script>
-  <script src="catalog.js?v=33"></script>
-  <script src="teams.js?v=33"></script>
-  <script src="app.js?v=33"></script>
+  <script src="usecases.js?v=40"></script>
+  <script src="catalog.js?v=40"></script>
+  <script src="teams.js?v=40"></script>
+  <script src="resources.js?v=40"></script>
+  <script src="app.js?v=40"></script>
 </body>
 </html>
