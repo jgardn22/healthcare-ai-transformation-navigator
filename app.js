@@ -401,7 +401,7 @@
   const lobTrack = (l) => (l.t === 'p' ? 'provider' : l.t === 'y' ? 'payer' : 'both');
 
   const COWORK_LOB = {
-    PRV: { EXE: 'exec', FIN: 'finance', RCM: 'revenue', ACC: 'access', HR: 'hr', MKT: 'growth', SCM: 'supply', LRC: 'legal', NUR: 'nursing', QLT: 'quality', EXP: 'pxp', POP: 'poph', RES: 'research', GME: 'gme', PMO: 'pmo', FAC: 'facilities', IT: 'it', PER: 'personal' },
+    PRV: { EXE: 'exec', FIN: 'finance', RCM: 'revenue', ACC: 'access', HR: 'hr', MKT: 'growth', SCM: 'supply', LRC: 'legal', NUR: 'nursing', QLT: 'quality', EXP: 'pxp', POP: 'poph', RES: 'research', GME: 'gme', PMO: 'pmo', FAC: 'facilities', IT: 'it', PER: 'personal', ACU: 'acute', ED: 'ed', OR: 'periop', AMB: 'ambulatory', PHM: 'pharmacy', DGX: 'diagnostics', HAH: 'hah', BRN: 'burnout', SAF: 'safety' },
     PAY: { EXE: 'exec', ACT: 'actuarial', CLM: 'claims', UM: 'um', CARE: 'poph', NET: 'network', MEM: 'member', GRO: 'growth', FIN: 'finance', RAQ: 'raq', APL: 'appeals', REG: 'reg', PMO: 'pmo', FAC: 'facilities', IT: 'it', HR: 'hr', LEG: 'legal', PRC: 'supply', PER: 'personal' }
   };
 
