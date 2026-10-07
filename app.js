@@ -417,7 +417,7 @@
       const tr = track === 'PRV' ? 'provider' : 'payer';
       haveCowork.add(lob + '|' + tr);
       list.push({
-        id: c[0], p: 1, lob, track: tr, kind: 'cowork',
+        id: c[0], p: 1, lob, lobs: [lob].concat((c[8] || []).filter((id) => lobById.has(id) && id !== lob)), track: tr, kind: 'cowork',
         title: c[2], sub: c[3], desc: c[4], output: c[5], review: c[6],
         tools: ['Copilot Cowork'], src: c[7] || 'Cowork library \u00B7 ' + c[0]
       });
