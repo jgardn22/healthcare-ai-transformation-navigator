@@ -108,10 +108,36 @@
       aiRole: 'Intelligence inside the app',
       humans: 'The work on screen, with clinical and business judgment at the decision.',
       aiTakes: 'Data entry, summaries, suggestions and clean-up inside the application.'
+    },
+    {
+      short: 'Custom build',
+      name: 'Custom AI Built by Professional Developers',
+      anchor: 'GitHub Copilot, Microsoft Foundry, Visual Studio Code',
+      filterName: 'GitHub Copilot, Microsoft Foundry',
+      tag: 'Developers build what off-the-shelf products do not cover.',
+      desc: 'Professional developers use code-first Microsoft tools to build custom AI applications and agents, and to modernize the software behind them.',
+      assists: ['Coding', 'Debugging', 'Testing', 'Modernization', 'Retrieval and grounding', 'Safety controls'],
+      what: 'AI solutions engineered in code: GitHub Copilot speeds the build, and Microsoft Foundry, search, MCP and safety services run the solution.',
+      owner: 'The engineering team owns design, testing, security and operations. Business owners set requirements and accept the result.',
+      participates: 'In the developer\u2019s workflow, writing and testing code, and inside the finished solution as models, agents and retrieval.',
+      uses: [
+        'Modernizing older claims, scheduling and interface code',
+        'Policy and guideline assistants with cited answers',
+        'Multi-agent apps across clinical, financial and operational systems, with approval gates',
+        'Controlled agent access to Azure resources through MCP',
+        'Safety checks on patient-facing and member-facing AI apps',
+        'Model evaluation on de-identified samples'
+      ],
+      tech: ['GitHub Copilot', 'Microsoft Foundry', 'VS Code', 'Azure MCP Server', 'Azure AI Search', 'Foundry Models', 'Semantic Kernel', 'Agent Framework', 'AI Toolkit', 'Content Safety'],
+      value: 'Fit and control over experience, logic, data and IP, at enterprise scale. The trade-off is engineering effort and long-term ownership.',
+      role: 'Builder and owner of the solution',
+      aiRole: 'Developer assistant, and the engine inside the custom solution',
+      humans: 'Architecture, security, testing, release, and accountability for the running solution.',
+      aiTakes: 'Code generation, tests, refactoring, retrieval, and the model and agent work inside the finished application.'
     }
   ];
 
-  /* Lines of business. l = the four pattern narratives (illustrative); ag = agents named in the AI Apps & Agents Executive Guide. */
+  /* Lines of business. l = the first four pattern narratives (illustrative); ag = agents named in the AI Apps & Agents Executive Guide. */
   const LOBS = [
     {id:"exec",name:"Executive & Strategy",icon:"🧭",t:"b",
      l:["Executives use Microsoft 365 Copilot to summarize meetings, draft leadership updates, and prepare for partner conversations.", "A chief of staff delegates a board packet, a strategy pre-read, or an evidence-linked decision brief to AI, then reviews and approves it.", "Reporting and escalation agents keep leadership metrics consistent and route cross-functional exceptions to the right owner within set guardrails.", "Power BI and Dynamics 365 put narrative insight and anomaly flags directly into the dashboards and reviews leaders already open."],
@@ -270,6 +296,14 @@
       <path class="m-line" d="M48 72 L76 100 M100 56 L128 102 M152 78 L76 100" opacity=".4"/>
       <circle class="m-node" cx="48" cy="72" r="5"/><circle class="m-node" cx="100" cy="56" r="7"/>
       <circle class="m-node" cx="152" cy="78" r="5"/><circle class="m-node" cx="128" cy="102" r="5"/><circle class="m-node" cx="76" cy="100" r="5"/>
+    </svg>`,
+    `<svg class="mt" viewBox="0 0 200 130" aria-hidden="true">
+      <rect class="m-frame" x="12" y="10" width="176" height="110" rx="14"/>
+      <circle class="m-dot" cx="27" cy="23" r="3"/><circle class="m-dot" cx="38" cy="23" r="3"/><circle class="m-dot" cx="49" cy="23" r="3"/>
+      <line class="m-line" x1="12" y1="35" x2="188" y2="35" opacity=".35"/>
+      <path class="m-flow" d="M72 52 L52 68 L72 84 M128 52 L148 68 L128 84 M110 50 L90 86"/>
+      <rect class="m-soft" x="28" y="96" width="36" height="14" rx="5"/><rect class="m-soft" x="82" y="96" width="36" height="14" rx="5"/><rect class="m-soft" x="136" y="96" width="36" height="14" rx="5"/>
+      <circle class="m-node" cx="46" cy="103" r="3.2"/><circle class="m-node" cx="100" cy="103" r="3.2"/><circle class="m-node" cx="154" cy="103" r="3.2"/>
     </svg>`
   ];
 
@@ -337,7 +371,7 @@
       </article>`).join('');
 
     railNodesEl.innerHTML = STAGES.map((s, i) => `
-      <button type="button" class="rail-node s${i + 1}" style="left:${(i / 3) * 100}%" data-i="${i}" aria-label="Pattern ${i + 1}: ${s.short}">${i + 1}<small>${s.short}</small></button>`).join('');
+      <button type="button" class="rail-node s${i + 1}" style="left:${(i / (STAGES.length - 1)) * 100}%" data-i="${i}" aria-label="Pattern ${i + 1}: ${s.short}">${i + 1}<small>${s.short}</small></button>`).join('');
   }
 
   function setActive(i) {
@@ -350,7 +384,7 @@
     $$('.rail-node', railNodesEl).forEach((el, idx) => {
       if (idx === i) el.setAttribute('aria-current', 'true'); else el.removeAttribute('aria-current');
     });
-    $('#railFill').style.clipPath = `inset(0 ${100 - (i / 3) * 100}% 0 0)`;
+    $('#railFill').style.clipPath = `inset(0 ${100 - (i / (STAGES.length - 1)) * 100}% 0 0)`;
   }
 
   function wireStages() {
@@ -375,7 +409,7 @@
     $('#rail').addEventListener('keydown', (e) => {
       if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
       e.preventDefault();
-      const next = Math.max(0, Math.min(3, activeStage + (e.key === 'ArrowRight' ? 1 : -1)));
+      const next = Math.max(0, Math.min(STAGES.length - 1, activeStage + (e.key === 'ArrowRight' ? 1 : -1)));
       setActive(next);
       $$('.rail-node', railNodesEl)[next].focus();
     });
@@ -546,7 +580,7 @@
   }
 
   const USE_CASES = buildUseCases();
-  const PRODUCT_PATTERN = { 'Microsoft 365 Copilot': 0, 'Dragon Copilot': 0, 'Copilot Cowork': 1, 'Copilot Studio': 2 };
+  const PRODUCT_PATTERN = { 'Microsoft 365 Copilot': 0, 'Dragon Copilot': 0, 'Copilot Cowork': 1, 'Copilot Studio': 2, 'GitHub Copilot': 4, 'Microsoft developer tools': 4, 'Microsoft Foundry': 4, 'Visual Studio Code': 4, 'Azure MCP Server': 4, 'Azure AI Search': 4, 'Azure OpenAI and Foundry Models': 4, 'Semantic Kernel': 4, 'Microsoft Agent Framework': 4, 'AI Toolkit for VS Code': 4, 'Azure AI Content Safety': 4 };
   const SUPPORTING_PRODUCTS = ['Power Automate', 'Dataverse'];
   const patternOfProduct = (name) => (name in PRODUCT_PATTERN ? PRODUCT_PATTERN[name] : SUPPORTING_PRODUCTS.indexOf(name) !== -1 ? -1 : 3);
   USE_CASES.forEach((u) => {
@@ -662,7 +696,7 @@
     const rows = USE_CASES.filter((u) => audOk(u) && patOk(u) && lobOk(u) && qOk(u) && imOk(u))
       .sort((a, b) => dispPat(a) - dispPat(b) || lobOrder.get(a.lob) - lobOrder.get(b.lob) || a.seq - b.seq);
     const shown = rows.slice(0, ex.shown);
-    const patCounts = [0, 0, 0, 0];
+    const patCounts = STAGES.map(() => 0);
     rows.forEach((u) => { patCounts[dispPat(u)] += 1; });
     const multi = patCounts.filter(Boolean).length > 1;
     let html = '';
