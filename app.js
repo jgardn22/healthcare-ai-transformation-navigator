@@ -14,7 +14,7 @@
     {
       short: 'Assistants',
       name: 'Humans Working with AI Assistants',
-      anchor: 'Microsoft 365 Copilot',
+      anchor: 'Microsoft 365 Copilot, Dragon Copilot',
       tag: 'Humans perform the work. AI helps.',
       desc: 'The user remains the primary worker. AI supports each task on request, and the person reviews and decides.',
       assists: ['Drafting', 'Summarization', 'Analysis', 'Information retrieval', 'Content generation'],
@@ -25,10 +25,11 @@
         'Summarizing long Teams threads and meetings for care-team huddles',
         'Drafting policy communications and patient-education materials for review',
         'Analyzing staffing and volume trends in Excel',
+        'Ambient clinical documentation and point-of-care guidance with Dragon Copilot',
         'Triaging and replying to a heavy Outlook inbox',
         'Drafting procedures, board materials, and presentations'
       ],
-      tech: ['Microsoft 365 Copilot', 'Outlook', 'Teams', 'Word', 'Excel', 'PowerPoint'],
+      tech: ['Microsoft 365 Copilot', 'Dragon Copilot', 'Outlook', 'Teams', 'Word', 'Excel', 'PowerPoint'],
       value: 'Broad individual productivity, less time spent drafting and searching, and lower cognitive load. Value depends on adoption and skills.',
       role: 'Practitioner with an assistant',
       aiRole: 'Assistant, on request',
@@ -87,7 +88,7 @@
     {
       short: 'In the app',
       name: 'AI Inside Business Applications',
-      anchor: 'Dragon Copilot, Dynamics 365, Power Platform',
+      anchor: 'Dynamics 365, Power Platform',
       tag: 'AI helps users inside the systems they already use.',
       desc: 'Users interact with business applications. AI enhances workflows, recommendations, insights, and automation directly inside the application experience.',
       assists: ['Recommendations', 'Insights', 'Automation', 'Predictions'],
@@ -95,14 +96,13 @@
       owner: 'The application user and the process owner. The application defines the workflow.',
       participates: 'Inside the application: suggestions, predictions, auto-completion, anomaly flags, and automated steps.',
       uses: [
-        'Ambient clinical documentation with Dragon Copilot',
         'Case summaries and suggested replies in Dynamics 365 Customer Service',
         'Predictive work orders and scheduling in Field Service',
         'Natural-language insight in Power BI',
         'Low-code apps with AI actions in Power Apps',
         'Exception handling in ERP and finance workflows'
       ],
-      tech: ['Dragon Copilot', 'Dynamics 365', 'Power Apps', 'Power BI', 'Power Automate', 'Azure AI services'],
+      tech: ['Dynamics 365', 'Power Apps', 'Power BI', 'Power Automate', 'Azure AI services'],
       value: 'Fast time to value with limited change management, because people stay in familiar tools. Better consistency, fewer clicks, and cleaner data.',
       role: 'Application user',
       aiRole: 'Intelligence inside the app',
@@ -156,13 +156,13 @@
      l:["Experience teams use Copilot to summarize survey comments and draft patient communications for review.", "A patient experience leader delegates a patient feedback theme workbook and improvement briefs, then reviews the findings.", "Digital front door, wayfinding, and patient financial experience agents guide patients to the right next step across channels.", "Customer-facing applications embed AI for personalized guidance, case summaries, and sentiment cues."],
      ag:[{"n": "Digital Front Door & Wayfinding Assistant", "t": "provider"}, {"n": "Patient Financial Experience Agent", "t": "provider"}]},
     {id:"nursing",name:"Nursing Leadership",icon:"🩺",t:"p",
-     l:["Nurse managers use Copilot to summarize huddle threads, draft shift handoff notes, and prepare policy updates for review.", "A nurse leader delegates rounding follow-up reconciliation, a nursing standards narrative, or a nursing council pack.", "Scheduling-exception agents propose coverage options within policy, and managers approve changes and govern staffing rules.", "Dragon Copilot and clinical workflow applications bring ambient documentation and summaries into the nursing and clinical workflow."],
+     l:["Nurse managers use Copilot to summarize huddle threads, draft shift handoff notes, and prepare policy updates for review.", "A nurse leader delegates rounding follow-up reconciliation, a nursing standards narrative, or a nursing council pack.", "Scheduling-exception agents propose coverage options within policy, and managers approve changes and govern staffing rules.", "Clinical workflow applications bring summaries and prompts into the nursing and clinical workflow."],
      ag:[{"n": "Staff Scheduling Exception Agent", "t": "provider"}]},
     {id:"quality",name:"Quality & Patient Safety",icon:"✅",t:"p",
      l:["Quality staff use Copilot to summarize event reports, compare standards, and draft improvement narratives for review.", "A quality leader delegates standards evidence navigation, survey preparation coordination, or an improvement project progress pack.", "Quality measure and regulatory reporting agents assemble evidence and flag gaps, with quality leaders owning submission decisions.", "Quality and safety applications embed AI for event trends, measure tracking, and evidence retrieval."],
      ag:[{"n": "Quality Measure & Regulatory Reporting Agent", "t": "provider"}]},
     {id:"acute",name:"Acute & Inpatient Care",icon:"🏥",t:"p",
-     l:["Care teams use Copilot to summarize huddles and draft handoff notes for review.", "A unit or service line leader delegates a patient-flow and staffing analysis to AI and reviews the brief.", "Inpatient progression agents watch for barriers to progress and discharge readiness and propose next actions, with clinicians approving and governing.", "Dragon Copilot and clinical applications bring ambient documentation and summaries into the clinical workflow."],
+     l:["Care teams use Copilot to summarize huddles and draft handoff notes for review.", "A unit or service line leader delegates a patient-flow and staffing analysis to AI and reviews the brief.", "Inpatient progression agents watch for barriers to progress and discharge readiness and propose next actions, with clinicians approving and governing.", "Clinical applications bring summaries and prompts into the clinical workflow."],
      ag:[{"n": "Inpatient Progression Agent", "t": "provider"}]},
     {id:"ed",name:"Emergency Department Operations",icon:"🚑",t:"p",
      l:["ED staff use Copilot to summarize shift handoffs and draft communications for review.", "An ED operations leader delegates a throughput and boarding analysis and a staffing recommendation brief.", "A throughput command center agent watches flow signals and proposes actions, with charge nurses and physicians deciding.", "Dashboards and clinical applications surface capacity and throughput signals in context."],
@@ -183,7 +183,7 @@
      l:["Remote care staff use Copilot to summarize patient trends and draft check-in notes for review.", "A program leader delegates a program performance and escalation analysis and a staffing brief.", "Remote patient monitoring orchestrators triage alerts and coordinate visits and supplies, with clinicians deciding on care.", "Monitoring and care applications embed AI for alert prioritization and patient summaries."],
      ag:[{"n": "Remote Patient Monitoring Orchestrator", "t": "provider"}]},
     {id:"burnout",name:"Provider Experience & Burnout Reduction",icon:"🌿",t:"p",
-     l:["Clinicians use Copilot to summarize messages and draft routine replies for review.", "A clinical operations leader delegates a documentation burden analysis and a clinician experience brief.", "Ambient documentation and note drafting agents prepare notes for clinician review and signature.", "Dragon Copilot brings ambient clinical documentation into the clinical workflow, so notes are drafted where care happens."],
+     l:["Clinicians use Copilot to summarize messages and draft routine replies for review.", "A clinical operations leader delegates a documentation burden analysis and a clinician experience brief.", "Ambient documentation and note drafting agents prepare notes for clinician review and signature.", "Clinical workflow applications bring documentation prompts and summaries into the clinical workflow, so notes are drafted where care happens."],
      ag:[{"n": "Ambient Documentation & Note Drafting Agent", "t": "provider"}]},
     {id:"safety",name:"Infection Prevention & Device Safety",icon:"🛡️",t:"p",
      l:["Safety staff use Copilot to summarize event reports and draft notices for review.", "A safety leader delegates recall impact and surveillance trend reports for committee review.", "Infection surveillance and patient safety event and recall agents monitor signals and route alerts, with safety leaders owning response.", "Safety and asset applications embed AI for signal detection and event summaries."],
@@ -546,7 +546,7 @@
   }
 
   const USE_CASES = buildUseCases();
-  const PRODUCT_PATTERN = { 'Microsoft 365 Copilot': 0, 'Copilot Cowork': 1, 'Copilot Studio': 2 };
+  const PRODUCT_PATTERN = { 'Microsoft 365 Copilot': 0, 'Dragon Copilot': 0, 'Copilot Cowork': 1, 'Copilot Studio': 2 };
   const SUPPORTING_PRODUCTS = ['Power Automate', 'Dataverse'];
   const patternOfProduct = (name) => (name in PRODUCT_PATTERN ? PRODUCT_PATTERN[name] : SUPPORTING_PRODUCTS.indexOf(name) !== -1 ? -1 : 3);
   USE_CASES.forEach((u) => {
