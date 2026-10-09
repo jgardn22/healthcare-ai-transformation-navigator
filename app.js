@@ -323,6 +323,8 @@
     themeBtn.setAttribute('aria-pressed', String(dark));
     themeBtn.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
     $('#themeLabel').textContent = dark ? 'Light' : 'Dark';
+    const tc = document.querySelector('meta[name="theme-color"]');
+    if (tc) tc.setAttribute('content', dark ? '#070b16' : '#f2f5fc');
   }
   themeBtn.addEventListener('click', () => {
     const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
@@ -798,6 +800,12 @@
     });
     moreBtn.addEventListener('click', () => { ex.shown += PAGE_SIZE; renderResults(false); });
     $('#clearFilters').addEventListener('click', resetFilters);
+    $('#jumpFilters').addEventListener('click', () => {
+      const f = $('.ex-filters');
+      if (f) f.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+      const q = $('#ucSearch');
+      if (q) setTimeout(() => q.focus({ preventScroll: true }), reduceMotion ? 0 : 450);
+    });
     gridEl.addEventListener('click', (e) => { if (e.target.closest('[data-act="reset"]')) resetFilters(); });
     refresh();
   }
@@ -874,8 +882,8 @@
           <header class="tm-ph"><p class="eyebrow">${esc(lob.name)}</p><h3>${esc(team.title)}</h3><p class="tm-sub">${esc(team.subtitle)}</p></header>
           <figure class="tm-fig">
             <button type="button" class="tm-zoom" data-act="zoom" aria-label="Enlarge the ${esc(team.title)} architecture diagram">
-              <img src="${esc(team.image)}" alt="${esc(team.alt)}" width="${team.width}" height="${team.height}">
-              <span class="tm-zoom-hint" aria-hidden="true">Click to enlarge</span>
+              <img src="${esc(team.image)}" alt="${esc(team.alt)}" width="${team.width}" height="${team.height}" loading="lazy" decoding="async">
+              <span class="tm-zoom-hint" aria-hidden="true">${window.matchMedia('(pointer: coarse)').matches ? 'Tap' : 'Click'} to enlarge</span>
             </button>
           </figure>
           ${howCards(lob, team)}
@@ -997,6 +1005,9 @@
     const bar = $('#progressBar');
     const status = $('#slideStatus');
     const last = slides.length - 1;
+    /* Keep in sync with the "flow" media query in styles.css. */
+    const flowMQ = window.matchMedia('(max-width: 760px), (pointer: coarse) and (max-width: 1099px), (pointer: coarse) and (max-height: 520px)');
+    let flow = flowMQ.matches;
     let index = 0;
     let settle = 0;
     let lastWheelAt = 0;
@@ -1022,7 +1033,7 @@
     function setCurrent(i) {
       const changed = i !== index;
       index = i;
-      slides.forEach((el, k) => { if (k === i) el.removeAttribute('inert'); else el.setAttribute('inert', ''); });
+      slides.forEach((el, k) => { if (flow || k === i) el.removeAttribute('inert'); else el.setAttribute('inert', ''); });
       dots.forEach((d, k) => { if (k === i) d.setAttribute('aria-current', 'true'); else d.removeAttribute('aria-current'); });
       navLinks.forEach((a) => { if (a.getAttribute('href') === '#' + ids[i]) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current'); });
       const activeLink = navLinks.find((a) => a.getAttribute('aria-current') === 'true');
@@ -1042,6 +1053,10 @@
       i = clamp(i);
       slides[i].removeAttribute('inert');
       setCurrent(i);
+      if (flow) {
+        window.scrollTo({ top: Math.max(0, slides[i].getBoundingClientRect().top + window.scrollY - (i === 0 ? 0 : $('.topbar').offsetHeight)), behavior: instant || reduceMotion ? 'auto' : 'smooth' });
+        return;
+      }
       main.scrollTo({ left: i * width(), behavior: instant || reduceMotion ? 'auto' : 'smooth' });
     }
 
@@ -1061,6 +1076,42 @@
     }
     main.addEventListener('scroll', onScroll, { passive: true });
 
+    let flowTicking = false;
+    function onFlowScroll() {
+      if (!flow || flowTicking) return;
+      flowTicking = true;
+      requestAnimationFrame(() => {
+        flowTicking = false;
+        const max = document.documentElement.scrollHeight - window.innerHeight;
+        bar.style.width = (max > 0 ? Math.max(0, Math.min(1, window.scrollY / max)) * 100 : 0) + '%';
+        const probe = window.innerHeight * 0.35;
+        let cur = 0;
+        slides.forEach((el, k) => { if (el.getBoundingClientRect().top <= probe) cur = k; });
+        if (cur !== index) setCurrent(cur);
+        const tt = $('#toTop');
+        if (tt) tt.hidden = window.scrollY < window.innerHeight * 1.5;
+      });
+    }
+    window.addEventListener('scroll', onFlowScroll, { passive: true });
+    $('#toTop').addEventListener('click', () => window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' }));
+
+    function applyMode() {
+      const was = flow;
+      flow = flowMQ.matches;
+      if (flow === was) return;
+      if (flow) {
+        slides.forEach((el) => { el.removeAttribute('inert'); reveal(el); });
+        main.scrollLeft = 0;
+        onFlowScroll();
+      } else {
+        window.scrollTo(0, 0);
+        $('#toTop').hidden = true;
+        setCurrent(index);
+        main.scrollTo({ left: index * width(), behavior: 'auto' });
+      }
+    }
+    if (flowMQ.addEventListener) flowMQ.addEventListener('change', applyMode); else if (flowMQ.addListener) flowMQ.addListener(applyMode);
+
     prevBtn.addEventListener('click', () => goTo(index - 1));
     nextBtn.addEventListener('click', () => goTo(index + 1));
     dots.forEach((d) => d.addEventListener('click', () => goTo(Number(d.dataset.i))));
@@ -1079,7 +1130,7 @@
 
     document.addEventListener('keydown', (e) => {
       if (e.defaultPrevented || e.altKey || e.ctrlKey || e.metaKey || e.shiftKey) return;
-      if (document.querySelector('dialog[open]')) return;
+      if (flow || document.querySelector('dialog[open]')) return;
       const t = e.target;
       if (t && (/^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName) || t.isContentEditable)) return;
       if (e.key === 'ArrowRight') { e.preventDefault(); goTo(index + 1); }
@@ -1091,6 +1142,7 @@
       return (oy === 'auto' || oy === 'scroll') && el.scrollHeight > el.clientHeight + 1;
     };
     main.addEventListener('wheel', (e) => {
+      if (flow) return;
       const now = performance.now();
       const freshGesture = now - lastWheelAt > 150;
       lastWheelAt = now;
@@ -1102,12 +1154,13 @@
       goTo(index + (e.deltaY > 0 ? 1 : -1));
     }, { passive: false });
 
-    window.addEventListener('resize', () => main.scrollTo({ left: index * width(), behavior: 'auto' }));
+    window.addEventListener('resize', () => { if (!flow) main.scrollTo({ left: index * width(), behavior: 'auto' }); });
     window.addEventListener('hashchange', () => { const i = ids.indexOf(location.hash.slice(1)); if (i >= 0) goTo(i); });
 
     const start = ids.indexOf(location.hash.slice(1));
-    if (start > 0) goTo(start, true); else setCurrent(0);
+    if (start > 0) goTo(start, true); else { setCurrent(0); onFlowScroll(); }
     reveal(slides[0]);
+    if (flow) slides.forEach(reveal);
   }
 
   /* ------------------------------------------------------------------ */

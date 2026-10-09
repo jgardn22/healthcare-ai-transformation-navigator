@@ -848,3 +848,117 @@ h1 { font-size: clamp(2.2rem, 4.4vw, 3.9rem); line-height: 1.05; letter-spacing:
 @media (min-width: 1100px) { .rs-card { align-content: start; align-items: start; } }
 .rs-desc { font-size: 1rem; line-height: 1.5; color: var(--text); opacity: .86; }
 @media (min-width: 1100px) { .rs-card { align-content: center; align-items: center; } .rs-desc { font-size: .98rem; } }
+
+/* ------------------------------------------------------------------ */
+/* Back to top (shown only in flow mode)                              */
+/* ------------------------------------------------------------------ */
+.to-top { display: none; }
+.ex-jump { display: none; }
+
+/* ------------------------------------------------------------------ */
+/* Flow mode: phones, small touch tablets and landscape phones.        */
+/* The horizontal slide deck becomes one normal, vertically scrolling   */
+/* page. Keep this query in sync with flowMQ in app.js.                 */
+/* ------------------------------------------------------------------ */
+@media (max-width: 760px), (pointer: coarse) and (max-width: 1099px), (pointer: coarse) and (max-height: 520px) {
+  html { overflow-x: hidden; }
+  body { height: auto; min-height: 100svh; overflow: visible; overflow-x: clip; padding-bottom: env(safe-area-inset-bottom); }
+  #slides { position: static; inset: auto; display: block; overflow: visible; scroll-snap-type: none; }
+  .screen {
+    display: block; flex: none; height: auto; overflow: visible; scroll-snap-align: none; scroll-snap-stop: normal;
+    padding: clamp(36px, 7vh, 56px) 0 clamp(20px, 4vh, 36px);
+  }
+  .screen > .container { margin: 0 auto; }
+  #top { display: flex; min-height: 100svh; padding-top: calc(var(--nav-h) + 20px); }
+  #top > .container { margin: auto; }
+  .container { padding-left: max(18px, env(safe-area-inset-left)); padding-right: max(18px, env(safe-area-inset-right)); }
+  .topbar { padding-left: max(12px, env(safe-area-inset-left)); padding-right: max(12px, env(safe-area-inset-right)); gap: 8px; }
+  .dock { display: none; }
+
+  /* Lighter paint: no big blurs or idle animation while scrolling */
+  .ambient i { display: none; }
+  .ambient {
+    background:
+      radial-gradient(60% 40% at 0% 0%, rgba(var(--s1-rgb), .22), transparent 70%),
+      radial-gradient(55% 40% at 100% 22%, rgba(var(--s2-rgb), .18), transparent 70%),
+      radial-gradient(60% 40% at 20% 100%, rgba(var(--s3-rgb), .16), transparent 70%),
+      linear-gradient(180deg, var(--bg), var(--bg-2));
+  }
+  .glass, .uc, .stage, .tk-card, .tm-card, .shift-col, .rs-card, .tk-cta, .tk-cta.secondary, .rung, .tm-outcomes, .tm-fa {
+    -webkit-backdrop-filter: none; backdrop-filter: none;
+  }
+  .glass, .uc, .stage, .tk-card, .tm-card, .rs-card, .rung { background: var(--glass-strong); }
+  .hero-logo, .track-line span, .track-nodes b, .m-flow, .m-node, .orbit, .orbit.slow { animation: none; }
+  .uc:hover, .stage:not(.active):hover, .pat-chip:hover, .rung:hover, .rs-card:hover, .tm-zoom:hover { transform: none; }
+
+  /* Touch ergonomics */
+  a, button, summary, select, input, [role="radio"], [role="button"] { touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
+  .brand { min-width: 44px; min-height: 44px; justify-content: center; }
+  .nav { gap: 2px; scroll-snap-type: x proximity; -webkit-overflow-scrolling: touch; }
+  .nav a { min-height: 44px; display: inline-flex; align-items: center; padding: 0 12px; font-size: .86rem; scroll-snap-align: center; }
+  .theme-toggle { min-width: 44px; min-height: 44px; justify-content: center; padding: 0 12px; }
+  .track-filter button, .link-btn, .btn.small, .domain-tab { min-height: 44px; }
+  .track-filter button { padding: 0 6px; }
+  .im-chip { min-height: 44px; }
+  .ex-sources summary { min-height: 44px; padding: 11px 0; width: auto; }
+  .f-search, .f-select { min-height: 48px; font-size: 16px; }
+  .btn { min-height: 48px; }
+
+  /* Readable type: nothing below 12px */
+  .f-hint, .f-label, .dg-label, .shift-k, .eyebrow.small, .uc-pat, .uc-track, .uc-src, .uc-sub, .tm-badge, .tm-role, .tm-zoom-hint,
+  .pc-top b, .pc-top em, .domain-tab .n, .rail-axis, .rail-axis span, .rail-node small, .track-ends, .track-nodes li, .tk-num,
+  .rung dt, .shift-strip span, .im-chip em, .uc-group em, .uc-group b, .stage-num, .anchor, .chip { font-size: max(.75rem, 12px); }
+  .rail-node small { font-size: .72rem; }
+  .uc-src, .uc-sub { font-size: .8rem; }
+  .ex-fine, .fine { font-size: .8rem; }
+  .uc-more-btn { width: 100%; }
+
+  /* Explorer: results flow in the page; filters stay close */
+  .ex-filters { padding: 14px; }
+  .f-hint { display: none; }
+  .pat-filter, .im-filter {
+    display: flex; grid-template-columns: none; gap: 8px; overflow-x: auto; scroll-snap-type: x proximity; -webkit-overflow-scrolling: touch;
+    margin: 0 -18px; padding: 2px 18px 6px; scroll-padding-inline: 18px; scrollbar-width: none;
+  }
+  .pat-filter::-webkit-scrollbar, .im-filter::-webkit-scrollbar { display: none; }
+  .pat-filter .pat-chip { flex: 0 0 min(62%, 230px); scroll-snap-align: start; grid-column: auto; min-height: 84px; }
+  .pat-filter .pat-chip:last-child { grid-column: auto; }
+  .im-filter .im-chip { flex: 0 0 auto; scroll-snap-align: start; white-space: nowrap; }
+  .ex-bar {
+    position: sticky; top: var(--nav-h); z-index: 20; align-items: center; margin: 0 -18px; padding: 8px 18px;
+    background: var(--glass-strong); border-bottom: 1px solid var(--line);
+    -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+  }
+  .ex-bar .ex-summary { flex-basis: 100%; order: 3; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: .78rem; }
+  .ex-bar .ex-count { margin: 0; }
+  .ex-jump { display: inline-block; }
+  .ex-bar .link-btn { margin-left: auto; }
+  .ex-bar #clearFilters:not([hidden]) + .ex-jump { margin-left: 0; }
+  .uc { content-visibility: auto; contain-intrinsic-size: auto 260px; }
+
+  /* Diagram viewer: full screen, pan and pinch */
+  .tm-dialog { width: 100vw; height: 100dvh; max-width: none; max-height: none; margin: 0; background: #0b1326; overflow: auto; -webkit-overflow-scrolling: touch; touch-action: pan-x pan-y pinch-zoom; }
+  .tm-dialog img { max-width: none; max-height: none; width: max(900px, 230vw); border-radius: 0; margin: 56px 0 24px; }
+  .tm-dclose { position: fixed; top: max(10px, env(safe-area-inset-top)); right: max(10px, env(safe-area-inset-right)); z-index: 2; min-height: 44px; padding: 0 20px; }
+  .tm-zoom-hint { font-size: .75rem; padding: 6px 12px; }
+
+  /* Back to top */
+  .to-top {
+    position: fixed; right: max(14px, env(safe-area-inset-right)); bottom: max(16px, env(safe-area-inset-bottom)); z-index: 90;
+    width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center; border: 1px solid var(--glass-brd);
+    background: var(--glass-strong); color: var(--text); box-shadow: var(--shadow-lg);
+  }
+  .to-top[hidden] { display: none; }
+  .to-top svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+
+  .stage-title button { min-height: 44px; }
+  .takeaway .container { min-height: 0; }
+
+  /* Remaining small type and small targets */
+  .uc-impact, .uc-impact b, .uc-impact b span, .uc-impact em, .uc-tools, .uc-tools em, .uc-tools i, .detail h4, .rs-kind, .tm-role,
+  .tm-card h5, .tm-outcomes h4, .tk-label, p.fine, .disclaimer { font-size: .78rem; }
+  .tm-card .tm-role, .tm-card p.tm-role, .fine.disclaimer, p.fine.disclaimer { font-size: .78rem; }
+  .tk-chain .dot { width: 22px; height: 22px; font-size: .75rem; }
+  summary { min-height: 44px; padding-top: 11px; padding-bottom: 11px; }
+  .tk-next a, .tk-actions a, .tk-cta { min-height: 44px; display: inline-flex; align-items: center; }
+}
