@@ -39,7 +39,7 @@
     {
       short: 'Delegation',
       name: 'Humans Delegating to AI Teammates',
-      anchor: 'Copilot Cowork, Microsoft Scout',
+      anchor: 'Copilot Cowork, Microsoft Autopilot',
       tag: 'Humans own outcomes. AI completes assigned work.',
       desc: 'People delegate complete projects and outcomes to AI, then review, refine, and approve the result.',
       assists: ['Research', 'Analysis', 'Document creation', 'Information gathering', 'Project execution'],
@@ -54,7 +54,7 @@
         'Project status and decision packages',
         'An always-on agent that tracks follow-ups, deadlines and recurring issues, and tells the owner what needs attention'
       ],
-      tech: ['Copilot Cowork', 'Microsoft Scout', 'Researcher and Analyst agents', 'Microsoft 365 Copilot', 'Work IQ', 'Microsoft Graph'],
+      tech: ['Copilot Cowork', 'Microsoft Autopilot', 'Researcher and Analyst agents', 'Microsoft 365 Copilot', 'Work IQ', 'Microsoft Graph'],
       value: 'The unit of value moves from minutes saved to hours or days of finished work returned, so leaders review more and draft less.',
       role: 'Manager of AI contributors',
       aiRole: 'Contributor owning assigned work',
@@ -583,7 +583,7 @@
   }
 
   const USE_CASES = buildUseCases();
-  const PRODUCT_PATTERN = { 'Microsoft 365 Copilot': 0, 'Dragon Copilot': 0, 'Copilot Cowork': 1, 'Microsoft Scout': 1, 'Copilot Studio': 2, 'GitHub Copilot': 4, 'Microsoft developer tools': 4, 'Microsoft Foundry': 4, 'Visual Studio Code': 4, 'Azure MCP Server': 4, 'Azure AI Search': 4, 'Azure OpenAI and Foundry Models': 4, 'Semantic Kernel': 4, 'Microsoft Agent Framework': 4, 'AI Toolkit for VS Code': 4, 'Azure AI Content Safety': 4 };
+  const PRODUCT_PATTERN = { 'Microsoft 365 Copilot': 0, 'Dragon Copilot': 0, 'Copilot Cowork': 1, 'Microsoft Autopilot': 1, 'Copilot Studio': 2, 'GitHub Copilot': 4, 'Microsoft developer tools': 4, 'Microsoft Foundry': 4, 'Visual Studio Code': 4, 'Azure MCP Server': 4, 'Azure AI Search': 4, 'Azure OpenAI and Foundry Models': 4, 'Semantic Kernel': 4, 'Microsoft Agent Framework': 4, 'AI Toolkit for VS Code': 4, 'Azure AI Content Safety': 4 };
   const SUPPORTING_PRODUCTS = ['Power Automate', 'Dataverse'];
   const patternOfProduct = (name) => (name in PRODUCT_PATTERN ? PRODUCT_PATTERN[name] : SUPPORTING_PRODUCTS.indexOf(name) !== -1 ? -1 : 3);
   USE_CASES.forEach((u) => {
