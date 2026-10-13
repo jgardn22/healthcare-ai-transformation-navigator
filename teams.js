@@ -120,5 +120,120 @@ window.HAIN_TEAMS = {
     humans: ['Legal Operations Team', 'Corporate Counsel', 'Privacy Office', 'Compliance Office', 'Contracts Team', 'External Counsel'],
     outcomes: ['Faster matter resolution', 'Reduced outside counsel spend', 'Better contract compliance', 'Stronger regulatory readiness', 'Improved auditability', 'Protected legal accountability'],
     principles: ['Secure by design', 'Governed by policy', 'Built for trust', 'Focused on people', 'Delivered at scale']
+  },
+  orch: {
+    image: 'assets/provider-operations-house-agentic-team.webp',
+    width: 1536,
+    height: 1024,
+    title: "Healthcare Provider Operations House",
+    subtitle: "A shared front door across Clinical Roles, Quality & Safety, and Supply Chain operations.",
+    alt: "Architecture diagram of the Healthcare Provider Operations House. A healthcare team member, such as a clinician, quality professional, supply chain staff member or leader, reaches Healthcare Provider Operations Assist, the front door. It handles common entry by chat, voice or form, identity and access, intent routing, approved knowledge, domain agent handoff, and a coherent result with citations and next steps. Three rooms sit below: the Clinical Roles Room, the Quality and Safety Room, and the Supply Chain Operations Room, each with six specialized agents. A governed services foundation of Microsoft 365, EHR and FHIR, SharePoint, quality platforms, ERP, SCM and WMS, identity, APIs, audit and telemetry, and approval gates supports them, with human accountability for clinicians, quality and safety specialists, supply chain leaders, legal and privacy, and authorized approvers, and outcomes that matter at the bottom.",
+    assist: {
+      name: "Healthcare Provider Operations Assist",
+      line: "Your intelligent front door to get work done safely and effectively",
+      ask: "I need help with a patient task, a safety report, or a supply chain exception.",
+      intake: ["Healthcare team member: a clinician, quality professional, supply chain staff member, or leader", "Common entry: chat, voice, or form submission", "Identity and access: secure, role-based access and context", "Approved knowledge: trusted policies, procedures and data"],
+      steps: ["Common entry", "Identity and access", "Intent routing", "Approved knowledge", "Domain agent handoff", "Coherent result"]
+    },
+    agents: [
+      ["Clinical Roles Room", ["Clinical Administrative Inbox", "Documentation Preparation", "Handoff Preparation", "Policy and Procedure", "Referral Coordination", "Patient Education"]],
+      ["Quality & Safety Room", ["Safety Event Intake", "Quality Measure Evidence", "Audit and Accreditation Evidence", "CAPA Tracking", "RCA Preparation", "Policy Surveillance"]],
+      ["Supply Chain Operations Room", ["Supply Exception", "Recall and Lot Coordination", "Inventory and PAR Exception", "Vendor and PO Exception", "Expiration and Obsolescence", "Substitute Product Coordination"]]
+    ],
+    governance: ["Microsoft 365 services", "Identity and access (least privilege)", "Audit and telemetry", "Approval gates for sensitive actions", "Governed APIs and connectors", "Quality platforms"],
+    systems: ["Microsoft 365 (Teams, Outlook, SharePoint)", "EHR and FHIR (Epic, Cerner, MEDITECH, etc.)", "SharePoint policies, procedures and knowledge content", "Quality platforms (safety, quality, registry and reporting systems)", "ERP, SCM and WMS (supply, inventory and procurement systems)", "Identity and access (SSO, RBAC, least privilege)", "APIs and connectors (secure, governed integrations)", "Audit and telemetry (logs, monitoring, usage analytics)"],
+    humans: ["Clinicians", "Quality and safety specialists", "Supply chain leaders", "Legal, privacy and compliance", "Authorized approvers"],
+    outcomes: ["Less administrative burden", "Faster cycle times", "Better traceability", "Stronger governance", "More time for patient care"],
+    principles: ["Agents prepare, retrieve, route and monitor bounded work", "Accountable professionals retain consequential decisions"]
+  },
+  supply: {
+    image: 'assets/supply-chain-operations-room-agentic-team.webp',
+    width: 1536,
+    height: 1024,
+    title: "Supply Chain Operations Room",
+    subtitle: "Multi-agent coordination for shortages, recalls, inventory exceptions, purchasing, and vendor operations.",
+    alt: "Architecture diagram of the Supply Chain Operations Room. Alerts, requests and external notifications enter an intake and discovery flow of alert and request intake, exception validation, inventory and contract search, and case summary. Supply Chain Operations Assist, the front door, detects and takes in the exception, reconciles data, routes the exception, prepares a response, sends it through an approval gate and tracks closure. Eight specialized sub-agents sit below: Supply Exception, Recall and Lot Coordination, Inventory and PAR Exception, Vendor and PO Exception, Expiration and Obsolescence, Substitute Product Coordination, Vendor Communication and Watchlist, and Demand and Usage Reporting. A governance control plane and shared platform services and integrations sit underneath, with human escalation to buyers, materials managers, pharmacy, value analysis, accounts payable, supply chain leadership and the clinical committee, and outcomes that matter on the right.",
+    assist: {
+      name: "Supply Chain Operations Assist",
+      line: "Your intelligent front door to supply chain operations",
+      ask: "I need help with a shortage, a recall notice, an inventory exception, or a vendor purchase order issue.",
+      intake: ["Alert and request intake: capture alerts, staff requests, emails and external notifications", "Exception validation: classify, enrich and validate key details such as item, location, severity and source", "Inventory and contract search: check current inventory, open POs, vendor data, contracts and the item master", "Case summary: create an initial summary, assign priority and route to the right agent"],
+      steps: ["Detect and intake", "Reconcile data", "Route exception", "Prepare response", "Approval gate", "Track closure"]
+    },
+    agents: [
+      ["Supply Exception Agent", ["Reconcile shortage, backorder notices, stock and open POs and demand", "Identify affected locations", "Open and route an exception case"]],
+      ["Recall & Lot Coordination Agent", ["Match recall notices to lot and asset inventory", "Assign location tasks", "Track confirmation and closure", "Provide status reporting"]],
+      ["Inventory & PAR Exception Agent", ["Reconcile count, PAR, consignment and movement exceptions", "Route adjustments and replenishment for approval", "Flag recurring issues"]],
+      ["Vendor & PO Exception Agent", ["Match PO, receipt, invoice and acknowledgments", "Route price and quantity disputes", "Draft vendor outreach and track resolution"]],
+      ["Expiration & Obsolescence Agent", ["Surveil lot and expiry data", "Create location tasks", "Track removal, transfer or destruction confirmations"]],
+      ["Substitute Product Coordination Agent", ["Assemble approved product, contract and evidence pack", "Track clinical and committee review", "Support the decision workflow, where humans decide suitability"]],
+      ["Vendor Communication & Watchlist Agent", ["Detect late acknowledgments and promise dates", "Draft consolidated outreach", "Maintain a vendor watchlist", "Provide stakeholder updates"]],
+      ["Demand & Usage Reporting Agent", ["Assemble approved demand and usage extracts", "Surface exceptions and trends", "Prepare a planning report; the leader owns forecast and order decisions"]]
+    ],
+    governance: ["Agent catalog", "Approval workflows", "Identity and access (RBAC, least privilege, segmentation)", "Audit logging", "Data classification", "Lifecycle management", "Performance and risk monitoring", "Policy and control"],
+    systems: ["Microsoft 365 (Teams, Outlook, SharePoint)", "ERP and SCM systems (e.g., SAP, Oracle, Workday)", "WMS and inventory (locations, movements)", "AP and EDI (invoice, payment, 855/856)", "Vendor feeds (supplier portals, recall notices, GPOs)", "Contracts and item master (contracts, pricing, item data)", "OR schedule (where authorized: case volumes and demand)", "BI and reporting (Power BI, analytics, dashboards)"],
+    humans: ["Buyers", "Materials Managers", "Pharmacy", "Value Analysis", "Accounts Payable", "Supply Chain Leadership", "Clinical Committee"],
+    outcomes: ["Faster exception response", "Better recall traceability", "Fewer stockouts", "Lower aging exceptions", "Reduced manual follow-up", "More resilient supply operations"],
+    principles: ["Secure by design", "Governed by policy", "Built for trust", "Focused on people", "Delivered at scale", "Humans approve substitutions, allocations, inventory adjustments, payment actions, disposition and material commitments"]
+  },
+  burnout: {
+    image: 'assets/clinical-roles-room-agentic-team.webp',
+    width: 1536,
+    height: 1024,
+    title: "Clinical Roles Room",
+    subtitle: "Administrative assistance around care, with licensed judgment retained by clinicians.",
+    alt: "Architecture diagram of the Clinical Roles Room. A request from clinical staff enters an intake and discovery flow of request intake, an administrative versus clinical check, approved knowledge search, and case summary. Clinical Roles Assist, the front door, understands the request, retrieves approved context, routes it to a bounded agent, prepares and coordinates the work, sends it for human review when required and delivers actionable results with citations. Eight specialized sub-agents sit below: Clinical Administrative Inbox, Documentation Preparation, Handoff Preparation, Policy and Procedure, Referral Coordination, Shift and Meeting Preparation, Patient Education Drafting, and Diagnostic Services Coordination. A governance control plane and shared platform services and integrations sit underneath, with human escalation to nurses, physicians and advanced practice providers, pharmacists, therapists, imaging and lab staff and care coordinators, and outcomes that matter on the right.",
+    assist: {
+      name: "Clinical Roles Assist",
+      line: "Your intelligent front door for administrative care support",
+      ask: "I need help with a handoff, documentation preparation, a policy question, or a referral status.",
+      intake: ["Request intake: capture, classify and prioritize administrative requests from clinical staff", "Administrative versus clinical check: determine whether the request is administrative or requires clinical judgment", "Approved knowledge search: search enterprise policies, procedures and trusted sources", "Case summary: create a summary and recommend the best agent or pathway"],
+      steps: ["Understand request", "Retrieve approved context", "Route to bounded agent", "Prepare and coordinate", "Human review", "Deliver"]
+    },
+    agents: [
+      ["Clinical Administrative Inbox Agent", ["Classify bounded administrative messages", "Route scheduling, forms and referral status", "Escalate clinical, urgent or ambiguous content"]],
+      ["Documentation Preparation Agent", ["Assemble prior notes, results, forms and open items", "Create a pre-read or draft shell with citations", "Clinician validates the final record"]],
+      ["Handoff Preparation Agent", ["Pull documented facts and unresolved tasks", "Create a draft handoff for the next care team", "Outgoing clinician validates completeness"]],
+      ["Policy & Procedure Agent", ["Search approved, current policies", "Cite version and owner", "Escalate conflicting, stale or absent policy"]],
+      ["Referral Coordination Agent", ["Validate administrative completeness", "Route missing items", "Track referral and scheduling status", "Escalate clinical-priority decisions"]],
+      ["Shift & Meeting Preparation Agent", ["Assemble operational issues, prior actions and references", "Prepare briefs for charge nurses and service leads", "Surface key updates and follow-ups"]],
+      ["Patient Education Drafting Agent", ["Adapt approved education to reading level, language and visit context", "Create multi-format materials", "Clinician approves release"]],
+      ["Diagnostic Services Coordination Agent", ["Track prerequisites, authorization and report delivery", "Coordinate across imaging, lab and therapy", "Proactively identify delays and notify the care team"]]
+    ],
+    governance: ["PHI and privacy controls (minimum necessary)", "Identity and access (Entra ID, role-based)", "Read-only by default", "Source citations with as-of dates", "Human sign-off for clinical records and high-impact communications", "Audit and monitoring"],
+    systems: ["Microsoft 365 (Teams, Outlook, SharePoint, Word, Excel)", "Entra ID (identity and access, RBAC)", "EHR and FHIR (Epic, Cerner, MEDITECH, etc.)", "Scheduling systems (appointments, resource management)", "Referral systems (internal and external referrals)", "Policy and knowledge (SharePoint, intranet, clinical guidelines)", "RIS and PACS (imaging)", "LIS (laboratory)", "Teams and Outlook (collaboration and notifications)"],
+    humans: ["Nurses", "Physicians and advanced practice providers", "Pharmacists", "Therapists (PT, OT, SLP)", "Imaging and lab staff", "Care coordinators"],
+    outcomes: ["Lower documentation burden", "Faster administrative coordination", "Better handoffs", "Faster policy access", "Reduced status chasing", "More time for care"],
+    principles: ["No autonomous diagnosis, symptom triage, protocol selection, medication decisions, critical-result interpretation, imaging prioritization, therapy goals, or treatment recommendation", "Human judgment. Better care."]
+  },
+  quality: {
+    image: 'assets/quality-safety-room-agentic-team.webp',
+    width: 1536,
+    height: 1024,
+    title: "Quality & Safety Room",
+    subtitle: "Governed agents for evidence collection, event operations, audit readiness, and action tracking.",
+    alt: "Architecture diagram of the Quality and Safety Room. Events, concerns, requests and external sources enter an intake and discovery flow of event and request intake, a completeness check, approved taxonomy and standards, and case summary. Quality and Safety Assist, the front door, takes in the event or request, normalizes and validates it, routes it to the best agent, gathers evidence, tracks actions and sends it for human review. Eight specialized sub-agents sit below: Safety Event Intake, Quality Measure Evidence, Audit and Accreditation Evidence, CAPA Tracking, Safety Huddle Preparation, Regulatory Report Preparation, RCA Preparation, and Policy Surveillance and Change. A governance control plane and shared platform services and integrations sit underneath, with human escalation to safety professionals, quality leaders, accreditation leads, regulatory specialists, clinical owners and legal and privacy. A Nursing Operations Assist agent portfolio strip shows the same agents with example use cases for nursing.",
+    assist: {
+      name: "Quality & Safety Assist",
+      line: "Your intelligent front door to quality and safety operations",
+      ask: "I need help with a safety event, a quality measure, an audit, or a corrective action.",
+      intake: ["Event and request intake: capture events, concerns, requests from clinical, operational or external sources", "Completeness check: validate required fields and identify missing information", "Approved taxonomy and standards: classify using approved taxonomy (e.g., PSO, NQF, regulatory)", "Case summary: create an initial summary and route to the appropriate team or agent"],
+      steps: ["Intake", "Normalize and validate", "Route to best agent", "Gather evidence", "Track actions", "Human review"]
+    },
+    agents: [
+      ["Safety Event Intake Agent", ["Normalize required fields", "Identify missing information", "Route by approved taxonomy", "Notify the safety queue"]],
+      ["Quality Measure Evidence Agent", ["Retrieve metric evidence", "Map definitions", "Reconcile periods", "Flag data gaps"]],
+      ["Audit & Accreditation Evidence Agent", ["Crosswalk standards to approved artifacts", "Verify owner status", "Assemble the evidence package", "Track readiness"]],
+      ["CAPA Tracking Agent", ["Create governed action records", "Set reminders and dependencies", "Track closure evidence", "Escalate overdue items"]],
+      ["Safety Huddle Preparation Agent", ["Summarize events and trends", "Highlight open actions", "Surface operational signals", "Prepare huddle briefs"]],
+      ["Regulatory Report Preparation Agent", ["Assemble approved facts, forms and exhibits", "Prepare a sign-off checklist", "Track submission requirements; an authorized specialist determines obligation and attestation"]],
+      ["RCA Preparation Agent", ["Build a factual chronology", "Create an evidence index", "Prepare an interview schedule", "Identify unanswered questions"]],
+      ["Policy Surveillance & Change Agent", ["Monitor external guidance and updates", "Compare to local policies", "Identify potential impacts", "Create owner questions and track unresolved gaps"]]
+    ],
+    governance: ["Privacy and PSO privilege (protect PHI and PSO data)", "Role-based access control (least privilege)", "Audit logging", "Source traceability (cite sources, maintain evidence lineage)", "Human sign-off for high-risk actions", "Retention and records management", "Output validation (rules, confidence checks, guardrails)", "Monitoring and analytics"],
+    systems: ["Microsoft 365 (Teams, Outlook, SharePoint)", "Quality and safety platform (event reporting, PSO)", "Dataverse (case management)", "EHR and FHIR (where authorized)", "Standards and regulatory sources (NQF, CMS, The Joint Commission, etc.)", "Teams and email (notifications and collaboration)"],
+    humans: ["Safety Professionals", "Quality Leaders", "Accreditation Leads", "Regulatory Specialists", "Clinical Owners", "Legal and Privacy"],
+    outcomes: ["Faster event routing", "Audit readiness", "Reduced evidence prep", "Better CAPA follow-through", "Stronger traceability", "Safer operations"],
+    principles: ["People first", "Governed by policy", "Built for trust", "Focused on outcomes", "Scalable for what is next", "Classification, severity, reportability, causality, conformance, corrective-action closure and regulatory attestation remain human decisions"]
   }
 };
