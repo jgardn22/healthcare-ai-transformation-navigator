@@ -962,3 +962,29 @@ h1 { font-size: clamp(2.2rem, 4.4vw, 3.9rem); line-height: 1.05; letter-spacing:
   summary { min-height: 44px; padding-top: 11px; padding-bottom: 11px; }
   .tk-next a, .tk-actions a, .tk-cta { min-height: 44px; display: inline-flex; align-items: center; }
 }
+
+/* HAVEN call-to-action in the Use Case Explorer header */
+.ex-haven {
+  display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 12px 14px; text-decoration: none; color: #fff;
+  padding: 12px 16px; border-radius: 18px; max-width: 520px;
+  background: linear-gradient(125deg, rgba(var(--s1-rgb), .95), rgba(var(--s2-rgb), .92));
+  border: 1px solid rgba(255, 255, 255, .22); box-shadow: 0 12px 30px rgba(var(--s1-rgb), .32);
+  transition: transform .3s var(--ease), box-shadow .3s;
+}
+.ex-haven:hover { transform: translateY(-2px); box-shadow: 0 18px 40px rgba(var(--s1-rgb), .48); }
+.ex-haven:focus-visible { outline: 3px solid var(--s1); outline-offset: 3px; }
+.ex-haven-ico { width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center; background: rgba(255, 255, 255, .2); }
+.ex-haven-copy { display: grid; gap: 2px; min-width: 0; }
+.ex-haven-copy b { font-size: 1rem; letter-spacing: -.01em; line-height: 1.2; }
+.ex-haven-copy span { font-size: .82rem; line-height: 1.35; color: rgba(255, 255, 255, .9); }
+.ex-haven-go { display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px; border-radius: 999px; background: #fff; color: #1b2a6b; font-weight: 700; font-size: .85rem; white-space: nowrap; }
+@media (min-width: 1100px) {
+  .ex-head { grid-template-columns: minmax(0, 1fr) minmax(340px, 460px); column-gap: 28px; align-items: center; max-width: none; }
+  .ex-head > .eyebrow, .ex-head > h2, .ex-head > .section-lede { grid-column: 1; }
+  .ex-head > .ex-haven { grid-column: 2; grid-row: 1 / span 3; }
+}
+@media (max-width: 760px), (pointer: coarse) and (max-width: 1099px) {
+  .ex-haven { grid-template-columns: auto minmax(0, 1fr); grid-template-areas: "ico copy" "go go"; max-width: none; padding: 14px 16px; }
+  .ex-haven-ico { grid-area: ico; } .ex-haven-copy { grid-area: copy; } .ex-haven-copy span { font-size: .85rem; }
+  .ex-haven-go { grid-area: go; justify-content: center; min-height: 44px; }
+}
