@@ -235,5 +235,35 @@ window.HAIN_TEAMS = {
     humans: ["Safety Professionals", "Quality Leaders", "Accreditation Leads", "Regulatory Specialists", "Clinical Owners", "Legal and Privacy"],
     outcomes: ["Faster event routing", "Audit readiness", "Reduced evidence prep", "Better CAPA follow-through", "Stronger traceability", "Safer operations"],
     principles: ["People first", "Governed by policy", "Built for trust", "Focused on outcomes", "Scalable for what is next", "Classification, severity, reportability, causality, conformance, corrective-action closure and regulatory attestation remain human decisions"]
+  },
+  revenue: {
+    image: 'assets/revenue-cycle-operations-room-agentic-team.webp',
+    width: 1536,
+    height: 1024,
+    title: "Revenue Cycle Management Operations Room",
+    subtitle: "AI-powered revenue cycle operations across access, coding, claims, denials, and patient financial experience.",
+    alt: "Architecture diagram of the Revenue Cycle Management Operations Room. A request from providers, staff or patients enters an intake and discovery flow of RCM request intake, context and eligibility check, coverage and authorization lookup, and case summary. Revenue Cycle Management Assist, the front door, understands the request, enriches and validates it with eligibility, claims and account data, routes it to the best agent, orchestrates actions, monitors compliance and synthesizes and delivers the response. Eight specialized sub-agents sit below: Patient Access, Claims Intake and Status, Coding and Documentation, Denial Management, Payment Posting and Reconciliation, Patient Financial Experience, Revenue Integrity, and Payer Policy Intelligence. A governance control plane and shared platform services and integrations sit underneath, with human escalation to patient access staff, coding specialists, RCM analysts, patient financial services, compliance and privacy, clinical staff and finance leadership, and outcomes that matter on the right.",
+    assist: {
+      name: "Revenue Cycle Management Assist",
+      line: "Your intelligent front door to revenue cycle operations",
+      ask: "I need help with an eligibility check, a claim status, a denial, a coding question, or a patient billing question.",
+      intake: ["RCM request intake: capture and classify requests from providers, staff or patients", "Context and eligibility check: identify patient, service, payer and claim context", "Coverage and authorization lookup: check eligibility, prior authorizations and payer rules", "Case summary: create an initial summary and route to the right agent"],
+      steps: ["Understand request", "Enrich and validate", "Route to best agent", "Orchestrate actions", "Monitor compliance", "Synthesize and deliver response"]
+    },
+    agents: [
+      ["Patient Access Agent", ["Eligibility and benefits verification", "Prior authorization status", "Patient scheduling support", "Financial clearance coordination"]],
+      ["Claims Intake & Status Agent", ["Claim creation and validation", "Claim status inquiries", "Payer communication summaries", "Timely follow-up and escalation"]],
+      ["Coding & Documentation Agent", ["Coding guidance and validation", "Documentation completeness checks", "Query preparation for clinicians", "Coding policy lookup"]],
+      ["Denial Management Agent", ["Denial reason analysis", "Appeal readiness assessment", "Evidence package assembly", "Resubmission tracking"]],
+      ["Payment Posting & Reconciliation Agent", ["Remittance processing support", "Payment matching", "Underpayment identification", "Account reconciliation"]],
+      ["Patient Financial Experience Agent", ["Patient balance inquiries", "Payment plan support", "Financial assistance guidance", "Clear, empathetic communications"]],
+      ["Revenue Integrity Agent", ["Charge capture audits", "CDM and compliance monitoring", "Key metric reporting", "Risk and opportunity identification"]],
+      ["Payer Policy Intelligence Agent", ["Payer policy lookup", "Coverage rule interpretation", "Policy change alerts", "Impact analysis and recommendations"]]
+    ],
+    governance: ["Agent catalog (discover, reuse, manage agents)", "Approval workflows (review and approve changes)", "Lifecycle management (version, deploy, monitor, retire)", "Audit logging (traceability for actions and decisions)", "Compliance and policy (payer policy alignment, PHI protection, regulatory standards)", "Prompt governance (standards and controls)", "Usage analytics (monitor adoption, performance and impact)"],
+    systems: ["Microsoft 365 (Teams, Outlook, SharePoint)", "Identity and access (SSO, RBAC, permissions)", "EHR and clinical systems (Epic, Cerner, MEDITECH, etc.)", "RCM systems (claims, billing, patient accounting)", "Payer portals (eligibility, claims, authorizations)", "APIs and MCP (secure, governed integrations)", "Security (Zero Trust, encryption, DLP)"],
+    humans: ["Patient Access Staff", "Coding Specialists", "RCM Analysts", "Patient Financial Services", "Compliance and Privacy", "Clinical Staff", "Finance Leadership"],
+    outcomes: ["Faster claim resolution", "Higher first-pass claim rates", "Increased net revenue", "Better patient experience", "Stronger compliance", "More efficient staff"],
+    principles: ["Secure by design", "Governed by policy", "Built for trust", "Focused on people", "Delivered at scale", "Clinical, financial and policy decisions remain with qualified professionals"]
   }
 };
