@@ -295,5 +295,34 @@ window.HAIN_TEAMS = {
     humans: ["Service Desk (Tier 1-3 support)", "IAM and Security", "Application Owners", "Data Owners", "Incident Managers", "Change Advisory and IT Leaders"],
     outcomes: ["Faster request resolution", "Better incident coordination", "Stronger access governance", "Higher change readiness", "Faster data issue resolution", "More productive teams"],
     principles: ["Secure by design", "Governed by policy", "Built for trust", "Focused on people", "Delivered at scale", "Security, access, production change and authoritative data decisions remain human-controlled"]
+  },
+  growth: {
+    image: 'assets/marketing-operations-room-agentic-team.webp',
+    width: 1536,
+    height: 1024,
+    title: "Marketing Operations Room",
+    subtitle: "AI-powered marketing operations to engage patients, grow markets, and build trusted brands.",
+    alt: "Architecture diagram of the Marketing Operations Room. A request from staff, leaders or external partners enters an intake and discovery flow of marketing request intake, context and audience check, asset and data lookup, and case summary. Marketing Operations Assist, the front door, understands the request, enriches and validates context, routes it to the best agent, orchestrates actions, monitors compliance, and synthesizes and delivers the response. Seven specialized sub-agents sit below: Campaign Strategy, Content Creation, Asset Management, Approval and Workflow, Analytics and Insights, Event and Experience, and Privacy and Compliance. A governance control plane and shared platform services and integrations sit underneath, with human escalation to the marketing team, creative services, legal and compliance, external partners and executive leadership, and outcomes that matter on the right.",
+    assist: {
+      name: "Marketing Operations Assist",
+      line: "Your intelligent front door for marketing support",
+      ask: "I need help with a campaign brief, content, an approved asset, a review, campaign results, or an event.",
+      intake: ["Marketing request intake: capture and classify requests from staff, leaders or external partners", "Context and audience check: identify audience, purpose, channel, brand guidelines and any regulatory or privacy considerations", "Asset and data lookup: retrieve existing assets, campaign history, audience data and performance insights", "Case summary: create an initial summary and route to the right agent or team"],
+      steps: ["Understand request", "Enrich and validate context", "Route to best agent", "Orchestrate actions", "Monitor compliance", "Synthesize and deliver response"]
+    },
+    agents: [
+      ["Campaign Strategy Agent", ["Develop campaign briefs", "Audience analysis and segmentation", "Channel recommendations", "Competitive insights", "Performance planning"]],
+      ["Content Creation Agent", ["Draft copy and creative content", "Adapt for multiple channels", "Optimize for audience and tone", "Generate variants for testing", "Repurpose existing content"]],
+      ["Asset Management Agent", ["Search and retrieve approved assets", "Version control and metadata", "Recommend existing content", "Manage digital asset requests", "Ensure brand compliance"]],
+      ["Approval & Workflow Agent", ["Route for review and approval", "Track status and reminders", "Ensure policy and brand compliance", "Manage feedback and revisions", "Notify stakeholders"]],
+      ["Analytics & Insights Agent", ["Analyze campaign performance", "Generate insights and summaries", "Track KPIs and trends", "Identify optimization opportunities", "Create executive reports"]],
+      ["Event & Experience Agent", ["Plan and coordinate events", "Manage logistics and communications", "Create event materials", "Track registrations and follow-ups", "Measure event impact"]],
+      ["Privacy & Compliance Agent", ["Check content for privacy requirements", "Validate consent and data use", "Ensure regulatory adherence", "Review sensitive language or claims", "Flag risks and escalate as needed"]]
+    ],
+    governance: ["Agent catalog (discover, reuse, manage agents)", "Approval workflows (review and approve content and campaigns)", "Identity and access (RBAC, least privilege, segmentation)", "Audit logging (traceability for actions and decisions)", "Policy and brand governance (brand guidelines, content policies, controls)", "Lifecycle management (version, deploy, monitor, retire)", "Usage analytics (monitor adoption, performance and impact)"],
+    systems: ["Microsoft 365 (Teams, Outlook, SharePoint)", "CRM and CDP (Dynamics, Salesforce, Adobe, etc.)", "Digital asset management (brand assets, media, metadata)", "Web and CMS (Sitecore, WordPress, etc.)", "Analytics platforms (Adobe, Google, Power BI, etc.)", "Marketing automation (Marketo, Salesforce Marketing, etc.)", "APIs and integration (secure, governed connectors)"],
+    humans: ["Marketing Team", "Creative Services", "Legal and Compliance", "External Partners", "Executive Leadership"],
+    outcomes: ["Faster campaign execution", "Stronger brand consistency", "Increased patient engagement", "Higher marketing ROI", "Greater compliance", "More productive teams"],
+    principles: ["Secure by design", "Governed by policy", "Built for trust", "Focused on people", "Delivered at scale", "Marketing drives healthier people and stronger communities"]
   }
 };
