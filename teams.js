@@ -265,5 +265,35 @@ window.HAIN_TEAMS = {
     humans: ["Patient Access Staff", "Coding Specialists", "RCM Analysts", "Patient Financial Services", "Compliance and Privacy", "Clinical Staff", "Finance Leadership"],
     outcomes: ["Faster claim resolution", "Higher first-pass claim rates", "Increased net revenue", "Better patient experience", "Stronger compliance", "More efficient staff"],
     principles: ["Secure by design", "Governed by policy", "Built for trust", "Focused on people", "Delivered at scale", "Clinical, financial and policy decisions remain with qualified professionals"]
+  },
+  it: {
+    image: 'assets/it-data-digital-operations-room-agentic-team.webp',
+    width: 1536,
+    height: 1024,
+    title: "IT, Data & Digital Operations Room",
+    subtitle: "AI-powered IT service, security, data, and digital operations to keep care running.",
+    alt: "Architecture diagram of the IT, Data and Digital Operations Room. A request from employees, clinicians or systems enters an intake and discovery flow of service request intake, context and impact check, user and system lookup, and case summary. IT, Data and Digital Operations Assist, the front door, understands the request, enriches and validates context, routes it to the best agent, orchestrates actions, monitors security and compliance, and synthesizes and delivers the response. Eight specialized sub-agents sit below: Service Request Intake and Routing, Incident Command, Access Review Evidence, Change Readiness, Data Quality Case, Analytics Request Scoping, Operating Review, and Knowledge and Status. A governance control plane and shared platform services and integrations sit underneath, with human escalation to the service desk, IAM and security, application owners, data owners, incident managers, and change advisory and IT leaders, and outcomes that matter on the right.",
+    assist: {
+      name: "IT, Data & Digital Operations Assist",
+      line: "Your intelligent front door for IT and digital operations",
+      ask: "I need help with an access request, an incident, a change, a data quality issue, or a question about IT status.",
+      intake: ["Service request intake: capture and classify requests from employees, clinicians and system users", "Context and impact check: identify request type, urgency, affected systems and business impact", "User and system lookup: retrieve user, device, application and asset information", "Case summary: create an initial summary and route to the right agent"],
+      steps: ["Understand request", "Enrich and validate context", "Route to best agent", "Orchestrate actions", "Monitor security and compliance", "Synthesize and deliver response"]
+    },
+    agents: [
+      ["Service Request Intake & Routing Agent", ["Classify and enrich requests", "Validate required fields", "Route to ownership", "Track status and follow-up"]],
+      ["Incident Command Agent", ["Assemble incident chronology", "Identify impacted services", "Track open actions", "Generate stakeholder briefings"]],
+      ["Access Review Evidence Agent", ["Collect entitlement and access evidence", "Flag missing or excess access", "Prepare reviewer package", "Track remediation status"]],
+      ["Change Readiness Agent", ["Assemble change plan", "Identify dependencies", "Validate testing evidence", "Prepare communications and track readiness status"]],
+      ["Data Quality Case Agent", ["Capture and classify data issue", "Reconcile evidence across systems", "Route to data owner", "Track remediation and closure"]],
+      ["Analytics Request Scoping Agent", ["Clarify business question and goal", "Identify data needs and sources", "Define audience and format", "Confirm acceptance criteria"]],
+      ["Operating Review Agent", ["Compile KPIs across IT operations", "Summarize incidents, changes and backlog", "Identify trends and risks", "Prepare leadership brief"]],
+      ["Knowledge & Status Agent", ["Answer questions from IT policies and procedures", "Provide real-time service and system status", "Surface relevant knowledge and troubleshooting guidance"]]
+    ],
+    governance: ["Agent catalog (discover, reuse, manage agents)", "Approval workflows (review and approve changes and actions)", "Identity and access (RBAC, least privilege, segmentation)", "Audit logging (traceability for actions and decisions)", "DLP and data classification (protect sensitive data)", "Lifecycle management (version, deploy, monitor, retire)", "Prompt governance (standards and controls)", "Usage analytics (monitor adoption, performance and impact)"],
+    systems: ["Microsoft 365 (Teams, Outlook, SharePoint)", "ITSM (ServiceNow, Jira, etc.)", "IAM and Entra ID (identity and access)", "CMDB and asset inventory (configuration management)", "Monitoring and observability (Dynatrace, Splunk, Datadog, etc.)", "Data catalog (Purview, Collibra, etc.)", "DevOps and change systems (Azure DevOps, GitHub, etc.)", "BI and reporting (Power BI, Tableau, etc.)"],
+    humans: ["Service Desk (Tier 1-3 support)", "IAM and Security", "Application Owners", "Data Owners", "Incident Managers", "Change Advisory and IT Leaders"],
+    outcomes: ["Faster request resolution", "Better incident coordination", "Stronger access governance", "Higher change readiness", "Faster data issue resolution", "More productive teams"],
+    principles: ["Secure by design", "Governed by policy", "Built for trust", "Focused on people", "Delivered at scale", "Security, access, production change and authoritative data decisions remain human-controlled"]
   }
 };
