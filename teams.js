@@ -412,7 +412,7 @@ window.HAIN_TEAMS = {
     outcomes: ["Faster time to value", "Greater portfolio clarity", "Better resource alignment", "Higher strategic impact", "Stronger governance", "More productive teams"],
     principles: ["Secure by design", "Governed by policy", "Built for trust", "Focused on people", "Delivered at scale", "Strategy, investment, prioritization and funding decisions remain with accountable leaders"]
   },
-  access: {
+  access: [{
     image: 'assets/patient-access-operations-room-agentic-team.webp',
     width: 1536,
     height: 1024,
@@ -440,7 +440,36 @@ window.HAIN_TEAMS = {
     humans: ["Patient Access Staff", "Clinical Teams", "Authorization Specialists", "Patient Financial Services", "Compliance and Privacy", "Access Leadership"],
     outcomes: ["Shorter wait times", "Higher access rates", "Better patient experience", "Greater operational efficiency", "Stronger compliance", "More productive teams"],
     principles: ["Secure by design", "Governed by policy", "Built for trust", "Focused on people", "Delivered at scale", "Removing barriers to care to build healthier communities"]
-  },
+  }, {
+    image: 'assets/contact-center-patient-experience-operations-room-agentic-team.webp',
+    width: 1536,
+    height: 1024,
+    title: "Contact Center & Patient Experience Operations Room",
+    subtitle: "AI-powered patient engagement to deliver faster, easier, and more personalized support.",
+    alt: "Architecture diagram of the Contact Center and Patient Experience Operations Room. A request from phone, chat, email, portal or in-person interactions enters an intake and discovery flow of patient inquiry intake, context and patient lookup, coverage and policy check, and case summary. Patient Experience Assist, the front door, understands the request, enriches and validates patient data, coverage and history, routes it to the best agent, orchestrates actions, monitors compliance, and synthesizes and delivers the response. Eight specialized sub-agents sit below: Patient Inquiry, Scheduling and Appointment, Eligibility and Benefits, Billing and Payment Support, Care Navigation, Patient Outreach, Feedback and Engagement, and Knowledge and Policy. A governance control plane and shared platform services and integrations sit underneath, with human escalation to contact center representatives, clinical triage teams, scheduling specialists, patient financial services, care management teams, compliance and privacy, and leadership teams, and outcomes that matter on the right.",
+    assist: {
+      name: "Patient Experience Assist",
+      line: "Your intelligent front door for patient and member support",
+      ask: "I need help with a question, an appointment, my coverage, a bill, or finding the right care.",
+      intake: ["Patient inquiry intake: capture and classify inquiries from phone, chat, email, portal or in-person interactions", "Context and patient lookup: identify patient, intent, history and care context (billing, clinical or general)", "Coverage and policy check: retrieve eligibility, benefits and policy information", "Case summary: create an initial summary and route to the right agent"],
+      steps: ["Understand request", "Enrich and validate context", "Route to best agent", "Orchestrate actions", "Monitor compliance", "Synthesize and deliver response"]
+    },
+    agents: [
+      ["Patient Inquiry Agent", ["Answer general questions", "Provide service navigation", "Check status and next steps", "Support multilingual interactions", "Escalate complex inquiries"]],
+      ["Scheduling & Appointment Agent", ["Find available appointments", "Reschedule or cancel", "Send confirmations and reminders", "Handle waitlists", "Coordinate specialty referrals"]],
+      ["Eligibility & Benefits Agent", ["Verify coverage and eligibility", "Explain benefits", "Estimate out-of-pocket costs", "Check prior authorization status", "Provide financial assistance options"]],
+      ["Billing & Payment Support Agent", ["Answer billing questions", "Provide balance details", "Set up payment plans", "Process payment transactions", "Explain statements and charges", "Connect to financial counseling"]],
+      ["Care Navigation Agent", ["Provide care options and next steps", "Coordinate referrals", "Support transitions of care", "Connect to clinical services", "Locate providers and facilities"]],
+      ["Patient Outreach Agent", ["Proactive outreach and follow-up", "Care gap notifications", "Preventive care reminders", "Post-discharge check-ins", "Support population health programs"]],
+      ["Feedback & Engagement Agent", ["Capture patient feedback and surveys", "Resolve concerns and complaints", "Identify themes and trends", "Route to service recovery teams", "Track satisfaction metrics"]],
+      ["Knowledge & Policy Agent", ["Answer questions from approved sources", "Provide accurate service information", "Interpret policies and guidelines", "Support agents with real-time guidance", "Keep content current"]]
+    ],
+    governance: ["Agent catalog (discover, reuse, manage agents)", "Approval workflows (review and approve changes and actions)", "Identity and access (RBAC, least privilege, segmentation)", "Audit logging (traceability for actions and decisions)", "Policy and compliance (align with HIPAA, CMS and organizational policies)", "Lifecycle management (version, deploy, monitor, retire)", "Usage analytics (monitor adoption, performance and impact)"],
+    systems: ["Microsoft 365 (Teams, Outlook, SharePoint)", "Contact center platforms (e.g., Genesys, NICE, Five9, Amazon Connect)", "EHR and clinical systems (Epic, Cerner, MEDITECH, etc.)", "CRM systems (Dynamics 365, Salesforce, etc.)", "Payer and eligibility (real-time eligibility, authorizations)", "APIs and integrations (secure, governed connectors)", "Security (Zero Trust, encryption, DLP)"],
+    humans: ["Contact Center Representatives", "Clinical Triage Teams", "Scheduling Specialists", "Patient Financial Services", "Care Management Teams", "Compliance and Privacy", "Leadership Teams"],
+    outcomes: ["Shorter wait times", "Higher patient satisfaction", "Increased access to care", "Lower operational cost", "Stronger compliance", "More consistent information", "Healthier communities"],
+    principles: ["Secure by design", "Governed by policy", "Built for trust", "Focused on people", "Delivered at scale", "Every interaction is an opportunity to create a healthier tomorrow"]
+  }],
   research: {
     image: 'assets/research-administration-operations-room-agentic-team.webp',
     width: 1536,
