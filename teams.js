@@ -61,7 +61,7 @@ window.HAIN_TEAMS = {
     outcomes: ['Reduced cognitive burden', 'Faster clinical guidance', 'Standardized care', 'Improved patient education', 'Stronger compliance', 'Higher nursing productivity'],
     principles: ['Secure by design', 'Governed by policy', 'Built for trust', 'Focused on people', 'Delivered at scale']
   },
-  hr: {
+  hr: [{
     image: 'assets/hr-agentic-team.webp',
     width: 1536,
     height: 1024,
@@ -90,7 +90,36 @@ window.HAIN_TEAMS = {
     humans: ['HR Service Desk', 'IT Support', 'Clinical Informatics', 'Finance Operations', 'Compliance Office'],
     outcomes: ['Faster resolutions', 'Better experience', 'Operational efficiency', 'Risk and compliance', 'Scalable innovation'],
     principles: ['Secure by design', 'Governed by policy', 'Built for trust', 'Focused on people', 'Delivered at scale']
-  },
+  }, {
+    image: 'assets/hr-operations-room-agentic-team.webp',
+    width: 1536,
+    height: 1024,
+    title: "Human Resources Operations Room",
+    subtitle: "AI-powered HR operations to attract, develop, and support a healthy, high-performing workforce.",
+    alt: "Architecture diagram of the Human Resources Operations Room. A request from employees, leaders or candidates enters an intake and discovery flow of HR request intake, context and employee check, people data lookup, and case summary. HR Operations Assist, the front door, understands the request, enriches and validates employee data, policies and program information, routes it to the best agent, orchestrates actions, monitors compliance, and synthesizes and delivers the response. Eight specialized sub-agents sit below: Talent Acquisition, Employee Experience, Learning and Development, Benefits and Wellbeing, Employee Relations, Workforce Planning, HR Operations, and Compliance and Policy. A governance control plane and shared platform services and integrations sit underneath, with human escalation to HR business partners, the talent acquisition team, the benefits team, employee relations, people leaders, the HR operations team and executive leadership, and outcomes that matter on the right.",
+    assist: {
+      name: "HR Operations Assist",
+      line: "Your intelligent front door for HR support",
+      ask: "I need help with a hiring request, a benefits question, a policy, a learning plan, or an employee issue.",
+      intake: ["HR request intake: capture and classify inquiries from employees, leaders or candidates", "Context and employee check: identify employee type, role, location, policies and applicable programs", "People data lookup: retrieve relevant HR data, benefits, learning and policy information", "Case summary: create an initial summary and route to the right agent or team"],
+      steps: ["Understand request", "Enrich and validate context", "Route to best agent", "Orchestrate actions", "Monitor compliance", "Synthesize and deliver response"]
+    },
+    agents: [
+      ["Talent Acquisition Agent", ["Support recruiting and hiring workflows", "Screen and summarize candidates", "Coordinate interviews", "Track hiring status", "Improve candidate experience"]],
+      ["Employee Experience Agent", ["Answer HR questions", "Guide employees to the right resources", "Support onboarding", "Help with leaves, transfers and life events", "Personalize guidance"]],
+      ["Learning & Development Agent", ["Recommend training and career paths", "Track learning progress", "Support skills development", "Identify required training", "Create personalized learning plans"]],
+      ["Benefits & Wellbeing Agent", ["Answer benefits and coverage questions", "Support enrollment and changes", "Compare plan options", "Explain FSA/HSA and other programs", "Promote wellbeing resources"]],
+      ["Employee Relations Agent", ["Guide policy and process questions", "Support conflict resolution", "Provide documentation templates", "Escalate sensitive matters", "Track case progress"]],
+      ["Workforce Planning Agent", ["Analyze workforce data", "Identify hiring needs and gaps", "Support organizational planning", "Model scenarios", "Provide insights and reports"]],
+      ["HR Operations Agent", ["Automate HR workflows", "Process policy requests", "Manage employee data changes", "Coordinate approvals", "Track SLAs and backlog", "Generate operational reports"]],
+      ["Compliance & Policy Agent", ["Provide policy guidance", "Ensure regulatory compliance", "Monitor policy changes", "Validate approvals", "Flag risks and exceptions", "Support audits"]]
+    ],
+    governance: ["Agent catalog (discover, reuse, manage agents)", "Approval workflows (review and approve content and actions)", "Identity and access (RBAC, least privilege, segmentation)", "Audit logging (traceability for actions and decisions)", "Policy and compliance (align with HR, legal and regulatory requirements)", "Lifecycle management (version, deploy, monitor, retire)", "Usage analytics (monitor adoption, performance and impact)"],
+    systems: ["Microsoft 365 (Teams, Outlook, SharePoint)", "HRIS and HCM systems (Workday, SAP, Oracle, etc.)", "Learning systems (Cornerstone, LinkedIn Learning, etc.)", "Benefits platforms (Benefitfocus, Fidelity, etc.)", "Collaboration tools (Viva, SharePoint, Communities, etc.)", "APIs and integrations (secure, governed connectors)", "Security (Zero Trust, encryption, DLP)"],
+    humans: ["HR Business Partners", "Talent Acquisition Team", "Benefits Team", "Employee Relations", "People Leaders", "HR Operations Team", "Executive Leadership"],
+    outcomes: ["A more engaged workforce", "Higher productivity", "Better employee experience", "Stronger talent retention", "Greater compliance", "Healthier communities"],
+    principles: ["Secure by design", "Governed by policy", "Built for trust", "Focused on people", "Delivered at scale", "Empowering people to create a healthier tomorrow"]
+  }],
   legal: {
     image: 'assets/legal-agentic-team.webp',
     width: 1536,
