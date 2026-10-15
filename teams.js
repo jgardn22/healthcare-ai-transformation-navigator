@@ -499,5 +499,35 @@ window.HAIN_TEAMS = {
     humans: ["Principal Investigators", "Research Administrators", "Sponsored Programs", "IRB and Research Compliance", "Clinical Research Teams", "Finance and Grants Teams", "Legal Counsel"],
     outcomes: ["Faster study startup", "Greater research capacity", "Improved researcher experience", "Stronger compliance", "Higher data quality", "Increased funding success", "Healthier communities"],
     principles: ["Secure by design", "Governed by policy", "Built for trust", "Focused on people", "Delivered at scale", "Turning research into healthier tomorrows"]
+  },
+  ambulatory: {
+    image: 'assets/ambulatory-specialty-care-operations-room-agentic-team.webp',
+    width: 1536,
+    height: 1024,
+    title: "Ambulatory & Specialty Care Operations Room",
+    subtitle: "AI-powered ambulatory and specialty care operations to improve access, coordination, and clinical outcomes.",
+    alt: "Architecture diagram of the Ambulatory and Specialty Care Operations Room. A request from patients, providers or staff enters an intake and discovery flow of care request intake, context and eligibility check, patient and care data lookup, and case summary. Ambulatory and Specialty Care Assist, the front door, understands the request, enriches and validates patient, provider, clinical and coverage information, routes it to the best agent, orchestrates actions, monitors compliance, and synthesizes and delivers the response. Eight specialized sub-agents sit below: Scheduling and Access, Referral and Care Coordination, Authorization and Eligibility, Specialty Triage, Chronic Care Management, Patient Education, Performance and Operations, and Clinical Knowledge. A governance control plane and shared platform services and integrations sit underneath, with human escalation to front desk and access staff, clinical care teams, specialty care teams, the authorization team, care management, compliance and privacy, and operations leadership, and outcomes that matter on the right.",
+    assist: {
+      name: "Ambulatory & Specialty Care Assist",
+      line: "Your intelligent front door for ambulatory and specialty care operations",
+      ask: "I need help with an appointment, a referral, an authorization, a care plan, or patient education.",
+      intake: ["Care request intake: capture and classify requests from patients, providers or staff for ambulatory and specialty care support", "Context and eligibility check: identify patient needs, specialty, urgency, referral status and coverage requirements", "Patient and care data lookup: retrieve patient history, referrals, authorizations and prior care activity", "Case summary: create an initial summary and route to the right agent or team"],
+      steps: ["Understand request", "Enrich and validate context", "Route to best agent", "Orchestrate actions", "Monitor compliance", "Synthesize and deliver response"]
+    },
+    agents: [
+      ["Scheduling & Access Agent", ["Find optimal appointments", "Manage waitlists", "Handle reschedules and cancellations", "Optimize provider schedules", "Reduce no-shows"]],
+      ["Referral & Care Coordination Agent", ["Process incoming referrals", "Track referral status", "Coordinate with specialists", "Manage transitions", "Close referral loops"]],
+      ["Authorization & Eligibility Agent", ["Verify coverage and benefits", "Check prior authorization status", "Prepare and submit authorization requests", "Track determinations", "Identify and resolve denials"]],
+      ["Specialty Triage Agent", ["Assess clinical care gaps", "Route to appropriate specialty", "Apply clinical guidelines", "Flag high-risk cases", "Recommend next best steps"]],
+      ["Chronic Care Management Agent", ["Identify care gaps", "Support outreach and follow-up", "Coordinate multi-disciplinary care", "Track longitudinal care plans", "Monitor quality measures"]],
+      ["Patient Education Agent", ["Create condition-specific education", "Tailor materials by language and literacy level", "Support pre- and post-visit instructions", "Answer patient questions"]],
+      ["Performance & Operations Agent", ["Track access and capacity metrics", "Identify bottlenecks", "Analyze no-show trends", "Generate operational reports", "Recommend improvements"]],
+      ["Clinical Knowledge Agent", ["Provide guidance on care pathways", "Surface latest evidence and guidelines", "Support specialty-specific protocols", "Answer clinical practice questions"]]
+    ],
+    governance: ["Agent catalog (discover, reuse, manage agents)", "Approval workflows (review and approve changes and actions)", "Identity and access (RBAC, least privilege, segmentation)", "Audit logging (traceability for actions and decisions)", "Policy and compliance (align with clinical, payer and regulatory policies)", "Lifecycle management (version, deploy, monitor, retire)", "Usage analytics (monitor adoption, performance and impact)"],
+    systems: ["Microsoft 365 (Teams, Outlook, SharePoint)", "EHR and clinical systems (Epic, Cerner, MEDITECH, etc.)", "Scheduling systems (Amion, QGenda, etc.)", "Payer systems (eligibility, auth, claims)", "Patient engagement (portal, CRM, contact center, etc.)", "APIs and integrations (secure, governed connectors)", "Security (Zero Trust, encryption, DLP)"],
+    humans: ["Front Desk and Access Staff", "Clinical Care Teams", "Specialty Care Teams", "Authorization Team", "Care Management", "Compliance and Privacy", "Operations Leadership"],
+    outcomes: ["Faster access to care", "Higher appointment completion", "Improved patient experience", "Greater operational efficiency", "Stronger compliance", "Healthier communities"],
+    principles: ["Secure by design", "Governed by policy", "Built for trust", "Focused on people", "Delivered at scale", "Expanding access to the right care for a healthier tomorrow"]
   }
 };
