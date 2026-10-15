@@ -296,7 +296,7 @@ window.HAIN_TEAMS = {
     outcomes: ["Faster request resolution", "Better incident coordination", "Stronger access governance", "Higher change readiness", "Faster data issue resolution", "More productive teams"],
     principles: ["Secure by design", "Governed by policy", "Built for trust", "Focused on people", "Delivered at scale", "Security, access, production change and authoritative data decisions remain human-controlled"]
   },
-  growth: {
+  growth: [{
     image: 'assets/marketing-operations-room-agentic-team.webp',
     width: 1536,
     height: 1024,
@@ -324,5 +324,33 @@ window.HAIN_TEAMS = {
     humans: ["Marketing Team", "Creative Services", "Legal and Compliance", "External Partners", "Executive Leadership"],
     outcomes: ["Faster campaign execution", "Stronger brand consistency", "Increased patient engagement", "Higher marketing ROI", "Greater compliance", "More productive teams"],
     principles: ["Secure by design", "Governed by policy", "Built for trust", "Focused on people", "Delivered at scale", "Marketing drives healthier people and stronger communities"]
-  }
+  }, {
+    image: 'assets/sales-growth-operations-room-agentic-team.webp',
+    width: 1536,
+    height: 1024,
+    title: "Sales & Growth Operations Room",
+    subtitle: "AI-powered business development and relationship management to expand access, partnerships, and market growth.",
+    alt: "Architecture diagram of the Sales and Growth Operations Room. A request from referral sources, employers, payers or internal teams enters an intake and discovery flow of growth request intake, context and opportunity assessment, data and relationship lookup, and case summary. Sales and Growth Assist, the front door, understands the request, enriches and validates context, routes it to the best agent, orchestrates actions, monitors compliance, and synthesizes and delivers the response. Seven specialized sub-agents sit below: Account and Relationship Intelligence, RFP and Proposal, Market Intelligence, Referral Development, Payer and Employer Engagement, Contract and Negotiation Support, and Marketing and Campaign Support. A governance control plane and shared platform services and integrations sit underneath, with human escalation to the sales and growth team, provider relations, contracting and legal, marketing and communications, finance and executive leadership, and outcomes that matter on the right.",
+    assist: {
+      name: "Sales & Growth Assist",
+      line: "Your intelligent front door for growth and partnership support",
+      ask: "I need help with an account briefing, an RFP response, a referral source, a payer or employer meeting, or a contract question.",
+      intake: ["Growth request intake: capture and classify inquiries from referral sources, employers, payers or internal teams", "Context and opportunity assessment: identify account, market and partnership context and business objectives", "Data and relationship lookup: retrieve account history, contracts, outreach activity and market intelligence", "Case summary: create an initial summary and route to the right agent or team"],
+      steps: ["Understand request", "Enrich and validate context", "Route to best agent", "Orchestrate actions", "Monitor compliance", "Synthesize and deliver response"]
+    },
+    agents: [
+      ["Account & Relationship Intelligence Agent", ["Research accounts and key stakeholders", "Summarize relationship history and activity", "Identify growth opportunities", "Prepare account briefs and talking points"]],
+      ["RFP & Proposal Agent", ["Analyze RFP requirements", "Gather relevant content and data", "Draft responses and summaries", "Track deadlines and approvals", "Coordinate reviews"]],
+      ["Market Intelligence Agent", ["Analyze market trends and competitive landscape", "Identify expansion opportunities", "Create market summaries and insights", "Monitor payer and employer dynamics"]],
+      ["Referral Development Agent", ["Identify and prioritize referral sources", "Prepare outreach plans and materials", "Track follow-ups and pipeline status", "Surface warm leads and opportunities"]],
+      ["Payer & Employer Engagement Agent", ["Research payer and employer needs and priorities", "Prepare meeting briefs", "Track engagement and commitments", "Monitor contract opportunities"]],
+      ["Contract & Negotiation Support Agent", ["Retrieve contract terms and templates", "Analyze key terms and redlines", "Summarize obligations and risks", "Prepare negotiation briefs and scenarios"]],
+      ["Marketing & Campaign Support Agent", ["Create campaign briefs", "Develop content and messaging", "Coordinate with legal and brand standards", "Track campaign performance and ROI"]]
+    ],
+    governance: ["Agent catalog (discover, reuse, manage agents)", "Approval workflows (review and approve content and outreach)", "Identity and access (RBAC, least privilege, segmentation)", "Audit logging (traceability for actions and decisions)", "Policy and brand governance (messaging, approvals, brand compliance)", "Lifecycle management (version, deploy, monitor, retire)", "Usage analytics (monitor adoption, performance and impact)"],
+    systems: ["Microsoft 365 (Teams, Outlook, SharePoint)", "CRM and CDP (Dynamics, Salesforce, etc.)", "Analytics platforms (Power BI, Databricks, etc.)", "External data sources (market, provider, payer data)", "Document repositories (contracts, RFPs, proposals)", "APIs and integrations (internal systems, partner data)", "Security (Zero Trust, encryption, DLP)"],
+    humans: ["Sales and Growth Team", "Provider Relations", "Contracting and Legal", "Marketing and Communications", "Finance", "Executive Leadership"],
+    outcomes: ["Faster opportunity conversion", "Stronger referral relationships", "Increased patient access", "Revenue growth", "Greater compliance", "More productive teams"],
+    principles: ["Secure by design", "Governed by policy", "Built for trust", "Focused on people", "Delivered at scale", "Healthier communities through stronger partnerships and greater access"]
+  }]
 };

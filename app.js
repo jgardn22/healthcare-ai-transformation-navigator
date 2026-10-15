@@ -827,7 +827,9 @@
     if (!listEl || !panel) return;
     const TEAMS = window.HAIN_TEAMS || {};
     let current = TEAMS.finance ? 'finance' : LOBS[0].id;
+    let variant = 0;
     const hasTeam = (id) => Object.prototype.hasOwnProperty.call(TEAMS, id);
+    const teamsFor = (id) => (hasTeam(id) ? [].concat(TEAMS[id]) : []);
     const chips = (items) => `<div class="tm-chips">${items.map((x) => `<span>${esc(x)}</span>`).join('')}</div>`;
 
     function renderList() {
@@ -875,11 +877,16 @@
 
     function renderPanel() {
       const lob = LOBS.find((l) => l.id === current);
-      const team = hasTeam(current) ? TEAMS[current] : null;
+      const variants = teamsFor(current);
+      const team = variants.length ? variants[Math.min(variant, variants.length - 1)] : null;
       let html;
       if (team) {
+        const switcher = variants.length > 1
+          ? `<div class="tm-variants" role="radiogroup" aria-label="Agent teams for ${esc(lob.name)}">${variants.map((v, i) => `<button type="button" role="radio" data-act="variant" data-i="${i}" aria-checked="${i === variant}">${esc(v.title)}</button>`).join('')}</div>`
+          : '';
         html = `
           <header class="tm-ph"><p class="eyebrow">${esc(lob.name)}</p><h3>${esc(team.title)}</h3><p class="tm-sub">${esc(team.subtitle)}</p></header>
+          ${switcher}
           <figure class="tm-fig">
             <button type="button" class="tm-zoom" data-act="zoom" aria-label="Enlarge the ${esc(team.title)} architecture diagram">
               <img src="${esc(team.image)}" alt="${esc(team.alt)}" width="${team.width}" height="${team.height}" loading="lazy" decoding="async">
@@ -899,6 +906,7 @@
 
     function select(id, focus) {
       current = id;
+      variant = 0;
       renderList();
       renderPanel();
       if (focus) { const el = $('.domain-tab[data-id="' + id + '"]', listEl); if (el) el.focus(); }
@@ -924,6 +932,14 @@
     selEl.addEventListener('change', () => select(selEl.value));
 
     panel.addEventListener('click', (e) => {
+      const vb = e.target.closest('[data-act="variant"]');
+      if (vb) {
+        variant = Number(vb.dataset.i);
+        renderPanel();
+        const k = panel.querySelector('.tm-variants button[aria-checked="true"]');
+        if (k) k.focus();
+        return;
+      }
       const z = e.target.closest('[data-act="zoom"]');
       if (!z || !dlg || !dlg.showModal) return;
       const img = z.querySelector('img');
