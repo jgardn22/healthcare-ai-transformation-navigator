@@ -352,5 +352,35 @@ window.HAIN_TEAMS = {
     humans: ["Sales and Growth Team", "Provider Relations", "Contracting and Legal", "Marketing and Communications", "Finance", "Executive Leadership"],
     outcomes: ["Faster opportunity conversion", "Stronger referral relationships", "Increased patient access", "Revenue growth", "Greater compliance", "More productive teams"],
     principles: ["Secure by design", "Governed by policy", "Built for trust", "Focused on people", "Delivered at scale", "Healthier communities through stronger partnerships and greater access"]
-  }]
+  }],
+  pmo: {
+    image: 'assets/pmo-operations-room-agentic-team.webp',
+    width: 1536,
+    height: 1024,
+    title: "Product, Portfolio & PMO Operations Room",
+    subtitle: "AI-powered portfolio and program execution to turn strategy into measurable impact.",
+    alt: "Architecture diagram of the Product, Portfolio and PMO Operations Room. A request from executives, teams or stakeholders enters an intake and discovery flow of portfolio request intake, context and prioritization, project and initiative lookup, and case summary. Product, Portfolio and PMO Assist, the front door, understands the request, enriches and validates context, routes it to the best agent, orchestrates actions, monitors progress and risk, and synthesizes and delivers the response. Eight specialized sub-agents sit below: Idea and Intake, Portfolio Planning, Program Management, Project Execution, Risk and Issue Management, Resource and Capacity, Reporting and Insights, and Knowledge and Lessons Learned. A governance control plane and shared platform services and integrations sit underneath, with human escalation to PMO leadership, business executives, program managers, finance partners, IT and data teams, change management and operational leaders, and outcomes that matter on the right.",
+    assist: {
+      name: "Product, Portfolio & PMO Assist",
+      line: "Your intelligent front door for portfolio and program support",
+      ask: "I need help with a new idea, a portfolio view, a program status, a project risk, or a resource question.",
+      intake: ["Portfolio request intake: capture and classify business cases from executives, teams or stakeholders", "Context and prioritization: identify strategic goals, dependencies, constraints and business value", "Project and initiative lookup: retrieve existing initiatives, status, artifacts and lessons learned", "Case summary: create an initial summary and route to the right agent or team"],
+      steps: ["Understand request", "Enrich and validate context", "Route to best agent", "Orchestrate actions", "Monitor progress and risk", "Synthesize and deliver response"]
+    },
+    agents: [
+      ["Idea & Intake Agent", ["Capture and enrich ideas", "Assess strategic fit", "Identify required information", "Route for review", "Track intake status"]],
+      ["Portfolio Planning Agent", ["Maintain portfolio plans", "Analyze capacity and constraints", "Model scenarios", "Prioritize investments", "Track value realization"]],
+      ["Program Management Agent", ["Create and maintain program plans", "Track milestones and dependencies", "Summarize status", "Identify and escalate risks", "Prepare steering materials"]],
+      ["Project Execution Agent", ["Create project artifacts", "Track tasks and timelines", "Monitor progress", "Flag delays and issues", "Prepare status reports"]],
+      ["Risk & Issue Management Agent", ["Identify and assess risks", "Track issues to closure", "Recommend mitigation options", "Monitor key risk indicators", "Prepare risk summaries"]],
+      ["Resource & Capacity Agent", ["Analyze resource needs", "Match skills to demand", "Track utilization and availability", "Identify staffing gaps", "Support workforce planning"]],
+      ["Reporting & Insights Agent", ["Generate executive reports and dashboards", "Analyze performance and outcomes", "Summarize key changes", "Create visualizations", "Provide insights and recommendations"]],
+      ["Knowledge & Lessons Learned Agent", ["Search prior initiatives", "Identify best practices", "Capture lessons learned", "Recommend templates", "Surface relevant examples and guidance"]]
+    ],
+    governance: ["Agent catalog (discover, reuse, manage agents)", "Approval workflows (review and approve initiatives and changes)", "Identity and access (RBAC, least privilege, segmentation)", "Audit logging (traceability for actions and decisions)", "Policy and standards (align with enterprise PMO methodology)", "Lifecycle management (version, deploy, monitor, retire)", "Usage analytics (monitor adoption, performance and impact)"],
+    systems: ["Microsoft 365 (Teams, Outlook, SharePoint)", "PPM tools (Planview, ServiceNow, Jira, Azure DevOps, etc.)", "Financial systems (budgeting, forecasting)", "Data and analytics (Power BI, Fabric, Dataverse, etc.)", "Collaboration tools (Whiteboard, Loop, etc.)", "Document repositories (contracts, business cases, policies, templates)", "APIs and integrations (secure, governed connectors)", "Security (Zero Trust, encryption, DLP)"],
+    humans: ["PMO Leadership", "Business Executives", "Program Managers", "Finance Partners", "IT and Data Teams", "Change Management", "Operational Leaders"],
+    outcomes: ["Faster time to value", "Greater portfolio clarity", "Better resource alignment", "Higher strategic impact", "Stronger governance", "More productive teams"],
+    principles: ["Secure by design", "Governed by policy", "Built for trust", "Focused on people", "Delivered at scale", "Strategy, investment, prioritization and funding decisions remain with accountable leaders"]
+  }
 };
