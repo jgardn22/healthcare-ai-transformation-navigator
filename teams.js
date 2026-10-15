@@ -382,5 +382,34 @@ window.HAIN_TEAMS = {
     humans: ["PMO Leadership", "Business Executives", "Program Managers", "Finance Partners", "IT and Data Teams", "Change Management", "Operational Leaders"],
     outcomes: ["Faster time to value", "Greater portfolio clarity", "Better resource alignment", "Higher strategic impact", "Stronger governance", "More productive teams"],
     principles: ["Secure by design", "Governed by policy", "Built for trust", "Focused on people", "Delivered at scale", "Strategy, investment, prioritization and funding decisions remain with accountable leaders"]
+  },
+  access: {
+    image: 'assets/patient-access-operations-room-agentic-team.webp',
+    width: 1536,
+    height: 1024,
+    title: "Patient Access Operations Room",
+    subtitle: "AI-powered access operations to get the right patients to the right care at the right time.",
+    alt: "Architecture diagram of the Patient Access Operations Room. A request from patients, providers, staff or external partners enters an intake and discovery flow of access request intake, patient and insurance verification, appointment and referral lookup, and case summary. Patient Access Assist, the front door, understands the request, enriches and validates patient, insurance, provider and service information, routes it to the best agent, orchestrates actions, monitors compliance, and synthesizes and delivers the response. Seven specialized sub-agents sit below: Scheduling, Eligibility and Benefits, Referral Management, Patient Intake, Authorization Support, Patient Communication, and Access Analytics. A governance control plane and shared platform services and integrations sit underneath, with human escalation to patient access staff, clinical teams, authorization specialists, patient financial services, compliance and privacy, and access leadership, and outcomes that matter on the right.",
+    assist: {
+      name: "Patient Access Assist",
+      line: "Your intelligent front door for patient access and scheduling",
+      ask: "I need help scheduling an appointment, checking insurance, tracking a referral, or getting an authorization.",
+      intake: ["Access request intake: capture and classify inquiries from patients, providers, staff or external partners", "Patient and insurance verification: identify patient, coverage type and service needs", "Appointment and referral lookup: check availability, referrals and provider options", "Case summary: create an initial summary and route to the right agent or team"],
+      steps: ["Understand request", "Enrich and validate context", "Route to best agent", "Orchestrate actions", "Monitor compliance", "Synthesize and deliver response"]
+    },
+    agents: [
+      ["Scheduling Agent", ["Check real-time availability", "Find optimal slots", "Manage waitlists", "Reschedule and handle cancellations", "Reduce no-shows"]],
+      ["Eligibility & Benefits Agent", ["Verify insurance coverage", "Check benefits and authorizations", "Estimate patient responsibility", "Identify coverage issues", "Guide next steps"]],
+      ["Referral Management Agent", ["Process incoming referrals", "Track referral status", "Match to appropriate providers", "Identify missing information", "Notify stakeholders"]],
+      ["Patient Intake Agent", ["Collect and validate patient information", "Complete pre-visit requirements", "Send instructions and reminders", "Identify special needs", "Prepare for visit"]],
+      ["Authorization Support Agent", ["Check prior auth requirements", "Prepare and submit requests", "Track status and follow up", "Identify denials or delays", "Coordinate with clinical and payer teams"]],
+      ["Patient Communication Agent", ["Answer patient questions", "Provide status updates", "Send reminders and instructions", "Support self-service via chat and voice", "Escalate complex inquiries"]],
+      ["Access Analytics Agent", ["Monitor access metrics", "Identify bottlenecks", "Analyze demand and capacity", "Forecast openings", "Generate operational reports"]]
+    ],
+    governance: ["Agent catalog (discover, reuse, manage agents)", "Approval workflows (review and approve changes and actions)", "Identity and access (RBAC, least privilege, segmentation)", "Audit logging (traceability for actions and decisions)", "Policy and compliance (align with HIPAA, CMS and payer requirements)", "Lifecycle management (version, deploy, monitor, retire)", "Usage analytics (monitor adoption, performance and impact)"],
+    systems: ["Microsoft 365 (Teams, Outlook, SharePoint)", "EHR and PM systems (Epic, Cerner, MEDITECH, etc.)", "Payer eligibility and auth (Availity, Carelon, Change Healthcare, etc.)", "Scheduling systems (Amion, QGenda, etc.)", "CRM and contact center (Dynamics, Salesforce, Genesys, etc.)", "APIs and integration (secure, governed connectors)", "Security (Zero Trust, encryption, DLP)"],
+    humans: ["Patient Access Staff", "Clinical Teams", "Authorization Specialists", "Patient Financial Services", "Compliance and Privacy", "Access Leadership"],
+    outcomes: ["Shorter wait times", "Higher access rates", "Better patient experience", "Greater operational efficiency", "Stronger compliance", "More productive teams"],
+    principles: ["Secure by design", "Governed by policy", "Built for trust", "Focused on people", "Delivered at scale", "Removing barriers to care to build healthier communities"]
   }
 };
