@@ -411,5 +411,35 @@ window.HAIN_TEAMS = {
     humans: ["Patient Access Staff", "Clinical Teams", "Authorization Specialists", "Patient Financial Services", "Compliance and Privacy", "Access Leadership"],
     outcomes: ["Shorter wait times", "Higher access rates", "Better patient experience", "Greater operational efficiency", "Stronger compliance", "More productive teams"],
     principles: ["Secure by design", "Governed by policy", "Built for trust", "Focused on people", "Delivered at scale", "Removing barriers to care to build healthier communities"]
+  },
+  research: {
+    image: 'assets/research-administration-operations-room-agentic-team.webp',
+    width: 1536,
+    height: 1024,
+    title: "Research Administration Operations Room",
+    subtitle: "AI-powered research administration to accelerate innovation, ensure compliance, and expand impact.",
+    alt: "Architecture diagram of the Research Administration Operations Room. A request from investigators, study staff, sponsors or external partners enters an intake and discovery flow of research request intake, context and eligibility check, study and sponsor lookup, and case summary. Research Administration Assist, the front door, understands the request, enriches and validates study, sponsor, regulatory and institutional context, routes it to the best agent, orchestrates actions, monitors compliance, and synthesizes and delivers the response. Eight specialized sub-agents sit below: Study Intake and Feasibility, Budget and Financial Management, Contract and Agreement, IRB and Regulatory, Participant Management, Data and Reporting, Compliance and Audit, and Knowledge and Insights. A governance control plane and shared platform services and integrations sit underneath, with human escalation to principal investigators, research administrators, sponsored programs, IRB and research compliance, clinical research teams, finance and grants teams, and legal counsel, and outcomes that matter on the right.",
+    assist: {
+      name: "Research Administration Assist",
+      line: "Your intelligent front door for research administration",
+      ask: "I need help with a study proposal, a budget, a contract, an IRB submission, or a compliance question.",
+      intake: ["Research request intake: capture and classify requests from investigators, study staff, sponsors or external partners", "Context and eligibility check: identify study type, funding source, regulatory requirements and institutional policies", "Study and sponsor lookup: retrieve study records, sponsor information, contracts and compliance obligations", "Case summary: create an initial summary and route to the right agent or team"],
+      steps: ["Understand request", "Enrich and validate context", "Route to best agent", "Orchestrate actions", "Monitor compliance", "Synthesize and deliver response"]
+    },
+    agents: [
+      ["Study Intake & Feasibility Agent", ["Assess study proposals", "Check institutional fit and capacity", "Identify key requirements", "Route to right teams", "Track intake status"]],
+      ["Budget & Financial Management Agent", ["Build and validate study budgets", "Track spend and forecasting", "Monitor cost-to-actuals", "Support invoicing and financial reporting", "Flag variances"]],
+      ["Contract & Agreement Agent", ["Draft and review study agreements", "Track negotiation status", "Compare terms with templates", "Monitor obligations and renewal dates", "Alert on key milestones"]],
+      ["IRB & Regulatory Agent", ["Prepare and check IRB submissions", "Track approvals and expirations", "Monitor continuing reviews", "Manage amendments", "Ensure regulatory alerts and milestones"]],
+      ["Participant Management Agent", ["Support recruitment planning", "Track enrollment and milestones", "Monitor study visits and retention", "Identify at-risk patients", "Generate enrollment reports"]],
+      ["Data & Reporting Agent", ["Aggregate study data", "Track key metrics and timelines", "Generate reports and dashboards", "Support sponsor reporting", "Identify data quality issues"]],
+      ["Compliance & Audit Agent", ["Monitor protocol adherence", "Check policy and regulatory requirements", "Prepare audit packages", "Track training and documentation", "Flag compliance risks"]],
+      ["Knowledge & Insights Agent", ["Answer research policy questions", "Retrieve SOPs and guidance", "Summarize evidence and best practices", "Surface relevant trials and opportunities", "Recommend next steps"]]
+    ],
+    governance: ["Agent catalog (discover, reuse, manage agents)", "Approval workflows (review and approve actions and changes)", "Identity and access (RBAC, least privilege, segmentation)", "Audit logging (traceability for actions and decisions)", "Policy and compliance (align with NIH, FDA, HIPAA and institutional policies)", "Lifecycle management (version, deploy, monitor, retire)", "Usage analytics (monitor adoption, performance and impact)"],
+    systems: ["Microsoft 365 (Teams, Outlook, SharePoint)", "Research systems (e.g., OnCore, Velos, REDCap)", "EHR and clinical systems (Epic, Cerner, MEDITECH, etc.)", "Grants and funding (eRA Commons, Grants.gov, etc.)", "Data and analytics (Power BI, Fabric, Dataverse, etc.)", "Document repositories (SharePoint, policy sites, SOPs)", "APIs and integrations (secure, governed connectors)", "Security (Zero Trust, encryption, DLP)"],
+    humans: ["Principal Investigators", "Research Administrators", "Sponsored Programs", "IRB and Research Compliance", "Clinical Research Teams", "Finance and Grants Teams", "Legal Counsel"],
+    outcomes: ["Faster study startup", "Greater research capacity", "Improved researcher experience", "Stronger compliance", "Higher data quality", "Increased funding success", "Healthier communities"],
+    principles: ["Secure by design", "Governed by policy", "Built for trust", "Focused on people", "Delivered at scale", "Turning research into healthier tomorrows"]
   }
 };
