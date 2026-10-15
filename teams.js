@@ -176,7 +176,7 @@ window.HAIN_TEAMS = {
     outcomes: ["Faster exception response", "Better recall traceability", "Fewer stockouts", "Lower aging exceptions", "Reduced manual follow-up", "More resilient supply operations"],
     principles: ["Secure by design", "Governed by policy", "Built for trust", "Focused on people", "Delivered at scale", "Humans approve substitutions, allocations, inventory adjustments, payment actions, disposition and material commitments"]
   },
-  burnout: {
+  burnout: [{
     image: 'assets/clinical-roles-room-agentic-team.webp',
     width: 1536,
     height: 1024,
@@ -205,7 +205,36 @@ window.HAIN_TEAMS = {
     humans: ["Nurses", "Physicians and advanced practice providers", "Pharmacists", "Therapists (PT, OT, SLP)", "Imaging and lab staff", "Care coordinators"],
     outcomes: ["Lower documentation burden", "Faster administrative coordination", "Better handoffs", "Faster policy access", "Reduced status chasing", "More time for care"],
     principles: ["No autonomous diagnosis, symptom triage, protocol selection, medication decisions, critical-result interpretation, imaging prioritization, therapy goals, or treatment recommendation", "Human judgment. Better care."]
-  },
+  }, {
+    image: 'assets/provider-experience-operations-room-agentic-team.webp',
+    width: 1536,
+    height: 1024,
+    title: "Provider Experience Operations Room",
+    subtitle: "AI-powered provider experience operations to reduce administrative burden and enable focused, high-quality care.",
+    alt: "Architecture diagram of the Provider Experience Operations Room. A request from clinicians, providers and care teams enters an intake and discovery flow of provider request intake, context and impact check, systems and data lookup, and case summary. Provider Experience Assist, the front door, understands the request, enriches and validates provider, practice, contract and operational data, routes it to the best agent, orchestrates actions, monitors compliance, and synthesizes and delivers the response. Eight specialized sub-agents sit below: Provider Onboarding, Credentialing and Enrollment, Scheduling and Access, Administrative Support, Performance and Insights, Wellbeing and Support, Communication and Engagement, and Policy and Knowledge. A governance control plane and shared platform services and integrations sit underneath, with human escalation to the provider experience team, medical staff services, HR and wellbeing, IT support, clinical leadership and executive sponsors, and outcomes that matter on the right.",
+    assist: {
+      name: "Provider Experience Assist",
+      line: "Your intelligent front door for provider support",
+      ask: "I need help with onboarding, credentialing, my schedule, an administrative task, or a policy question.",
+      intake: ["Provider request intake: capture and classify requests from clinicians, providers and care teams", "Context and impact check: identify provider type, specialty, location and operational context", "Systems and data lookup: retrieve provider profile, schedule, productivity, contract and credentialing data", "Case summary: create an initial summary and route to the right agent or team"],
+      steps: ["Understand request", "Enrich and validate context", "Route to best agent", "Orchestrate actions", "Monitor compliance", "Synthesize and deliver response"]
+    },
+    agents: [
+      ["Provider Onboarding Agent", ["Guide new provider setup", "Coordinate credentials and access", "Track required training", "Prepare practice orientation", "Monitor onboarding milestones"]],
+      ["Credentialing & Enrollment Agent", ["Track credentialing status", "Manage recredentialing", "Validate payer enrollment", "Monitor expirations", "Alert on missing documents"]],
+      ["Scheduling & Access Agent", ["Optimize provider schedules", "Identify open capacity", "Manage leave coverage", "Reduce no-shows", "Surface access opportunities"]],
+      ["Administrative Support Agent", ["Draft forms and letters", "Summarize policy requirements", "Assist with licensure, DEA and privileging", "Route requests to appropriate teams", "Track status and follow-up"]],
+      ["Performance & Insights Agent", ["Provide productivity insights", "Compare benchmarks", "Identify trends and opportunities", "Prepare provider scorecards", "Support value-based care reporting"]],
+      ["Wellbeing & Support Agent", ["Resource navigation", "Burnout risk signals", "Connect to wellness programs", "Provide mental health resources", "Identify workload concerns"]],
+      ["Communication & Engagement Agent", ["Answer provider questions", "Deliver targeted announcements", "Facility and system updates", "Collect feedback", "Summarize sentiment and themes"]],
+      ["Policy & Knowledge Agent", ["Answer questions from provider policies", "Surface relevant credentialing and guidelines", "Provide clinical administrative guidance", "Link to training and resources"]]
+    ],
+    governance: ["Agent catalog (discover, reuse, manage agents)", "Approval workflows (review and approve actions and changes)", "Identity and access (RBAC, least privilege, segmentation)", "Audit logging (traceability for actions and decisions)", "Policy and compliance (align with HR, legal and medical staff policies)", "Lifecycle management (version, deploy, monitor, retire)", "Usage analytics (monitor adoption, performance and impact)"],
+    systems: ["Microsoft 365 (Teams, Outlook, SharePoint)", "EHR and clinical systems (Epic, Cerner, MEDITECH, etc.)", "Provider data management (credentialing, privileging, licensure, enrollment)", "Scheduling systems (Amion, QGenda, Oracle, etc.)", "HR and learning systems (Workday, HCM, training, etc.)", "APIs and integrations (secure, governed connectors)", "Security (Zero Trust, encryption, DLP)"],
+    humans: ["Provider Experience Team", "Medical Staff Services", "HR and Wellbeing", "IT Support", "Clinical Leadership", "Executive Sponsors"],
+    outcomes: ["Less administrative burden", "Higher provider satisfaction", "Faster onboarding", "Better access to care", "Stronger compliance", "Higher productivity", "Healthier providers"],
+    principles: ["Secure by design", "Governed by policy", "Built for trust", "Focused on people", "Delivered at scale", "Empowering providers to deliver their best care"]
+  }],
   quality: {
     image: 'assets/quality-safety-room-agentic-team.webp',
     width: 1536,
