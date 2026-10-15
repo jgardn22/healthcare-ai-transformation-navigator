@@ -91,12 +91,12 @@ window.HAIN_TEAMS = {
     outcomes: ['Faster resolutions', 'Better experience', 'Operational efficiency', 'Risk and compliance', 'Scalable innovation'],
     principles: ['Secure by design', 'Governed by policy', 'Built for trust', 'Focused on people', 'Delivered at scale']
   }, {
-    image: 'assets/hr-operations-room-agentic-team.webp?v=82',
+    image: 'assets/hr-operations-room-agentic-team.webp?v=84',
     width: 1536,
     height: 1024,
-    title: "Human Resources Operations Room",
+    title: "HR Operations Assist Multi-Agent Team",
     subtitle: "AI-powered HR operations to attract, develop, and support a healthy, high-performing workforce.",
-    alt: "Architecture diagram of the Human Resources Operations Room. A request from employees, leaders or candidates enters an intake and discovery flow of HR request intake, context and employee check, people data lookup, and case summary. HR Operations Assist, the front door, understands the request, enriches and validates employee data, policies and program information, routes it to the best agent, orchestrates actions, monitors compliance, and synthesizes and delivers the response. Eight specialized sub-agents sit below: Talent Acquisition, Employee Experience, Learning and Development, Benefits and Wellbeing, Employee Relations, Workforce Planning, HR Operations, and Compliance and Policy. A governance control plane and shared platform services and integrations sit underneath, with human escalation to HR business partners, the talent acquisition team, the benefits team, employee relations, people leaders, the HR operations team and executive leadership, and outcomes that matter on the right.",
+    alt: "Architecture diagram of the HR Operations Assist Multi-Agent Team. A request from employees, leaders or candidates enters an intake and discovery flow of HR request intake, context and employee check, people data lookup, and case summary. HR Operations Assist, the front door, understands the request, enriches and validates employee data, policies and program information, routes it to the best agent, orchestrates actions, monitors compliance, and synthesizes and delivers the response. Eight specialized sub-agents sit below: Talent Acquisition, Employee Experience, Learning and Development, Benefits and Wellbeing, Employee Relations, Workforce Planning, HR Operations, and Compliance and Policy. A governance control plane and shared platform services and integrations sit underneath, with human escalation to HR business partners, the talent acquisition team, the benefits team, employee relations, people leaders, the HR operations team and executive leadership, and outcomes that matter on the right.",
     assist: {
       name: "HR Operations Assist",
       line: "Your intelligent front door for HR support",
@@ -176,12 +176,12 @@ window.HAIN_TEAMS = {
     principles: ["Agents prepare, retrieve, route and monitor bounded work", "Accountable professionals retain consequential decisions"]
   },
   supply: {
-    image: 'assets/supply-chain-operations-room-agentic-team.webp?v=82',
+    image: 'assets/supply-chain-operations-room-agentic-team.webp?v=84',
     width: 1536,
     height: 1024,
-    title: "Supply Chain Operations Room",
+    title: "Supply Chain Operations Assist Multi-Agent Team",
     subtitle: "Multi-agent coordination for shortages, recalls, inventory exceptions, purchasing, and vendor operations.",
-    alt: "Architecture diagram of the Supply Chain Operations Room. Alerts, requests and external notifications enter an intake and discovery flow of alert and request intake, exception validation, inventory and contract search, and case summary. Supply Chain Operations Assist, the front door, detects and takes in the exception, reconciles data, routes the exception, prepares a response, sends it through an approval gate and tracks closure. Eight specialized sub-agents sit below: Supply Exception, Recall and Lot Coordination, Inventory and PAR Exception, Vendor and PO Exception, Expiration and Obsolescence, Substitute Product Coordination, Vendor Communication and Watchlist, and Demand and Usage Reporting. A governance control plane and shared platform services and integrations sit underneath, with human escalation to buyers, materials managers, pharmacy, value analysis, accounts payable, supply chain leadership and the clinical committee, and outcomes that matter on the right.",
+    alt: "Architecture diagram of the Supply Chain Operations Assist Multi-Agent Team. Alerts, requests and external notifications enter an intake and discovery flow of alert and request intake, exception validation, inventory and contract search, and case summary. Supply Chain Operations Assist, the front door, detects and takes in the exception, reconciles data, routes the exception, prepares a response, sends it through an approval gate and tracks closure. Eight specialized sub-agents sit below: Supply Exception, Recall and Lot Coordination, Inventory and PAR Exception, Vendor and PO Exception, Expiration and Obsolescence, Substitute Product Coordination, Vendor Communication and Watchlist, and Demand and Usage Reporting. A governance control plane and shared platform services and integrations sit underneath, with human escalation to buyers, materials managers, pharmacy, value analysis, accounts payable, supply chain leadership and the clinical committee, and outcomes that matter on the right.",
     assist: {
       name: "Supply Chain Operations Assist",
       line: "Your intelligent front door to supply chain operations",
@@ -206,12 +206,12 @@ window.HAIN_TEAMS = {
     principles: ["Secure by design", "Governed by policy", "Built for trust", "Focused on people", "Delivered at scale", "Humans approve substitutions, allocations, inventory adjustments, payment actions, disposition and material commitments"]
   },
   burnout: [{
-    image: 'assets/clinical-roles-room-agentic-team.webp',
+    image: 'assets/clinical-roles-room-agentic-team.webp?v=84',
     width: 1536,
     height: 1024,
-    title: "Clinical Roles Room",
+    title: "Clinical Roles Assist Multi-Agent Team",
     subtitle: "Administrative assistance around care, with licensed judgment retained by clinicians.",
-    alt: "Architecture diagram of the Clinical Roles Room. A request from clinical staff enters an intake and discovery flow of request intake, an administrative versus clinical check, approved knowledge search, and case summary. Clinical Roles Assist, the front door, understands the request, retrieves approved context, routes it to a bounded agent, prepares and coordinates the work, sends it for human review when required and delivers actionable results with citations. Eight specialized sub-agents sit below: Clinical Administrative Inbox, Documentation Preparation, Handoff Preparation, Policy and Procedure, Referral Coordination, Shift and Meeting Preparation, Patient Education Drafting, and Diagnostic Services Coordination. A governance control plane and shared platform services and integrations sit underneath, with human escalation to nurses, physicians and advanced practice providers, pharmacists, therapists, imaging and lab staff and care coordinators, and outcomes that matter on the right.",
+    alt: "Architecture diagram of the Clinical Roles Assist Multi-Agent Team. A request from clinical staff enters an intake and discovery flow of request intake, an administrative versus clinical check, approved knowledge search, and case summary. Clinical Roles Assist, the front door, understands the request, retrieves approved context, routes it to a bounded agent, prepares and coordinates the work, sends it for human review when required and delivers actionable results with citations. Eight specialized sub-agents sit below: Clinical Administrative Inbox, Documentation Preparation, Handoff Preparation, Policy and Procedure, Referral Coordination, Shift and Meeting Preparation, Patient Education Drafting, and Diagnostic Services Coordination. A governance control plane and shared platform services and integrations sit underneath, with human escalation to nurses, physicians and advanced practice providers, pharmacists, therapists, imaging and lab staff and care coordinators, and outcomes that matter on the right.",
     assist: {
       name: "Clinical Roles Assist",
       line: "Your intelligent front door for administrative care support",
@@ -235,12 +235,12 @@ window.HAIN_TEAMS = {
     outcomes: ["Lower documentation burden", "Faster administrative coordination", "Better handoffs", "Faster policy access", "Reduced status chasing", "More time for care"],
     principles: ["No autonomous diagnosis, symptom triage, protocol selection, medication decisions, critical-result interpretation, imaging prioritization, therapy goals, or treatment recommendation", "Human judgment. Better care."]
   }, {
-    image: 'assets/provider-experience-operations-room-agentic-team.webp?v=82',
+    image: 'assets/provider-experience-operations-room-agentic-team.webp?v=84',
     width: 1536,
     height: 1024,
-    title: "Provider Experience Operations Room",
+    title: "Provider Experience Assist Multi-Agent Team",
     subtitle: "AI-powered provider experience operations to reduce administrative burden and enable focused, high-quality care.",
-    alt: "Architecture diagram of the Provider Experience Operations Room. A request from clinicians, providers and care teams enters an intake and discovery flow of provider request intake, context and impact check, systems and data lookup, and case summary. Provider Experience Assist, the front door, understands the request, enriches and validates provider, practice, contract and operational data, routes it to the best agent, orchestrates actions, monitors compliance, and synthesizes and delivers the response. Eight specialized sub-agents sit below: Provider Onboarding, Credentialing and Enrollment, Scheduling and Access, Administrative Support, Performance and Insights, Wellbeing and Support, Communication and Engagement, and Policy and Knowledge. A governance control plane and shared platform services and integrations sit underneath, with human escalation to the provider experience team, medical staff services, HR and wellbeing, IT support, clinical leadership and executive sponsors, and outcomes that matter on the right.",
+    alt: "Architecture diagram of the Provider Experience Assist Multi-Agent Team. A request from clinicians, providers and care teams enters an intake and discovery flow of provider request intake, context and impact check, systems and data lookup, and case summary. Provider Experience Assist, the front door, understands the request, enriches and validates provider, practice, contract and operational data, routes it to the best agent, orchestrates actions, monitors compliance, and synthesizes and delivers the response. Eight specialized sub-agents sit below: Provider Onboarding, Credentialing and Enrollment, Scheduling and Access, Administrative Support, Performance and Insights, Wellbeing and Support, Communication and Engagement, and Policy and Knowledge. A governance control plane and shared platform services and integrations sit underneath, with human escalation to the provider experience team, medical staff services, HR and wellbeing, IT support, clinical leadership and executive sponsors, and outcomes that matter on the right.",
     assist: {
       name: "Provider Experience Assist",
       line: "Your intelligent front door for provider support",
@@ -265,12 +265,12 @@ window.HAIN_TEAMS = {
     principles: ["Secure by design", "Governed by policy", "Built for trust", "Focused on people", "Delivered at scale", "Empowering providers to deliver their best care"]
   }],
   quality: {
-    image: 'assets/quality-safety-room-agentic-team.webp',
+    image: 'assets/quality-safety-room-agentic-team.webp?v=84',
     width: 1536,
     height: 1024,
-    title: "Quality & Safety Room",
+    title: "Quality & Safety Assist Multi-Agent Team",
     subtitle: "Governed agents for evidence collection, event operations, audit readiness, and action tracking.",
-    alt: "Architecture diagram of the Quality and Safety Room. Events, concerns, requests and external sources enter an intake and discovery flow of event and request intake, a completeness check, approved taxonomy and standards, and case summary. Quality and Safety Assist, the front door, takes in the event or request, normalizes and validates it, routes it to the best agent, gathers evidence, tracks actions and sends it for human review. Eight specialized sub-agents sit below: Safety Event Intake, Quality Measure Evidence, Audit and Accreditation Evidence, CAPA Tracking, Safety Huddle Preparation, Regulatory Report Preparation, RCA Preparation, and Policy Surveillance and Change. A governance control plane and shared platform services and integrations sit underneath, with human escalation to safety professionals, quality leaders, accreditation leads, regulatory specialists, clinical owners and legal and privacy. A Nursing Operations Assist agent portfolio strip shows the same agents with example use cases for nursing.",
+    alt: "Architecture diagram of the Quality and Safety Assist Multi-Agent Team. Events, concerns, requests and external sources enter an intake and discovery flow of event and request intake, a completeness check, approved taxonomy and standards, and case summary. Quality and Safety Assist, the front door, takes in the event or request, normalizes and validates it, routes it to the best agent, gathers evidence, tracks actions and sends it for human review. Eight specialized sub-agents sit below: Safety Event Intake, Quality Measure Evidence, Audit and Accreditation Evidence, CAPA Tracking, Safety Huddle Preparation, Regulatory Report Preparation, RCA Preparation, and Policy Surveillance and Change. A governance control plane and shared platform services and integrations sit underneath, with human escalation to safety professionals, quality leaders, accreditation leads, regulatory specialists, clinical owners and legal and privacy. A Nursing Operations Assist agent portfolio strip shows the same agents with example use cases for nursing.",
     assist: {
       name: "Quality & Safety Assist",
       line: "Your intelligent front door to quality and safety operations",
@@ -295,12 +295,12 @@ window.HAIN_TEAMS = {
     principles: ["People first", "Governed by policy", "Built for trust", "Focused on outcomes", "Scalable for what is next", "Classification, severity, reportability, causality, conformance, corrective-action closure and regulatory attestation remain human decisions"]
   },
   revenue: {
-    image: 'assets/revenue-cycle-operations-room-agentic-team.webp?v=82',
+    image: 'assets/revenue-cycle-operations-room-agentic-team.webp?v=84',
     width: 1536,
     height: 1024,
-    title: "Revenue Cycle Management Operations Room",
+    title: "Revenue Cycle Management Assist Multi-Agent Team",
     subtitle: "AI-powered revenue cycle operations across access, coding, claims, denials, and patient financial experience.",
-    alt: "Architecture diagram of the Revenue Cycle Management Operations Room. A request from providers, staff or patients enters an intake and discovery flow of RCM request intake, context and eligibility check, coverage and authorization lookup, and case summary. Revenue Cycle Management Assist, the front door, understands the request, enriches and validates it with eligibility, claims and account data, routes it to the best agent, orchestrates actions, monitors compliance and synthesizes and delivers the response. Eight specialized sub-agents sit below: Patient Access, Claims Intake and Status, Coding and Documentation, Denial Management, Payment Posting and Reconciliation, Patient Financial Experience, Revenue Integrity, and Payer Policy Intelligence. A governance control plane and shared platform services and integrations sit underneath, with human escalation to patient access staff, coding specialists, RCM analysts, patient financial services, compliance and privacy, clinical staff and finance leadership, and outcomes that matter on the right.",
+    alt: "Architecture diagram of the Revenue Cycle Management Assist Multi-Agent Team. A request from providers, staff or patients enters an intake and discovery flow of RCM request intake, context and eligibility check, coverage and authorization lookup, and case summary. Revenue Cycle Management Assist, the front door, understands the request, enriches and validates it with eligibility, claims and account data, routes it to the best agent, orchestrates actions, monitors compliance and synthesizes and delivers the response. Eight specialized sub-agents sit below: Patient Access, Claims Intake and Status, Coding and Documentation, Denial Management, Payment Posting and Reconciliation, Patient Financial Experience, Revenue Integrity, and Payer Policy Intelligence. A governance control plane and shared platform services and integrations sit underneath, with human escalation to patient access staff, coding specialists, RCM analysts, patient financial services, compliance and privacy, clinical staff and finance leadership, and outcomes that matter on the right.",
     assist: {
       name: "Revenue Cycle Management Assist",
       line: "Your intelligent front door to revenue cycle operations",
@@ -325,12 +325,12 @@ window.HAIN_TEAMS = {
     principles: ["Secure by design", "Governed by policy", "Built for trust", "Focused on people", "Delivered at scale", "Clinical, financial and policy decisions remain with qualified professionals"]
   },
   it: {
-    image: 'assets/it-data-digital-operations-room-agentic-team.webp?v=82',
+    image: 'assets/it-data-digital-operations-room-agentic-team.webp?v=84',
     width: 1536,
     height: 1024,
-    title: "IT, Data & Digital Operations Room",
+    title: "IT, Data & Digital Operations Assist Multi-Agent Team",
     subtitle: "AI-powered IT service, security, data, and digital operations to keep care running.",
-    alt: "Architecture diagram of the IT, Data and Digital Operations Room. A request from employees, clinicians or systems enters an intake and discovery flow of service request intake, context and impact check, user and system lookup, and case summary. IT, Data and Digital Operations Assist, the front door, understands the request, enriches and validates context, routes it to the best agent, orchestrates actions, monitors security and compliance, and synthesizes and delivers the response. Eight specialized sub-agents sit below: Service Request Intake and Routing, Incident Command, Access Review Evidence, Change Readiness, Data Quality Case, Analytics Request Scoping, Operating Review, and Knowledge and Status. A governance control plane and shared platform services and integrations sit underneath, with human escalation to the service desk, IAM and security, application owners, data owners, incident managers, and change advisory and IT leaders, and outcomes that matter on the right.",
+    alt: "Architecture diagram of the IT, Data and Digital Operations Assist Multi-Agent Team. A request from employees, clinicians or systems enters an intake and discovery flow of service request intake, context and impact check, user and system lookup, and case summary. IT, Data and Digital Operations Assist, the front door, understands the request, enriches and validates context, routes it to the best agent, orchestrates actions, monitors security and compliance, and synthesizes and delivers the response. Eight specialized sub-agents sit below: Service Request Intake and Routing, Incident Command, Access Review Evidence, Change Readiness, Data Quality Case, Analytics Request Scoping, Operating Review, and Knowledge and Status. A governance control plane and shared platform services and integrations sit underneath, with human escalation to the service desk, IAM and security, application owners, data owners, incident managers, and change advisory and IT leaders, and outcomes that matter on the right.",
     assist: {
       name: "IT, Data & Digital Operations Assist",
       line: "Your intelligent front door for IT and digital operations",
@@ -355,12 +355,12 @@ window.HAIN_TEAMS = {
     principles: ["Secure by design", "Governed by policy", "Built for trust", "Focused on people", "Delivered at scale", "Security, access, production change and authoritative data decisions remain human-controlled"]
   },
   growth: [{
-    image: 'assets/marketing-operations-room-agentic-team.webp?v=82',
+    image: 'assets/marketing-operations-room-agentic-team.webp?v=84',
     width: 1536,
     height: 1024,
-    title: "Marketing Operations Room",
+    title: "Marketing Operations Assist Multi-Agent Team",
     subtitle: "AI-powered marketing operations to engage patients, grow markets, and build trusted brands.",
-    alt: "Architecture diagram of the Marketing Operations Room. A request from staff, leaders or external partners enters an intake and discovery flow of marketing request intake, context and audience check, asset and data lookup, and case summary. Marketing Operations Assist, the front door, understands the request, enriches and validates context, routes it to the best agent, orchestrates actions, monitors compliance, and synthesizes and delivers the response. Seven specialized sub-agents sit below: Campaign Strategy, Content Creation, Asset Management, Approval and Workflow, Analytics and Insights, Event and Experience, and Privacy and Compliance. A governance control plane and shared platform services and integrations sit underneath, with human escalation to the marketing team, creative services, legal and compliance, external partners and executive leadership, and outcomes that matter on the right.",
+    alt: "Architecture diagram of the Marketing Operations Assist Multi-Agent Team. A request from staff, leaders or external partners enters an intake and discovery flow of marketing request intake, context and audience check, asset and data lookup, and case summary. Marketing Operations Assist, the front door, understands the request, enriches and validates context, routes it to the best agent, orchestrates actions, monitors compliance, and synthesizes and delivers the response. Seven specialized sub-agents sit below: Campaign Strategy, Content Creation, Asset Management, Approval and Workflow, Analytics and Insights, Event and Experience, and Privacy and Compliance. A governance control plane and shared platform services and integrations sit underneath, with human escalation to the marketing team, creative services, legal and compliance, external partners and executive leadership, and outcomes that matter on the right.",
     assist: {
       name: "Marketing Operations Assist",
       line: "Your intelligent front door for marketing support",
@@ -383,12 +383,12 @@ window.HAIN_TEAMS = {
     outcomes: ["Faster campaign execution", "Stronger brand consistency", "Increased patient engagement", "Higher marketing ROI", "Greater compliance", "More productive teams"],
     principles: ["Secure by design", "Governed by policy", "Built for trust", "Focused on people", "Delivered at scale", "Marketing drives healthier people and stronger communities"]
   }, {
-    image: 'assets/sales-growth-operations-room-agentic-team.webp?v=82',
+    image: 'assets/sales-growth-operations-room-agentic-team.webp?v=84',
     width: 1536,
     height: 1024,
-    title: "Sales & Growth Operations Room",
+    title: "Sales & Growth Assist Multi-Agent Team",
     subtitle: "AI-powered business development and relationship management to expand access, partnerships, and market growth.",
-    alt: "Architecture diagram of the Sales and Growth Operations Room. A request from referral sources, employers, payers or internal teams enters an intake and discovery flow of growth request intake, context and opportunity assessment, data and relationship lookup, and case summary. Sales and Growth Assist, the front door, understands the request, enriches and validates context, routes it to the best agent, orchestrates actions, monitors compliance, and synthesizes and delivers the response. Seven specialized sub-agents sit below: Account and Relationship Intelligence, RFP and Proposal, Market Intelligence, Referral Development, Payer and Employer Engagement, Contract and Negotiation Support, and Marketing and Campaign Support. A governance control plane and shared platform services and integrations sit underneath, with human escalation to the sales and growth team, provider relations, contracting and legal, marketing and communications, finance and executive leadership, and outcomes that matter on the right.",
+    alt: "Architecture diagram of the Sales and Growth Assist Multi-Agent Team. A request from referral sources, employers, payers or internal teams enters an intake and discovery flow of growth request intake, context and opportunity assessment, data and relationship lookup, and case summary. Sales and Growth Assist, the front door, understands the request, enriches and validates context, routes it to the best agent, orchestrates actions, monitors compliance, and synthesizes and delivers the response. Seven specialized sub-agents sit below: Account and Relationship Intelligence, RFP and Proposal, Market Intelligence, Referral Development, Payer and Employer Engagement, Contract and Negotiation Support, and Marketing and Campaign Support. A governance control plane and shared platform services and integrations sit underneath, with human escalation to the sales and growth team, provider relations, contracting and legal, marketing and communications, finance and executive leadership, and outcomes that matter on the right.",
     assist: {
       name: "Sales & Growth Assist",
       line: "Your intelligent front door for growth and partnership support",
@@ -412,12 +412,12 @@ window.HAIN_TEAMS = {
     principles: ["Secure by design", "Governed by policy", "Built for trust", "Focused on people", "Delivered at scale", "Healthier communities through stronger partnerships and greater access"]
   }],
   pmo: {
-    image: 'assets/pmo-operations-room-agentic-team.webp?v=82',
+    image: 'assets/pmo-operations-room-agentic-team.webp?v=84',
     width: 1536,
     height: 1024,
-    title: "Product, Portfolio & PMO Operations Room",
+    title: "Product, Portfolio & PMO Assist Multi-Agent Team",
     subtitle: "AI-powered portfolio and program execution to turn strategy into measurable impact.",
-    alt: "Architecture diagram of the Product, Portfolio and PMO Operations Room. A request from executives, teams or stakeholders enters an intake and discovery flow of portfolio request intake, context and prioritization, project and initiative lookup, and case summary. Product, Portfolio and PMO Assist, the front door, understands the request, enriches and validates context, routes it to the best agent, orchestrates actions, monitors progress and risk, and synthesizes and delivers the response. Eight specialized sub-agents sit below: Idea and Intake, Portfolio Planning, Program Management, Project Execution, Risk and Issue Management, Resource and Capacity, Reporting and Insights, and Knowledge and Lessons Learned. A governance control plane and shared platform services and integrations sit underneath, with human escalation to PMO leadership, business executives, program managers, finance partners, IT and data teams, change management and operational leaders, and outcomes that matter on the right.",
+    alt: "Architecture diagram of the Product, Portfolio and PMO Assist Multi-Agent Team. A request from executives, teams or stakeholders enters an intake and discovery flow of portfolio request intake, context and prioritization, project and initiative lookup, and case summary. Product, Portfolio and PMO Assist, the front door, understands the request, enriches and validates context, routes it to the best agent, orchestrates actions, monitors progress and risk, and synthesizes and delivers the response. Eight specialized sub-agents sit below: Idea and Intake, Portfolio Planning, Program Management, Project Execution, Risk and Issue Management, Resource and Capacity, Reporting and Insights, and Knowledge and Lessons Learned. A governance control plane and shared platform services and integrations sit underneath, with human escalation to PMO leadership, business executives, program managers, finance partners, IT and data teams, change management and operational leaders, and outcomes that matter on the right.",
     assist: {
       name: "Product, Portfolio & PMO Assist",
       line: "Your intelligent front door for portfolio and program support",
@@ -442,12 +442,12 @@ window.HAIN_TEAMS = {
     principles: ["Secure by design", "Governed by policy", "Built for trust", "Focused on people", "Delivered at scale", "Strategy, investment, prioritization and funding decisions remain with accountable leaders"]
   },
   access: [{
-    image: 'assets/patient-access-operations-room-agentic-team.webp?v=82',
+    image: 'assets/patient-access-operations-room-agentic-team.webp?v=84',
     width: 1536,
     height: 1024,
-    title: "Patient Access Operations Room",
+    title: "Patient Access Assist Multi-Agent Team",
     subtitle: "AI-powered access operations to get the right patients to the right care at the right time.",
-    alt: "Architecture diagram of the Patient Access Operations Room. A request from patients, providers, staff or external partners enters an intake and discovery flow of access request intake, patient and insurance verification, appointment and referral lookup, and case summary. Patient Access Assist, the front door, understands the request, enriches and validates patient, insurance, provider and service information, routes it to the best agent, orchestrates actions, monitors compliance, and synthesizes and delivers the response. Seven specialized sub-agents sit below: Scheduling, Eligibility and Benefits, Referral Management, Patient Intake, Authorization Support, Patient Communication, and Access Analytics. A governance control plane and shared platform services and integrations sit underneath, with human escalation to patient access staff, clinical teams, authorization specialists, patient financial services, compliance and privacy, and access leadership, and outcomes that matter on the right.",
+    alt: "Architecture diagram of the Patient Access Assist Multi-Agent Team. A request from patients, providers, staff or external partners enters an intake and discovery flow of access request intake, patient and insurance verification, appointment and referral lookup, and case summary. Patient Access Assist, the front door, understands the request, enriches and validates patient, insurance, provider and service information, routes it to the best agent, orchestrates actions, monitors compliance, and synthesizes and delivers the response. Seven specialized sub-agents sit below: Scheduling, Eligibility and Benefits, Referral Management, Patient Intake, Authorization Support, Patient Communication, and Access Analytics. A governance control plane and shared platform services and integrations sit underneath, with human escalation to patient access staff, clinical teams, authorization specialists, patient financial services, compliance and privacy, and access leadership, and outcomes that matter on the right.",
     assist: {
       name: "Patient Access Assist",
       line: "Your intelligent front door for patient access and scheduling",
@@ -470,12 +470,12 @@ window.HAIN_TEAMS = {
     outcomes: ["Shorter wait times", "Higher access rates", "Better patient experience", "Greater operational efficiency", "Stronger compliance", "More productive teams"],
     principles: ["Secure by design", "Governed by policy", "Built for trust", "Focused on people", "Delivered at scale", "Removing barriers to care to build healthier communities"]
   }, {
-    image: 'assets/contact-center-patient-experience-operations-room-agentic-team.webp?v=82',
+    image: 'assets/contact-center-patient-experience-operations-room-agentic-team.webp?v=84',
     width: 1536,
     height: 1024,
-    title: "Contact Center & Patient Experience Operations Room",
+    title: "Patient Experience Assist Multi-Agent Team",
     subtitle: "AI-powered patient engagement to deliver faster, easier, and more personalized support.",
-    alt: "Architecture diagram of the Contact Center and Patient Experience Operations Room. A request from phone, chat, email, portal or in-person interactions enters an intake and discovery flow of patient inquiry intake, context and patient lookup, coverage and policy check, and case summary. Patient Experience Assist, the front door, understands the request, enriches and validates patient data, coverage and history, routes it to the best agent, orchestrates actions, monitors compliance, and synthesizes and delivers the response. Eight specialized sub-agents sit below: Patient Inquiry, Scheduling and Appointment, Eligibility and Benefits, Billing and Payment Support, Care Navigation, Patient Outreach, Feedback and Engagement, and Knowledge and Policy. A governance control plane and shared platform services and integrations sit underneath, with human escalation to contact center representatives, clinical triage teams, scheduling specialists, patient financial services, care management teams, compliance and privacy, and leadership teams, and outcomes that matter on the right.",
+    alt: "Architecture diagram of the Patient Experience Assist Multi-Agent Team. A request from phone, chat, email, portal or in-person interactions enters an intake and discovery flow of patient inquiry intake, context and patient lookup, coverage and policy check, and case summary. Patient Experience Assist, the front door, understands the request, enriches and validates patient data, coverage and history, routes it to the best agent, orchestrates actions, monitors compliance, and synthesizes and delivers the response. Eight specialized sub-agents sit below: Patient Inquiry, Scheduling and Appointment, Eligibility and Benefits, Billing and Payment Support, Care Navigation, Patient Outreach, Feedback and Engagement, and Knowledge and Policy. A governance control plane and shared platform services and integrations sit underneath, with human escalation to contact center representatives, clinical triage teams, scheduling specialists, patient financial services, care management teams, compliance and privacy, and leadership teams, and outcomes that matter on the right.",
     assist: {
       name: "Patient Experience Assist",
       line: "Your intelligent front door for patient and member support",
@@ -500,12 +500,12 @@ window.HAIN_TEAMS = {
     principles: ["Secure by design", "Governed by policy", "Built for trust", "Focused on people", "Delivered at scale", "Every interaction is an opportunity to create a healthier tomorrow"]
   }],
   research: {
-    image: 'assets/research-administration-operations-room-agentic-team.webp?v=82',
+    image: 'assets/research-administration-operations-room-agentic-team.webp?v=84',
     width: 1536,
     height: 1024,
-    title: "Research Administration Operations Room",
+    title: "Research Administration Assist Multi-Agent Team",
     subtitle: "AI-powered research administration to accelerate innovation, ensure compliance, and expand impact.",
-    alt: "Architecture diagram of the Research Administration Operations Room. A request from investigators, study staff, sponsors or external partners enters an intake and discovery flow of research request intake, context and eligibility check, study and sponsor lookup, and case summary. Research Administration Assist, the front door, understands the request, enriches and validates study, sponsor, regulatory and institutional context, routes it to the best agent, orchestrates actions, monitors compliance, and synthesizes and delivers the response. Eight specialized sub-agents sit below: Study Intake and Feasibility, Budget and Financial Management, Contract and Agreement, IRB and Regulatory, Participant Management, Data and Reporting, Compliance and Audit, and Knowledge and Insights. A governance control plane and shared platform services and integrations sit underneath, with human escalation to principal investigators, research administrators, sponsored programs, IRB and research compliance, clinical research teams, finance and grants teams, and legal counsel, and outcomes that matter on the right.",
+    alt: "Architecture diagram of the Research Administration Assist Multi-Agent Team. A request from investigators, study staff, sponsors or external partners enters an intake and discovery flow of research request intake, context and eligibility check, study and sponsor lookup, and case summary. Research Administration Assist, the front door, understands the request, enriches and validates study, sponsor, regulatory and institutional context, routes it to the best agent, orchestrates actions, monitors compliance, and synthesizes and delivers the response. Eight specialized sub-agents sit below: Study Intake and Feasibility, Budget and Financial Management, Contract and Agreement, IRB and Regulatory, Participant Management, Data and Reporting, Compliance and Audit, and Knowledge and Insights. A governance control plane and shared platform services and integrations sit underneath, with human escalation to principal investigators, research administrators, sponsored programs, IRB and research compliance, clinical research teams, finance and grants teams, and legal counsel, and outcomes that matter on the right.",
     assist: {
       name: "Research Administration Assist",
       line: "Your intelligent front door for research administration",
@@ -530,12 +530,12 @@ window.HAIN_TEAMS = {
     principles: ["Secure by design", "Governed by policy", "Built for trust", "Focused on people", "Delivered at scale", "Turning research into healthier tomorrows"]
   },
   ambulatory: {
-    image: 'assets/ambulatory-specialty-care-operations-room-agentic-team.webp?v=82',
+    image: 'assets/ambulatory-specialty-care-operations-room-agentic-team.webp?v=84',
     width: 1536,
     height: 1024,
-    title: "Ambulatory & Specialty Care Operations Room",
+    title: "Ambulatory & Specialty Care Assist Multi-Agent Team",
     subtitle: "AI-powered ambulatory and specialty care operations to improve access, coordination, and clinical outcomes.",
-    alt: "Architecture diagram of the Ambulatory and Specialty Care Operations Room. A request from patients, providers or staff enters an intake and discovery flow of care request intake, context and eligibility check, patient and care data lookup, and case summary. Ambulatory and Specialty Care Assist, the front door, understands the request, enriches and validates patient, provider, clinical and coverage information, routes it to the best agent, orchestrates actions, monitors compliance, and synthesizes and delivers the response. Eight specialized sub-agents sit below: Scheduling and Access, Referral and Care Coordination, Authorization and Eligibility, Specialty Triage, Chronic Care Management, Patient Education, Performance and Operations, and Clinical Knowledge. A governance control plane and shared platform services and integrations sit underneath, with human escalation to front desk and access staff, clinical care teams, specialty care teams, the authorization team, care management, compliance and privacy, and operations leadership, and outcomes that matter on the right.",
+    alt: "Architecture diagram of the Ambulatory and Specialty Care Assist Multi-Agent Team. A request from patients, providers or staff enters an intake and discovery flow of care request intake, context and eligibility check, patient and care data lookup, and case summary. Ambulatory and Specialty Care Assist, the front door, understands the request, enriches and validates patient, provider, clinical and coverage information, routes it to the best agent, orchestrates actions, monitors compliance, and synthesizes and delivers the response. Eight specialized sub-agents sit below: Scheduling and Access, Referral and Care Coordination, Authorization and Eligibility, Specialty Triage, Chronic Care Management, Patient Education, Performance and Operations, and Clinical Knowledge. A governance control plane and shared platform services and integrations sit underneath, with human escalation to front desk and access staff, clinical care teams, specialty care teams, the authorization team, care management, compliance and privacy, and operations leadership, and outcomes that matter on the right.",
     assist: {
       name: "Ambulatory & Specialty Care Assist",
       line: "Your intelligent front door for ambulatory and specialty care operations",
