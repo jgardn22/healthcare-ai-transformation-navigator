@@ -558,5 +558,665 @@ window.HAIN_TEAMS = {
     humans: ["Front Desk and Access Staff", "Clinical Care Teams", "Specialty Care Teams", "Authorization Team", "Care Management", "Compliance and Privacy", "Operations Leadership"],
     outcomes: ["Faster access to care", "Higher appointment completion", "Improved patient experience", "Greater operational efficiency", "Stronger compliance", "Healthier communities"],
     principles: ["Secure by design", "Governed by policy", "Built for trust", "Focused on people", "Delivered at scale", "Expanding access to the right care for a healthier tomorrow"]
+  },
+  exec: {
+    image: 'assets/executive-strategy-operations-room-agentic-team.webp',
+    width: 1536,
+    height: 1024,
+    title: "Executive & Strategy Room",
+    subtitle: "AI-powered executive decision support, strategy execution and board readiness.",
+    alt: "Architecture diagram of the Executive & Strategy Room. A request enters an intake and discovery flow of executive request, strategic context check, source & data lookup, briefing summary. Executive & Strategy Assist, the front door, understands the request, enriches and validates context, routes it to the best agent, orchestrates actions, monitors compliance, and synthesizes and delivers the response. Eight specialized sub-agents sit below: Board Briefing, Strategic Planning, Performance Insights, Market Intelligence, Initiative Tracking, Decision Memo, Stakeholder Comms, and Risk Escalation. A governance control plane and shared platform services and integrations sit underneath, with human escalation to executive team, chief of staff, strategy office, board secretary, finance leaders, and legal, and outcomes that matter on the right: faster decisions, sharper focus, less prep burden, aligned leadership, clear accountability.",
+    assist: {
+      name: "Executive & Strategy Assist",
+      line: "Your intelligent front door for executive and strategy support",
+      ask: "I need help preparing a board briefing, tracking a strategic initiative, or drafting a decision memo for leadership.",
+      intake: ["Executive Request: capture and classify requests from executives, chiefs of staff and board members", "Strategic Context Check: identify the strategic priority, audience, deadline and confidentiality level", "Source & Data Lookup: retrieve performance reports, plans, market data and prior board materials", "Briefing Summary: create an initial summary and route to the right agent or team"],
+      steps: ["Understand request", "Enrich and validate context", "Route to best agent", "Orchestrate actions", "Monitor compliance", "Synthesize and deliver response"]
+    },
+    agents: [
+      ["Board Briefing Agent", ["Assemble board meeting packets", "Draft executive summaries", "Track board action items", "Prepare committee talking points", "Check materials for consistency"]],
+      ["Strategic Planning Agent", ["Support strategic plan development", "Align goals across service lines", "Model scenarios and tradeoffs", "Track plan milestones", "Prepare annual planning calendars"]],
+      ["Performance Insights Agent", ["Consolidate system performance scorecards", "Explain variances to targets", "Highlight emerging trends", "Prepare leadership dashboards", "Flag measures needing attention"]],
+      ["Market Intelligence Agent", ["Monitor competitor and payer activity", "Summarize regional market shifts", "Track regulatory and policy changes", "Assess growth and partnership options"]],
+      ["Initiative Tracking Agent", ["Track strategic initiative status", "Monitor owners and deadlines", "Surface blocked or at-risk work", "Prepare steering committee updates", "Capture benefits realized"]],
+      ["Decision Memo Agent", ["Draft decision memos and options", "Summarize financial and clinical impact", "Capture risks and dependencies", "Route memos for review", "Record decisions and rationale"]],
+      ["Stakeholder Comms Agent", ["Draft leadership messages and talking points", "Tailor updates by audience", "Prepare town hall materials", "Coordinate communication timing", "Track key stakeholder concerns"]],
+      ["Risk Escalation Agent", ["Identify enterprise risks needing attention", "Route issues to accountable executives", "Track escalation responses", "Summarize risk exposure for leaders", "Monitor mitigation progress"]]
+    ],
+    governance: ["Agent catalog (discover, reuse, manage agents)", "Approval workflows (review and approve actions and changes)", "Audit logging (traceability for actions and decisions)", "Source Traceability", "Executive Confidentiality", "Human Review"],
+    systems: ["Microsoft 365", "Planning & BI", "Financial Systems", "Market Research", "Board Portal", "Security"],
+    humans: ["Executive Team", "Chief of Staff", "Strategy Office", "Board Secretary", "Finance Leaders", "Legal"],
+    outcomes: ["Faster Decisions", "Sharper Focus", "Less Prep Burden", "Aligned Leadership", "Clear Accountability"],
+    principles: ["Secure by design", "Governed by policy", "Built for trust", "Focused on people", "Delivered at scale", "Helping leaders decide with clarity"]
+  },
+  facilities: {
+    image: 'assets/facilities-asset-management-operations-room-agentic-team.webp',
+    width: 1536,
+    height: 1024,
+    title: "Facilities & Asset Management Operations Room",
+    subtitle: "AI-powered work orders, preventive maintenance and asset lifecycle across the care environment.",
+    alt: "Architecture diagram of the Facilities & Asset Management Operations Room. A request enters an intake and discovery flow of work request intake, location & asset check, safety & priority check, case summary. Facilities Assist, the front door, understands the request, enriches and validates context, routes it to the best agent, orchestrates actions, monitors compliance, and synthesizes and delivers the response. Eight specialized sub-agents sit below: Work Order Triage, Preventive Maintenance, Asset Lifecycle, Environment of Care, Energy & Utilities, Space & Capacity, Vendor & Contractor, and Life Safety Compliance. A governance control plane and shared platform services and integrations sit underneath, with human escalation to facilities technicians, biomedical engineering, environmental services, safety officer, vendors, and operations leaders, and outcomes that matter on the right: faster repairs, fewer equipment outages, safer environment, lower maintenance cost, audit-ready compliance.",
+    assist: {
+      name: "Facilities Assist",
+      line: "Your intelligent front door for facilities and asset management",
+      ask: "I need help with a work order, a maintenance schedule, an equipment issue, or a safety inspection.",
+      intake: ["Work Request Intake: capture and classify repair and service requests from clinical and support staff", "Location & Asset Check: identify the unit, room, equipment and maintenance history involved", "Safety & Priority Check: determine patient safety impact, infection risk and response urgency", "Case Summary: create an initial summary and route to the right agent or team"],
+      steps: ["Understand request", "Enrich and validate context", "Route to best agent", "Orchestrate actions", "Monitor compliance", "Synthesize and deliver response"]
+    },
+    agents: [
+      ["Work Order Triage Agent", ["Classify and prioritize requests", "Assign to the right technician", "Flag patient care impacts", "Track work order status", "Notify requesters of progress"]],
+      ["Preventive Maintenance Agent", ["Schedule recurring inspections", "Plan maintenance around unit census", "Track overdue maintenance tasks", "Recommend maintenance intervals", "Document completed service"]],
+      ["Asset Lifecycle Agent", ["Maintain equipment inventory records", "Track warranties and service contracts", "Flag aging equipment", "Support replacement planning", "Document equipment retirement"]],
+      ["Environment of Care Agent", ["Schedule rounds and safety inspections", "Track findings through correction", "Support infection control risk assessments", "Prepare environment of care reports"]],
+      ["Energy & Utilities Agent", ["Monitor power, water and HVAC use", "Flag abnormal utility patterns", "Track critical systems status", "Support outage and backup readiness", "Recommend efficiency improvements"]],
+      ["Space & Capacity Agent", ["Track room and unit availability", "Support renovation and move planning", "Coordinate space requests", "Maintain floor plans and room data", "Identify underused space"]],
+      ["Vendor & Contractor Agent", ["Verify contractor credentials and access", "Track vendor service performance", "Coordinate scheduled vendor visits", "Monitor contract terms and renewals", "Support purchase request status"]],
+      ["Life Safety Compliance Agent", ["Track fire and life safety inspections", "Manage fire drills and documentation", "Monitor interim life safety measures", "Prepare survey evidence packages", "Flag deficiencies and due dates"]]
+    ],
+    governance: ["Agent catalog (discover, reuse, manage agents)", "Approval workflows (review and approve actions and changes)", "Audit logging (traceability for actions and decisions)", "Safety Controls", "Vendor Access", "Compliance Evidence"],
+    systems: ["Microsoft 365", "CMMS Work Orders", "Building Management", "Asset Inventory", "ERP Procurement", "IoT Sensors"],
+    humans: ["Facilities Technicians", "Biomedical Engineering", "Environmental Services", "Safety Officer", "Vendors", "Operations Leaders"],
+    outcomes: ["Faster Repairs", "Fewer Equipment Outages", "Safer Environment", "Lower Maintenance Cost", "Audit-Ready Compliance"],
+    principles: ["Secure by design", "Governed by policy", "Built for trust", "Focused on people", "Delivered at scale", "Keeping every care environment safe and ready"]
+  },
+  poph: {
+    image: 'assets/care-population-health-operations-room-agentic-team.webp',
+    width: 1536,
+    height: 1024,
+    title: "Care & Population Health Operations Room",
+    subtitle: "AI-powered care coordination, risk stratification and community outreach.",
+    alt: "Architecture diagram of the Care & Population Health Operations Room. A request enters an intake and discovery flow of patient signal intake, risk & eligibility check, records & program lookup, care summary. Care & Population Health Assist, the front door, understands the request, enriches and validates context, routes it to the best agent, orchestrates actions, monitors compliance, and synthesizes and delivers the response. Eight specialized sub-agents sit below: Risk Stratification, Care Gap Closure, Care Management Outreach, Transitions of Care, Social Needs Referral, Chronic Condition Monitoring, Program Enrollment, and Population Insights. A governance control plane and shared platform services and integrations sit underneath, with human escalation to care managers, nurses, physicians, social workers, community health workers, and quality leaders, and outcomes that matter on the right: earlier intervention, closed care gaps, fewer readmissions, better health equity, more care manager capacity.",
+    assist: {
+      name: "Care & Population Health Assist",
+      line: "Your intelligent front door for care coordination and population health",
+      ask: "I need help identifying patients who need outreach, closing care gaps, or coordinating care after discharge.",
+      intake: ["Patient Signal Intake: capture alerts, referrals and requests from care teams, patients and community partners", "Risk & Eligibility Check: identify risk level, program eligibility and coverage requirements", "Records & Program Lookup: retrieve clinical history, care plans, program rosters and community resources", "Care Summary: create an initial summary and route to the right agent or team"],
+      steps: ["Understand request", "Enrich and validate context", "Route to best agent", "Orchestrate actions", "Monitor compliance", "Synthesize and deliver response"]
+    },
+    agents: [
+      ["Risk Stratification Agent", ["Identify high-risk patient groups", "Combine clinical and social factors", "Prioritize patients for outreach", "Explain drivers of risk", "Refresh risk lists regularly"]],
+      ["Care Gap Closure Agent", ["Identify overdue screenings and vaccines", "Check quality measure status", "Prepare outreach lists by gap", "Track gap closure progress", "Flag chart documentation gaps"]],
+      ["Care Management Outreach Agent", ["Draft outreach scripts and messages", "Schedule follow-up calls and visits", "Track outreach attempts and outcomes", "Balance care manager caseloads", "Summarize patient goals and barriers"]],
+      ["Transitions of Care Agent", ["Identify recent discharges needing follow-up", "Coordinate post-discharge appointments", "Support medication reconciliation outreach", "Track handoffs to primary care", "Flag early return risks"]],
+      ["Social Needs Referral Agent", ["Screen for housing and food needs", "Match patients to community resources", "Send and track referrals", "Confirm services were received", "Document social needs for care teams"]],
+      ["Chronic Condition Monitoring Agent", ["Track diabetes and heart failure measures", "Flag worsening readings for review", "Support self-management check-ins", "Prepare care plan updates", "Coordinate with specialty teams"]],
+      ["Program Enrollment Agent", ["Check patient program eligibility", "Support consent and enrollment steps", "Track program participation", "Manage waitlists and graduation", "Report enrollment by program"]],
+      ["Population Insights Agent", ["Analyze outcomes by population segment", "Highlight health equity disparities", "Prepare quality and value reports", "Track program impact over time", "Support value-based contract reporting"]]
+    ],
+    governance: ["Agent catalog (discover, reuse, manage agents)", "Approval workflows (review and approve actions and changes)", "Audit logging (traceability for actions and decisions)", "PHI Minimum Necessary", "Clinical Governance", "Consent Management"],
+    systems: ["Microsoft 365", "EHR Clinical Systems", "Claims & Eligibility", "Care Management Platform", "Community Resources", "Analytics"],
+    humans: ["Care Managers", "Nurses", "Physicians", "Social Workers", "Community Health Workers", "Quality Leaders"],
+    outcomes: ["Earlier Intervention", "Closed Care Gaps", "Fewer Readmissions", "Better Health Equity", "More Care Manager Capacity"],
+    principles: ["Secure by design", "Governed by policy", "Built for trust", "Focused on people", "Delivered at scale", "Turning population insight into healthier communities"]
+  },
+  personal: {
+    image: 'assets/personal-productivity-operations-room-agentic-team.webp',
+    width: 1536,
+    height: 1024,
+    title: "Personal Productivity Room",
+    subtitle: "AI-powered everyday work help for every clinician, leader and team member.",
+    alt: "Architecture diagram of the Personal Productivity Room. A request enters an intake and discovery flow of work request, role & context check, mail, files & meetings lookup, task summary. Personal Productivity Assist, the front door, understands the request, enriches and validates context, routes it to the best agent, orchestrates actions, monitors compliance, and synthesizes and delivers the response. Eight specialized sub-agents sit below: Inbox & Email, Meeting Prep & Recap, Document Drafting, Research & Summary, Scheduling, Data & Spreadsheets, Presentation Builder, and Follow-Up Tracking. A governance control plane and shared platform services and integrations sit underneath, with human escalation to employees, managers, it service desk, privacy office, adoption team, and executive sponsors, and outcomes that matter on the right: time back weekly, faster documents, clearer meetings, fewer manual tasks, higher satisfaction.",
+    assist: {
+      name: "Personal Productivity Assist",
+      line: "Your intelligent front door for everyday work productivity",
+      ask: "I need help catching up on email, preparing for a meeting, drafting a document, or building a presentation.",
+      intake: ["Work Request: capture requests from clinicians, leaders and team members in plain language", "Role & Context Check: identify the user's role, task type, audience and sensitivity of the content", "Mail, Files & Meetings Lookup: retrieve relevant messages, documents, calendar items and meeting notes", "Task Summary: create an initial summary and route to the right agent or team"],
+      steps: ["Understand request", "Enrich and validate context", "Route to best agent", "Orchestrate actions", "Monitor compliance", "Synthesize and deliver response"]
+    },
+    agents: [
+      ["Inbox & Email Agent", ["Summarize long email threads", "Prioritize messages needing action", "Draft replies in your voice", "Flag overdue responses", "Organize messages into folders"]],
+      ["Meeting Prep & Recap Agent", ["Prepare briefs from related materials", "Suggest agenda items and questions", "Summarize meeting discussions", "Capture decisions and action items", "Send recaps to attendees"]],
+      ["Document Drafting Agent", ["Draft memos, letters and policies", "Adapt tone for different audiences", "Rewrite text for clarity", "Apply organizational templates", "Check consistency across documents"]],
+      ["Research & Summary Agent", ["Summarize reports and articles", "Compare sources on a topic", "Extract key points and risks", "Find relevant internal documents", "Cite source material for review"]],
+      ["Scheduling Agent", ["Find meeting times across calendars", "Protect focus time", "Book rooms and virtual meetings", "Resolve scheduling conflicts", "Suggest changes to recurring meetings"]],
+      ["Data & Spreadsheets Agent", ["Clean and organize spreadsheet data", "Build formulas and pivot tables", "Create charts from raw data", "Explain trends in a dataset", "Check figures for errors"]],
+      ["Presentation Builder Agent", ["Build slide decks from documents", "Suggest slide structure and flow", "Create speaker notes", "Apply brand and layout standards", "Tailor decks for different audiences"]],
+      ["Follow-Up Tracking Agent", ["Collect commitments from emails and meetings", "Remind owners of due dates", "Track tasks across teams", "Summarize open items weekly", "Draft status update messages"]]
+    ],
+    governance: ["Agent catalog (discover, reuse, manage agents)", "Approval workflows (review and approve actions and changes)", "Audit logging (traceability for actions and decisions)", "Data Loss Prevention", "Sensitivity Labels", "Responsible AI"],
+    systems: ["Microsoft 365", "Outlook & Teams", "SharePoint & OneDrive", "Word, Excel, PowerPoint", "Identity & Access", "Security"],
+    humans: ["Employees", "Managers", "IT Service Desk", "Privacy Office", "Adoption Team", "Executive Sponsors"],
+    outcomes: ["Time Back Weekly", "Faster Documents", "Clearer Meetings", "Fewer Manual Tasks", "Higher Satisfaction"],
+    principles: ["Secure by design", "Governed by policy", "Built for trust", "Focused on people", "Delivered at scale", "Helping teams spend more time on what matters"]
+  },
+  pxp: {
+    image: 'assets/patient-experience-digital-front-door-operations-room-agentic-team.webp',
+    width: 1536,
+    height: 1024,
+    title: "Patient Experience & Digital Front Door Operations Room",
+    subtitle: "AI-powered digital access, navigation and communication from search to follow-up.",
+    alt: "Architecture diagram of the Patient Experience & Digital Front Door Operations Room. A request enters an intake and discovery flow of patient request intake, identity & channel check, provider & service lookup, journey summary. Patient Experience Assist, the front door, understands the request, enriches and validates context, routes it to the best agent, orchestrates actions, monitors compliance, and synthesizes and delivers the response. Eight specialized sub-agents sit below: Find-Care Navigation, Online Scheduling, Digital Check-In, Patient Messaging, Billing Questions, Language & Accessibility, Feedback & Sentiment, and Service Recovery. A governance control plane and shared platform services and integrations sit underneath, with human escalation to patient access staff, nurse triage, patient advocates, schedulers, digital team, and privacy office, and outcomes that matter on the right: easier access, higher satisfaction, fewer phone calls, faster response, more equitable access.",
+    assist: {
+      name: "Patient Experience Assist",
+      line: "Your intelligent front door for patient experience and digital access",
+      ask: "I need help finding a doctor, booking an appointment, checking in online, or understanding my bill.",
+      intake: ["Patient Request Intake: capture requests from patients and families across web, app, phone and text", "Identity & Channel Check: verify who is asking and choose the safest, most suitable channel", "Provider & Service Lookup: retrieve providers, locations, availability, services and visit instructions", "Journey Summary: create an initial summary and route to the right agent or team"],
+      steps: ["Understand request", "Enrich and validate context", "Route to best agent", "Orchestrate actions", "Monitor compliance", "Synthesize and deliver response"]
+    },
+    agents: [
+      ["Find-Care Navigation Agent", ["Match patients to the right provider", "Explain care options in plain language", "Filter by location, insurance and language", "Guide urgent needs to proper care", "Suggest virtual or in-person visits"]],
+      ["Online Scheduling Agent", ["Offer open appointment times", "Book, change and cancel visits", "Manage waitlist and cancellation offers", "Send reminders and prep instructions", "Match visit type to provider"]],
+      ["Digital Check-In Agent", ["Collect forms and updated insurance", "Confirm demographics and consent", "Verify contact preferences", "Share arrival and parking details", "Reduce front desk paperwork"]],
+      ["Patient Messaging Agent", ["Draft replies to portal messages", "Route messages to the right team", "Answer routine non-clinical questions", "Send visit and results notifications", "Escalate clinical concerns to nurses"]],
+      ["Billing Questions Agent", ["Explain statements and balances", "Provide cost estimates before visits", "Set up payment plans", "Direct financial assistance requests", "Route billing disputes to staff"]],
+      ["Language & Accessibility Agent", ["Provide interpreter and translation support", "Simplify instructions to plain language", "Support hearing and vision needs", "Offer accessible formats and channels", "Record communication preferences"]],
+      ["Feedback & Sentiment Agent", ["Collect survey responses after visits", "Group comments by theme", "Detect patient frustration early", "Summarize feedback by unit or clinic", "Share compliments with staff"]],
+      ["Service Recovery Agent", ["Flag complaints needing follow-up", "Route issues to patient advocates", "Track resolution and response times", "Suggest recovery steps for teams", "Identify recurring service problems"]]
+    ],
+    governance: ["Agent catalog (discover, reuse, manage agents)", "Approval workflows (review and approve actions and changes)", "Audit logging (traceability for actions and decisions)", "PHI Minimum Necessary", "Identity Verification", "Clinical Safety Guardrails"],
+    systems: ["Microsoft 365", "EHR Patient Portal", "Scheduling Systems", "Contact Center CRM", "Feedback Surveys", "Consent & Identity"],
+    humans: ["Patient Access Staff", "Nurse Triage", "Patient Advocates", "Schedulers", "Digital Team", "Privacy Office"],
+    outcomes: ["Easier Access", "Higher Satisfaction", "Fewer Phone Calls", "Faster Response", "More Equitable Access"],
+    principles: ["Secure by design", "Governed by policy", "Built for trust", "Focused on people", "Delivered at scale", "Removing barriers to better care"]
+  },
+  acute: {
+    image: 'assets/acute-inpatient-care-operations-room-agentic-team.webp',
+    width: 1536,
+    height: 1024,
+    title: "Acute & Inpatient Care Operations Room",
+    subtitle: "AI-powered patient flow, care team coordination and safe discharge.",
+    alt: "Architecture diagram of the Acute & Inpatient Care Operations Room. A request enters an intake and discovery flow of unit request intake, patient status check, orders & chart lookup, care summary. Inpatient Care Assist, the front door, understands the request, enriches and validates context, routes it to the best agent, orchestrates actions, monitors compliance, and synthesizes and delivers the response. Eight specialized sub-agents sit below: Patient Flow & Beds, Rounds Preparation, Care Plan Coordination, Discharge Planning, Clinical Documentation, Consult Coordination, Length-of-Stay Insights, and Shift Handoff. A governance control plane and shared platform services and integrations sit underneath, with human escalation to hospitalists, bedside nurses, case managers, charge nurses, pharmacists, and unit leaders, and outcomes that matter on the right: faster discharges, better bed throughput, safer handoffs, less charting burden, shorter stays.",
+    assist: {
+      name: "Inpatient Care Assist",
+      line: "Your intelligent front door for acute and inpatient care operations",
+      ask: "I need help with bed placement, rounds preparation, a discharge plan, or a shift handoff on my unit.",
+      intake: ["Unit Request Intake: capture requests from physicians, nurses, case managers and unit leaders", "Patient Status Check: identify patient acuity, care needs, pending tasks and discharge readiness", "Orders & Chart Lookup: retrieve orders, results, notes, care plans and consult activity", "Care Summary: create an initial summary and route to the right agent or team"],
+      steps: ["Understand request", "Enrich and validate context", "Route to best agent", "Orchestrate actions", "Monitor compliance", "Synthesize and deliver response"]
+    },
+    agents: [
+      ["Patient Flow & Beds Agent", ["Match patients to appropriate beds", "Track pending admissions and transfers", "Flag bed delays and bottlenecks", "Coordinate cleaning and room turnover", "Forecast daily census"]],
+      ["Rounds Preparation Agent", ["Summarize overnight events and results", "Prepare patient lists for rounds", "Highlight pending orders and tasks", "Capture rounding decisions", "Flag patients with changing status"]],
+      ["Care Plan Coordination Agent", ["Consolidate care team goals", "Track pending therapies and procedures", "Identify care plan gaps", "Coordinate disciplines around the patient", "Share plan updates with the team"]],
+      ["Discharge Planning Agent", ["Identify patients nearing discharge", "Track discharge barriers and tasks", "Coordinate post-acute placement", "Prepare discharge instructions", "Schedule follow-up appointments"]],
+      ["Clinical Documentation Agent", ["Draft progress and handoff notes", "Identify missing documentation", "Suggest documentation clarifications", "Support accurate diagnosis capture", "Reduce duplicate charting"]],
+      ["Consult Coordination Agent", ["Route consult requests to specialists", "Track consult response times", "Summarize consultant recommendations", "Flag overdue consults", "Notify teams of new recommendations"]],
+      ["Length-of-Stay Insights Agent", ["Compare stays with expected duration", "Identify causes of avoidable delay", "Highlight patients at risk of long stays", "Report trends by unit and service", "Support daily huddle discussions"]],
+      ["Shift Handoff Agent", ["Build structured handoff summaries", "Highlight pending tasks and risks", "Capture family and safety concerns", "Prepare nurse-to-nurse reports", "Confirm handoff completion"]]
+    ],
+    governance: ["Agent catalog (discover, reuse, manage agents)", "Approval workflows (review and approve actions and changes)", "Audit logging (traceability for actions and decisions)", "Clinical Governance", "PHI Minimum Necessary", "Clinician Sign-Off"],
+    systems: ["Microsoft 365", "EHR Clinical Systems", "Bed Management", "Case Management", "Staffing & Scheduling", "Analytics"],
+    humans: ["Hospitalists", "Bedside Nurses", "Case Managers", "Charge Nurses", "Pharmacists", "Unit Leaders"],
+    outcomes: ["Faster Discharges", "Better Bed Throughput", "Safer Handoffs", "Less Charting Burden", "Shorter Stays"],
+    principles: ["Secure by design", "Governed by policy", "Built for trust", "Focused on people", "Delivered at scale", "Getting every patient home safely and sooner"]
+  },
+  ed: {
+    image: 'assets/emergency-department-operations-operations-room-agentic-team.webp',
+    width: 1536,
+    height: 1024,
+    title: "Emergency Department Operations Room",
+    subtitle: "AI-powered triage support, throughput and boarding management.",
+    alt: "Architecture diagram of the Emergency Department Operations Room. A request enters an intake and discovery flow of ed arrival intake, acuity & urgency check, tracking board lookup, patient summary. Emergency Department Assist, the front door, understands the request, enriches and validates context, routes it to the best agent, orchestrates actions, monitors compliance, and synthesizes and delivers the response. Eight specialized sub-agents sit below: Triage Support, ED Throughput, Boarding & Bed Requests, Diagnostic Turnaround, Disposition & Transfer, ED Documentation, Surge Capacity, and Return-Visit Prevention. A governance control plane and shared platform services and integrations sit underneath, with human escalation to ed physicians, triage nurses, charge nurses, bed management, transfer center, and ed leaders, and outcomes that matter on the right: shorter waits, faster door-to-provider, less boarding, safer triage, lower burnout.",
+    assist: {
+      name: "Emergency Department Assist",
+      line: "Your intelligent front door for emergency department operations",
+      ask: "I need help with triage, a boarding patient, a bed request, or ED crowding right now.",
+      intake: ["ED Arrival Intake: capture arrivals, transfers and requests from triage staff, EMS and ED physicians", "Acuity & Urgency Check: identify presenting complaint, acuity level and time-sensitive conditions", "Tracking Board Lookup: retrieve current patient status, orders, results and room assignments", "Patient Summary: create an initial summary and route to the right agent or team"],
+      steps: ["Understand request", "Enrich and validate context", "Route to best agent", "Orchestrate actions", "Monitor compliance", "Synthesize and deliver response"]
+    },
+    agents: [
+      ["Triage Support Agent", ["Summarize presenting complaints and history", "Highlight time-sensitive conditions", "Suggest acuity levels for nurse review", "Flag sepsis and stroke risks", "Prompt for missing triage details"]],
+      ["ED Throughput Agent", ["Monitor waiting room and census", "Identify delays by care stage", "Suggest staffing and room moves", "Support fast-track patient flow", "Track left-without-being-seen risk"]],
+      ["Boarding & Bed Requests Agent", ["Submit and track inpatient bed requests", "Identify long-boarding patients", "Escalate bed delays to house supervisors", "Coordinate bed assignment status", "Summarize boarding impact on the ED"]],
+      ["Diagnostic Turnaround Agent", ["Track pending lab and imaging orders", "Flag delayed results", "Prioritize urgent studies", "Notify teams when results return", "Report turnaround by study type"]],
+      ["Disposition & Transfer Agent", ["Support admit, discharge and transfer decisions", "Coordinate transfers to other facilities", "Track transfer acceptance and transport", "Prepare discharge instructions", "Document transfer requirements"]],
+      ["ED Documentation Agent", ["Draft ED visit summaries", "Identify missing chart elements", "Support accurate procedure capture", "Reduce time spent charting", "Assemble transfer records"]],
+      ["Surge Capacity Agent", ["Detect rising volume early", "Recommend surge plan activation", "Track open beds and staff availability", "Coordinate overflow area readiness", "Prepare leadership surge updates"]],
+      ["Return-Visit Prevention Agent", ["Identify patients at risk of returning", "Arrange follow-up appointments", "Support post-visit callbacks", "Track repeat visits within days", "Connect frequent users to resources"]]
+    ],
+    governance: ["Agent catalog (discover, reuse, manage agents)", "Approval workflows (review and approve actions and changes)", "Audit logging (traceability for actions and decisions)", "Clinical Safety Guardrails", "Override Controls"],
+    systems: ["Microsoft 365", "EHR ED Tracking Board", "Bed Management", "RIS / PACS", "LIS", "Transfer Center"],
+    humans: ["ED Physicians", "Triage Nurses", "Charge Nurses", "Bed Management", "Transfer Center", "ED Leaders"],
+    outcomes: ["Shorter Waits", "Faster Door-to-Provider", "Less Boarding", "Safer Triage", "Lower Burnout"],
+    principles: ["Secure by design", "Governed by policy", "Built for trust", "Focused on people", "Delivered at scale", "Keeping emergency care moving when every minute counts"]
+  },
+  periop: {
+    image: 'assets/perioperative-surgical-services-operations-room-agentic-team.webp',
+    width: 1536,
+    height: 1024,
+    title: "Perioperative & Surgical Services Operations Room",
+    subtitle: "AI-powered surgical scheduling, readiness and operating room throughput.",
+    alt: "Architecture diagram of the Perioperative & Surgical Services Operations Room. A request enters an intake and discovery flow of case request intake, readiness & urgency check, schedule & chart lookup, case summary. Perioperative Assist, the front door, understands the request, enriches and validates context, routes it to the best agent, orchestrates actions, monitors compliance, and synthesizes and delivers the response. Eight specialized sub-agents sit below: OR Scheduling, Pre-Op Readiness, Block Utilization, Supply & Instrument Readiness, Anesthesia Coordination, Surgical Documentation, Turnover & Throughput, and Post-Op Handoff. A governance control plane and shared platform services and integrations sit underneath, with human escalation to surgeons, anesthesiologists, periop nurses, sterile processing, schedulers, and periop leaders, and outcomes that matter on the right: higher or utilization, fewer day-of cancellations, faster turnover, better surgeon experience, safer transitions.",
+    assist: {
+      name: "Perioperative Assist",
+      line: "Your intelligent front door for perioperative and surgical services",
+      ask: "I need help scheduling a surgical case, checking pre-op readiness, or finding open operating room time.",
+      intake: ["Case Request Intake: capture surgical booking requests from surgeons, offices and perioperative staff", "Readiness & Urgency Check: identify procedure type, urgency, clearances and equipment needs", "Schedule & Chart Lookup: retrieve OR schedules, block time, surgeon preferences and patient records", "Case Summary: create an initial summary and route to the right agent or team"],
+      steps: ["Understand request", "Enrich and validate context", "Route to best agent", "Orchestrate actions", "Monitor compliance", "Synthesize and deliver response"]
+    },
+    agents: [
+      ["OR Scheduling Agent", ["Match cases to rooms and times", "Estimate case duration accurately", "Resolve scheduling conflicts", "Place add-on and urgent cases", "Notify teams of schedule changes"]],
+      ["Pre-Op Readiness Agent", ["Track required labs and clearances", "Confirm consents and history physicals", "Flag incomplete pre-op items", "Send patient preparation instructions", "Alert staff before cancellation risks"]],
+      ["Block Utilization Agent", ["Monitor surgeon block use", "Identify unused block time early", "Suggest releasing or reassigning blocks", "Report utilization by service", "Support block review meetings"]],
+      ["Supply & Instrument Readiness Agent", ["Confirm implants and instruments for cases", "Build surgeon preference cards", "Flag missing or recalled supplies", "Coordinate loaner equipment arrival", "Track supply use per case"]],
+      ["Anesthesia Coordination Agent", ["Match anesthesia staff to cases", "Summarize patient anesthesia history", "Flag airway and medical risks", "Coordinate pre-anesthesia evaluations", "Track staffing coverage gaps"]],
+      ["Surgical Documentation Agent", ["Draft operative note templates", "Check required case documentation", "Support accurate procedure coding", "Track time-out and counts records", "Flag incomplete records"]],
+      ["Turnover & Throughput Agent", ["Track room turnover times", "Identify first-case delays", "Coordinate cleaning and room setup", "Show delay causes by case", "Support daily OR huddles"]],
+      ["Post-Op Handoff Agent", ["Prepare recovery unit handoff summaries", "Track post-op orders and pain plans", "Coordinate bed placement after surgery", "Schedule post-op follow-up visits", "Notify families of case completion"]]
+    ],
+    governance: ["Agent catalog (discover, reuse, manage agents)", "Approval workflows (review and approve actions and changes)", "Audit logging (traceability for actions and decisions)", "Surgical Safety Checklist", "Clinical Governance", "Human Approval"],
+    systems: ["Microsoft 365", "EHR Periop System", "OR Scheduling", "Supply Inventory", "Sterile Processing", "Anesthesia Systems"],
+    humans: ["Surgeons", "Anesthesiologists", "Periop Nurses", "Sterile Processing", "Schedulers", "Periop Leaders"],
+    outcomes: ["Higher OR Utilization", "Fewer Day-Of Cancellations", "Faster Turnover", "Better Surgeon Experience", "Safer Transitions"],
+    principles: ["Secure by design", "Governed by policy", "Built for trust", "Focused on people", "Delivered at scale", "Giving surgical teams their time back"]
+  },
+  pharmacy: {
+    image: 'assets/pharmacy-operations-operations-room-agentic-team.webp',
+    width: 1536,
+    height: 1024,
+    title: "Pharmacy Operations Room",
+    subtitle: "AI-powered medication safety, inventory and pharmacy workflow support.",
+    alt: "Architecture diagram of the Pharmacy Operations Room. A request enters an intake and discovery flow of medication request intake, patient & order check, formulary & drug lookup, case summary. Pharmacy Assist, the front door, understands the request, enriches and validates context, routes it to the best agent, orchestrates actions, monitors compliance, and synthesizes and delivers the response. Eight specialized sub-agents sit below: Order Review, Formulary Support, Drug Shortage Management, Inventory & Dispensing, Prior Auth & Coverage, 340B Compliance, Controlled Substances, and Discharge Med Reconciliation. A governance control plane and shared platform services and integrations sit underneath, with human escalation to pharmacists, pharmacy technicians, prescribers, nurses, compliance, and pharmacy leaders, and outcomes that matter on the right: safer medication use, fewer stockouts, faster turnaround, stronger compliance, more time for patients.",
+    assist: {
+      name: "Pharmacy Assist",
+      line: "Your intelligent front door for pharmacy operations",
+      ask: "I need help with a medication order, a drug shortage, a formulary question, or a prior authorization.",
+      intake: ["Medication Request Intake: capture requests from prescribers, nurses, patients and pharmacy staff", "Patient & Order Check: identify the patient, medication, dose, allergies and clinical context", "Formulary & Drug Lookup: retrieve formulary status, interactions, inventory and coverage information", "Case Summary: create an initial summary and route to the right agent or team"],
+      steps: ["Understand request", "Enrich and validate context", "Route to best agent", "Orchestrate actions", "Monitor compliance", "Synthesize and deliver response"]
+    },
+    agents: [
+      ["Order Review Agent", ["Check doses against patient factors", "Screen for interactions and allergies", "Flag duplicate or unusual orders", "Prioritize orders for pharmacist review", "Document intervention recommendations"]],
+      ["Formulary Support Agent", ["Answer formulary status questions", "Suggest preferred therapeutic alternatives", "Support non-formulary requests", "Track committee decisions and updates", "Notify prescribers of formulary changes"]],
+      ["Drug Shortage Management Agent", ["Monitor supplier shortage notices", "Identify affected medications and patients", "Suggest approved substitutes", "Track conservation and allocation plans", "Communicate shortage updates to clinicians"]],
+      ["Inventory & Dispensing Agent", ["Track stock levels and par levels", "Forecast medication usage", "Flag expiring and recalled products", "Coordinate cabinet restocking", "Support compounding and IV workflow"]],
+      ["Prior Auth & Coverage Agent", ["Check medication coverage and criteria", "Assemble prior authorization documentation", "Track submission and decision status", "Suggest covered alternatives", "Support appeals for denied drugs"]],
+      ["340B Compliance Agent", ["Check patient and prescription eligibility", "Track purchasing accumulator accuracy", "Prepare audit documentation", "Flag potential diversion risks", "Reconcile contract pharmacy activity"]],
+      ["Controlled Substances Agent", ["Monitor controlled substance counts", "Flag unusual dispensing patterns", "Track discrepancy resolution", "Prepare diversion review reports", "Support DEA record requirements"]],
+      ["Discharge Med Reconciliation Agent", ["Compare home and inpatient medications", "Flag discrepancies for pharmacist review", "Prepare patient medication lists", "Check discharge medication access", "Support bedside delivery of prescriptions"]]
+    ],
+    governance: ["Agent catalog (discover, reuse, manage agents)", "Approval workflows (review and approve actions and changes)", "Audit logging (traceability for actions and decisions)", "Pharmacist Verification", "Controlled Substance Controls", "Clinical Governance"],
+    systems: ["Microsoft 365", "EHR / CPOE", "Pharmacy Information System", "Dispensing Cabinets", "Wholesaler Inventory", "Drug Knowledge Base"],
+    humans: ["Pharmacists", "Pharmacy Technicians", "Prescribers", "Nurses", "Compliance", "Pharmacy Leaders"],
+    outcomes: ["Safer Medication Use", "Fewer Stockouts", "Faster Turnaround", "Stronger Compliance", "More Time for Patients"],
+    principles: ["Secure by design", "Governed by policy", "Built for trust", "Focused on people", "Delivered at scale", "Safer medication use for every patient"]
+  },
+  diagnostics: {
+    image: 'assets/diagnostics-imaging-operations-room-agentic-team.webp',
+    width: 1536,
+    height: 1024,
+    title: "Diagnostics & Imaging Operations Room",
+    subtitle: "AI-powered order-to-result workflows across laboratory and radiology.",
+    alt: "Architecture diagram of the Diagnostics & Imaging Operations Room. A request enters an intake and discovery flow of order intake, priority & appropriateness check, schedule & protocol lookup, exam summary. Diagnostics & Imaging Assist, the front door, understands the request, enriches and validates context, routes it to the best agent, orchestrates actions, monitors compliance, and synthesizes and delivers the response. Eight specialized sub-agents sit below: Order Validation, Imaging Scheduling, Protocol Support, Critical Result Follow-Up, Report Turnaround, Specimen Tracking, Incidental Finding Follow-Up, and Equipment Utilization. A governance control plane and shared platform services and integrations sit underneath, with human escalation to radiologists, pathologists, technologists, lab staff, ordering clinicians, and department leaders, and outcomes that matter on the right: faster turnaround, fewer missed follow-ups, better scanner use, fewer repeat orders, happier referrers.",
+    assist: {
+      name: "Diagnostics & Imaging Assist",
+      line: "Your intelligent front door for diagnostics and imaging",
+      ask: "I need help with an imaging order, a lab result follow-up, a scan appointment, or a report that is overdue.",
+      intake: ["Order Intake: capture lab and imaging orders and requests from clinicians and care teams", "Priority & Appropriateness Check: identify urgency, clinical indication and ordering guideline alignment", "Schedule & Protocol Lookup: retrieve open appointments, exam protocols, preparation steps and prior studies", "Exam Summary: create an initial summary and route to the right agent or team"],
+      steps: ["Understand request", "Enrich and validate context", "Route to best agent", "Orchestrate actions", "Monitor compliance", "Synthesize and deliver response"]
+    },
+    agents: [
+      ["Order Validation Agent", ["Check orders for missing information", "Confirm clinical indication and appropriateness", "Identify duplicate or recent studies", "Suggest alternative exams", "Request clarification from ordering clinicians"]],
+      ["Imaging Scheduling Agent", ["Find open scanner appointments", "Match exams to equipment and staff", "Send patient preparation instructions", "Manage cancellations and reschedules", "Prioritize urgent inpatient exams"]],
+      ["Protocol Support Agent", ["Suggest exam protocols by indication", "Check contrast and safety screening", "Flag implants and allergy concerns", "Support technologist protocol questions", "Retrieve relevant prior studies"]],
+      ["Critical Result Follow-Up Agent", ["Detect results needing urgent action", "Track clinician notification and acknowledgment", "Escalate unacknowledged critical results", "Document communication timing", "Report critical result compliance"]],
+      ["Report Turnaround Agent", ["Track unread and unsigned reports", "Prioritize reading worklists", "Flag reports nearing target times", "Show delays by modality", "Support radiologist workload balancing"]],
+      ["Specimen Tracking Agent", ["Track specimens from collection to result", "Flag mislabeled or lost specimens", "Monitor transport and receiving times", "Coordinate recollection requests", "Report pending tests by location"]],
+      ["Incidental Finding Follow-Up Agent", ["Identify findings needing follow-up", "Notify ordering clinicians and patients", "Schedule recommended follow-up studies", "Track completion of recommendations", "Report loop closure rates"]],
+      ["Equipment Utilization Agent", ["Track scanner and analyzer use", "Identify downtime and idle capacity", "Support maintenance scheduling", "Forecast demand by modality", "Recommend schedule template changes"]]
+    ],
+    governance: ["Agent catalog (discover, reuse, manage agents)", "Approval workflows (review and approve actions and changes)", "Audit logging (traceability for actions and decisions)", "Radiologist Oversight", "Clinical Governance", "PHI Minimum Necessary"],
+    systems: ["Microsoft 365", "EHR Order Entry", "RIS / PACS", "LIS", "Scheduling", "Analytics"],
+    humans: ["Radiologists", "Pathologists", "Technologists", "Lab Staff", "Ordering Clinicians", "Department Leaders"],
+    outcomes: ["Faster Turnaround", "Fewer Missed Follow-Ups", "Better Scanner Use", "Fewer Repeat Orders", "Happier Referrers"],
+    principles: ["Secure by design", "Governed by policy", "Built for trust", "Focused on people", "Delivered at scale", "Turning results into timely action"]
+  },
+  hah: {
+    image: 'assets/hospital-at-home-remote-care-operations-room-agentic-team.webp',
+    width: 1536,
+    height: 1024,
+    title: "Hospital-at-Home & Remote Care Operations Room",
+    subtitle: "AI-powered remote monitoring and home-based acute care coordination.",
+    alt: "Architecture diagram of the Hospital-at-Home & Remote Care Operations Room. A request enters an intake and discovery flow of enrollment intake, eligibility & home check, device & record lookup, care summary. Hospital-at-Home Assist, the front door, understands the request, enriches and validates context, routes it to the best agent, orchestrates actions, monitors compliance, and synthesizes and delivers the response. Eight specialized sub-agents sit below: Admission Screening, Remote Vitals Monitoring, Escalation Triage, Home Visit Scheduling, Medication & Supply Logistics, Care Team Coordination, Device Management, and Discharge & Step-Down. A governance control plane and shared platform services and integrations sit underneath, with human escalation to home hospitalists, remote nurses, paramedics, pharmacists, care coordinators, and program leaders, and outcomes that matter on the right: safer care at home, freed hospital beds, earlier intervention, better patient experience, fewer readmissions.",
+    assist: {
+      name: "Hospital-at-Home Assist",
+      line: "Your intelligent front door for hospital-at-home and remote care",
+      ask: "I need help enrolling a patient in hospital at home, checking on a remote patient, or scheduling a home visit.",
+      intake: ["Enrollment Intake: capture referrals from emergency, inpatient and primary care teams for home-based care", "Eligibility & Home Check: identify clinical eligibility, home safety, caregiver support and connectivity", "Device & Record Lookup: retrieve patient records, monitoring devices, vitals trends and home visit plans", "Care Summary: create an initial summary and route to the right agent or team"],
+      steps: ["Understand request", "Enrich and validate context", "Route to best agent", "Orchestrate actions", "Monitor compliance", "Synthesize and deliver response"]
+    },
+    agents: [
+      ["Admission Screening Agent", ["Screen candidates against clinical criteria", "Confirm address and service area", "Check caregiver and home readiness", "Verify insurance for home-based care", "Support patient and family consent"]],
+      ["Remote Vitals Monitoring Agent", ["Track readings from home devices", "Flag out-of-range vital signs", "Detect missing or late readings", "Summarize daily patient trends", "Support nurse check-in calls"]],
+      ["Escalation Triage Agent", ["Prioritize alerts for nurse review", "Suggest next steps by protocol", "Route urgent cases to physicians", "Coordinate emergency transport", "Document escalation decisions"]],
+      ["Home Visit Scheduling Agent", ["Plan daily routes for visiting staff", "Match visits to nurse and paramedic skills", "Coordinate lab draws and treatments", "Reschedule visits around patient needs", "Confirm visit times with families"]],
+      ["Medication & Supply Logistics Agent", ["Coordinate medication delivery to homes", "Track supplies and equipment orders", "Arrange IV and oxygen equipment", "Schedule pickup of used equipment", "Flag delivery delays"]],
+      ["Care Team Coordination Agent", ["Share daily plans across the team", "Summarize virtual and in-person visits", "Coordinate specialist consults", "Connect patients with social support", "Track pending orders and tasks"]],
+      ["Device Management Agent", ["Track device assignment and setup", "Guide patients through device use", "Detect offline or failing devices", "Coordinate replacement and return", "Maintain device inventory records"]],
+      ["Discharge & Step-Down Agent", ["Identify patients ready to graduate", "Plan transition to home health or clinic", "Schedule follow-up appointments", "Prepare patient education materials", "Arrange return to hospital when needed"]]
+    ],
+    governance: ["Agent catalog (discover, reuse, manage agents)", "Approval workflows (review and approve actions and changes)", "Audit logging (traceability for actions and decisions)", "Clinical Safety Thresholds", "Home Safety Controls", "Device Security"],
+    systems: ["Microsoft 365", "EHR Clinical Systems", "Monitoring Devices", "Telehealth", "Logistics & Supplies", "Care Coordination"],
+    humans: ["Home Hospitalists", "Remote Nurses", "Paramedics", "Pharmacists", "Care Coordinators", "Program Leaders"],
+    outcomes: ["Safer Care at Home", "Freed Hospital Beds", "Earlier Intervention", "Better Patient Experience", "Fewer Readmissions"],
+    principles: ["Secure by design", "Governed by policy", "Built for trust", "Focused on people", "Delivered at scale", "Bringing hospital-level care home"]
+  },
+  safety: {
+    image: 'assets/infection-prevention-device-safety-operations-room-agentic-team.webp',
+    width: 1536,
+    height: 1024,
+    title: "Infection Prevention & Device Safety Operations Room",
+    subtitle: "AI-powered surveillance, outbreak response and medical device safety.",
+    alt: "Architecture diagram of the Infection Prevention & Device Safety Operations Room. A request enters an intake and discovery flow of safety event intake, severity & exposure check, lab & device lookup, investigation summary. Infection Prevention Assist, the front door, understands the request, enriches and validates context, routes it to the best agent, orchestrates actions, monitors compliance, and synthesizes and delivers the response. Eight specialized sub-agents sit below: HAI Surveillance, Outbreak Detection, Isolation Precautions, Device Recall Management, Sterile Processing Compliance, Antimicrobial Stewardship, Event Investigation, and Public Health Reporting. A governance control plane and shared platform services and integrations sit underneath, with human escalation to infection preventionists, epidemiologists, biomedical engineering, clinical leaders, risk & safety, and public health, and outcomes that matter on the right: fewer infections, faster outbreak response, safer devices, stronger compliance, audit-ready reporting.",
+    assist: {
+      name: "Infection Prevention Assist",
+      line: "Your intelligent front door for infection prevention and device safety",
+      ask: "I need help with a possible outbreak, an isolation question, a device recall, or a sterile processing concern.",
+      intake: ["Safety Event Intake: Capture and classify safety events, exposures and device concerns from clinical units and staff", "Severity & Exposure Check: Gauge event severity, patient exposure, affected units and reporting obligations", "Lab & Device Lookup: Retrieve culture results, patient locations, device lot records and prior related events", "Investigation Summary: Create an initial investigation summary and route to the right agent or team"],
+      steps: ["Understand request", "Enrich and validate context", "Route to best agent", "Orchestrate actions", "Monitor compliance", "Synthesize and deliver response"]
+    },
+    agents: [
+      ["HAI Surveillance Agent", ["Review infection surveillance findings", "Apply standard case definitions", "Flag device and procedure-related infections", "Track unit-level infection trends", "Prepare surveillance reports"]],
+      ["Outbreak Detection Agent", ["Spot unusual organism clusters", "Map patient and staff exposures", "Recommend containment steps", "Track outbreak response actions", "Summarize findings for leadership"]],
+      ["Isolation Precautions Agent", ["Recommend isolation by organism", "Track patient isolation status", "Support room cleaning and turnover", "Alert staff to precaution changes"]],
+      ["Device Recall Management Agent", ["Match recalls to inventory", "Locate affected devices and patients", "Track removal and replacement", "Document notifications and closure", "Monitor manufacturer safety alerts"]],
+      ["Sterile Processing Compliance Agent", ["Track reprocessing and sterilization logs", "Flag missed steps and failed indicators", "Monitor instrument tray readiness", "Check equipment maintenance records", "Prepare survey readiness reports"]],
+      ["Antimicrobial Stewardship Agent", ["Review antimicrobial orders against guidelines", "Flag opportunities to narrow therapy", "Track antibiotic use and resistance", "Support prospective audit and feedback", "Summarize unit prescribing patterns"]],
+      ["Event Investigation Agent", ["Assemble event timelines and records", "Support root cause analysis", "Identify contributing factors", "Track corrective actions", "Draft investigation summaries"]],
+      ["Public Health Reporting Agent", ["Identify reportable conditions", "Prepare state and federal submissions", "Track reporting deadlines", "Reconcile surveillance and lab data", "Document public health communications"]]
+    ],
+    governance: ["Agent catalog (discover, reuse, manage agents)", "Approval workflows (review and approve actions and changes)", "Audit logging (traceability for actions and decisions)", "Clinical Governance", "Regulatory Attestation", "Source Traceability"],
+    systems: ["Microsoft 365", "EHR Clinical Systems", "LIS Microbiology", "Device Inventory", "Event Reporting", "Public Health Registries"],
+    humans: ["Infection Preventionists", "Epidemiologists", "Biomedical Engineering", "Clinical Leaders", "Risk & Safety", "Public Health"],
+    outcomes: ["Fewer Infections", "Faster Outbreak Response", "Safer Devices", "Stronger Compliance", "Audit-Ready Reporting"],
+    principles: ["Secure by design", "Governed by policy", "Built for trust", "Focused on people", "Delivered at scale", "Protecting patients with earlier signals"]
+  },
+  gme: {
+    image: 'assets/graduate-medical-education-operations-room-agentic-team.webp',
+    width: 1536,
+    height: 1024,
+    title: "Graduate Medical Education Operations Room",
+    subtitle: "AI-powered resident scheduling, evaluation and accreditation readiness.",
+    alt: "Architecture diagram of the Graduate Medical Education Operations Room. A request enters an intake and discovery flow of program request intake, trainee & program check, policy & record lookup, case summary. GME Assist, the front door, understands the request, enriches and validates context, routes it to the best agent, orchestrates actions, monitors compliance, and synthesizes and delivers the response. Eight specialized sub-agents sit below: Resident Scheduling, Duty Hours Monitoring, Evaluation & Milestones, Credentialing & Onboarding, Curriculum & Didactics, Accreditation Reporting, Wellness & Support, and Recruitment & Match. A governance control plane and shared platform services and integrations sit underneath, with human escalation to program directors, program coordinators, faculty, residents, gme office, and compliance, and outcomes that matter on the right: compliant duty hours, faster onboarding, accreditation readiness, better resident wellbeing, less coordinator workload.",
+    assist: {
+      name: "GME Assist",
+      line: "Your intelligent front door for graduate medical education",
+      ask: "I need help with a resident schedule, a duty hours issue, an evaluation, or an accreditation report.",
+      intake: ["Program Request Intake: Capture and classify requests from residents, fellows, program directors and coordinators", "Trainee & Program Check: Identify trainee, program, training year and applicable accreditation requirements", "Policy & Record Lookup: Retrieve schedules, evaluations, program policies and trainee records", "Case Summary: Create an initial summary and route to the right agent or team"],
+      steps: ["Understand request", "Enrich and validate context", "Route to best agent", "Orchestrate actions", "Monitor compliance", "Synthesize and deliver response"]
+    },
+    agents: [
+      ["Resident Scheduling Agent", ["Build rotation and call schedules", "Resolve coverage gaps and swaps", "Balance service needs and training goals", "Account for leave and vacation", "Publish schedule updates"]],
+      ["Duty Hours Monitoring Agent", ["Track weekly hours by resident", "Flag potential duty hour violations", "Monitor required days off", "Review moonlighting hours", "Prepare compliance summaries"]],
+      ["Evaluation & Milestones Agent", ["Collect and track evaluations", "Summarize milestone progress", "Flag residents needing support", "Prepare for clinical competency reviews", "Draft feedback summaries"]],
+      ["Credentialing & Onboarding Agent", ["Track licensure and onboarding documents", "Verify privileges and credentials", "Coordinate badging and system access", "Monitor required training completion", "Manage visa and license renewals"]],
+      ["Curriculum & Didactics Agent", ["Plan didactic and conference calendars", "Map rotations to curriculum goals", "Track procedure and case logs", "Track attendance and completion", "Recommend learning resources"]],
+      ["Accreditation Reporting Agent", ["Compile annual program evaluation data", "Prepare accreditation site visit materials", "Track resident case and exam outcomes", "Monitor program citations and responses", "Generate accreditation reports"]],
+      ["Wellness & Support Agent", ["Identify early signs of burnout", "Connect residents to support services", "Track wellness program participation", "Route confidential concerns appropriately", "Summarize program wellness trends"]],
+      ["Recruitment & Match Agent", ["Screen and organize applications", "Coordinate interview scheduling", "Support rank list preparation", "Track applicant communications", "Prepare incoming resident onboarding"]]
+    ],
+    governance: ["Agent catalog (discover, reuse, manage agents)", "Approval workflows (review and approve actions and changes)", "Audit logging (traceability for actions and decisions)", "Accreditation Evidence", "Resident Privacy", "Human Review"],
+    systems: ["Microsoft 365", "GME Management System", "Scheduling System", "HRIS Credentialing", "Match Platform", "Learning Platform"],
+    humans: ["Program Directors", "Program Coordinators", "Faculty", "Residents", "GME Office", "Compliance"],
+    outcomes: ["Compliant Duty Hours", "Faster Onboarding", "Accreditation Readiness", "Better Resident Wellbeing", "Less Coordinator Workload"],
+    principles: ["Secure by design", "Governed by policy", "Built for trust", "Focused on people", "Delivered at scale", "Supporting the next generation of physicians"]
+  },
+  actuarial: {
+    image: 'assets/actuarial-underwriting-operations-room-agentic-team.webp',
+    width: 1536,
+    height: 1024,
+    title: "Actuarial & Underwriting Operations Room",
+    subtitle: "AI-powered pricing, risk analysis and underwriting support for health plans.",
+    alt: "Architecture diagram of the Actuarial & Underwriting Operations Room. A request enters an intake and discovery flow of analysis request intake, scope & data check, model & data lookup, analysis summary. Actuarial & Underwriting Assist, the front door, understands the request, enriches and validates context, routes it to the best agent, orchestrates actions, monitors compliance, and synthesizes and delivers the response. Eight specialized sub-agents sit below: Rate Filing Support, Experience Analysis, Risk Scoring, Reserve Support, Underwriting Review, Forecast & Trend, Rate Review Response, and Model Documentation. A governance control plane and shared platform services and integrations sit underneath, with human escalation to actuaries, underwriters, finance, compliance, chief actuary, and executive leaders, and outcomes that matter on the right: faster rate development, sharper risk insight, better forecast accuracy, audit-ready models, less manual analysis.",
+    assist: {
+      name: "Actuarial & Underwriting Assist",
+      line: "Your intelligent front door for actuarial and underwriting for health plans",
+      ask: "I need help with a rate filing, an experience analysis, a risk score, or an underwriting review.",
+      intake: ["Analysis Request Intake: Capture and classify analysis requests from actuarial, finance, underwriting and product teams", "Scope & Data Check: Confirm scope, product line, time period, data sources and regulatory requirements", "Model & Data Lookup: Retrieve claims experience, enrollment data, prior models and filing history", "Analysis Summary: Create an initial analysis summary and route to the right agent or team"],
+      steps: ["Understand request", "Enrich and validate context", "Route to best agent", "Orchestrate actions", "Monitor compliance", "Synthesize and deliver response"]
+    },
+    agents: [
+      ["Rate Filing Support Agent", ["Assemble rate filing exhibits", "Check filings against state requirements", "Track filing deadlines and status", "Draft actuarial memorandum sections", "Compare proposed and prior rates"]],
+      ["Experience Analysis Agent", ["Analyze claims by service category", "Compare actual to expected costs", "Identify cost and utilization drivers", "Adjust for completion and trend", "Summarize results by product"]],
+      ["Risk Scoring Agent", ["Calculate member and group risk scores", "Review risk adjustment inputs", "Compare population acuity over time", "Flag unusual risk shifts", "Document scoring assumptions"]],
+      ["Reserve Support Agent", ["Compile claims for reserve analysis", "Review completion factor patterns", "Compare reserve estimates to actual payments", "Prepare reserve support documentation"]],
+      ["Underwriting Review Agent", ["Review group and individual applications", "Apply underwriting guidelines", "Flag high-risk or incomplete submissions", "Prepare quote recommendations", "Track renewals and decisions"]],
+      ["Forecast & Trend Agent", ["Project medical cost trends", "Model enrollment scenarios", "Compare forecasts to results", "Identify emerging cost pressures", "Prepare budget and planning inputs"]],
+      ["Rate Review Response Agent", ["Draft responses to regulator questions", "Retrieve supporting data and exhibits", "Track open objections and deadlines", "Align answers with prior filings", "Coordinate review with actuaries"]],
+      ["Model Documentation Agent", ["Document model methods and assumptions", "Track model versions and changes", "Support peer review and validation", "Prepare audit and filing documentation"]]
+    ],
+    governance: ["Agent catalog (discover, reuse, manage agents)", "Approval workflows (review and approve actions and changes)", "Audit logging (traceability for actions and decisions)", "Model Governance", "Actuarial Standards", "Human Sign-Off"],
+    systems: ["Microsoft 365", "Actuarial Modeling", "Claims & Enrollment Data", "Data Warehouse", "Rate Filing Systems", "Analytics"],
+    humans: ["Actuaries", "Underwriters", "Finance", "Compliance", "Chief Actuary", "Executive Leaders"],
+    outcomes: ["Faster Rate Development", "Sharper Risk Insight", "Better Forecast Accuracy", "Audit-Ready Models", "Less Manual Analysis"],
+    principles: ["Secure by design", "Governed by policy", "Built for trust", "Focused on people", "Delivered at scale", "Turning risk insight into sustainable coverage"]
+  },
+  claims: {
+    image: 'assets/claims-operations-operations-room-agentic-team.webp',
+    width: 1536,
+    height: 1024,
+    title: "Claims Operations Room",
+    subtitle: "AI-powered claims adjudication, exception handling and payment accuracy.",
+    alt: "Architecture diagram of the Claims Operations Room. A request enters an intake and discovery flow of claim intake, coverage check, policy lookup, case summary. Claims Assist, the front door, understands the request, enriches and validates context, routes it to the best agent, orchestrates actions, monitors compliance, and synthesizes and delivers the response. Eight specialized sub-agents sit below: Claims Intake, Eligibility Check, Adjudication Support, Pend & Exception, Coordination of Benefits, Claim Status, Overpayment Recovery, and Appeals Referral. A governance control plane and shared platform services and integrations sit underneath, with human escalation to claims examiners, medical directors, coding specialists, provider services, compliance, and claims leaders, and outcomes that matter on the right: faster adjudication, higher auto-adjudication, fewer payment errors, lower admin cost, happier providers.",
+    assist: {
+      name: "Claims Assist",
+      line: "Your intelligent front door for health plan claims operations",
+      ask: "I need help with a pended claim, a payment error, a coordination of benefits issue, or a claim status.",
+      intake: ["Claim Intake: Capture and classify claims, inquiries and exceptions from providers, members and internal teams", "Coverage Check: Confirm member eligibility, coverage dates, plan benefits and claim type", "Policy Lookup: Retrieve claim history, plan rules, provider contracts and prior adjustments", "Case Summary: Create an initial claim summary and route to the right agent or team"],
+      steps: ["Understand request", "Enrich and validate context", "Route to best agent", "Orchestrate actions", "Monitor compliance", "Synthesize and deliver response"]
+    },
+    agents: [
+      ["Claims Intake Agent", ["Receive and classify incoming claims", "Validate required claim data", "Identify missing or invalid fields", "Route paper and electronic claims", "Flag duplicate submissions"]],
+      ["Eligibility Check Agent", ["Verify member coverage on service date", "Check plan and benefit eligibility", "Confirm provider network status", "Flag terminated or inactive coverage"]],
+      ["Adjudication Support Agent", ["Apply benefit and contract rules", "Review pricing and fee schedules", "Check authorization requirements", "Recommend payment or denial", "Document adjudication rationale"]],
+      ["Pend & Exception Agent", ["Identify why claims pended", "Route exceptions to the right examiner", "Prioritize aging pended claims", "Track resolution actions", "Spot recurring pend causes"]],
+      ["Coordination of Benefits Agent", ["Identify other insurance coverage", "Determine primary and secondary payer", "Track subrogation opportunities", "Coordinate payments with other carriers", "Document COB updates"]],
+      ["Claim Status Agent", ["Answer provider claim status questions", "Explain denial and adjustment reasons", "Summarize remittance details", "Track resubmissions and corrections"]],
+      ["Overpayment Recovery Agent", ["Identify overpaid claims", "Calculate refund amounts", "Generate provider recovery letters", "Track offsets and repayments", "Reconcile recovered funds"]],
+      ["Appeals Referral Agent", ["Identify disputed claim decisions", "Assemble claim and policy documents", "Route cases to appeals teams", "Track dispute deadlines", "Notify requesters of status"]]
+    ],
+    governance: ["Agent catalog (discover, reuse, manage agents)", "Approval workflows (review and approve actions and changes)", "Audit logging (traceability for actions and decisions)", "Payer Policy Controls", "Human Review"],
+    systems: ["Microsoft 365", "Claims Systems", "Eligibility & Benefits", "Provider Network", "Contact Center CRM", "Analytics"],
+    humans: ["Claims Examiners", "Medical Directors", "Coding Specialists", "Provider Services", "Compliance", "Claims Leaders"],
+    outcomes: ["Faster Adjudication", "Higher Auto-Adjudication", "Fewer Payment Errors", "Lower Admin Cost", "Happier Providers"],
+    principles: ["Secure by design", "Governed by policy", "Built for trust", "Focused on people", "Delivered at scale", "Paying claims right the first time"]
+  },
+  um: {
+    image: 'assets/utilization-management-prior-authorization-operations-room-agentic-team.webp',
+    width: 1536,
+    height: 1024,
+    title: "Utilization Management & Prior Authorization Operations Room",
+    subtitle: "AI-powered prior authorization and utilization review with clinician-led decisions.",
+    alt: "Architecture diagram of the Utilization Management & Prior Authorization Operations Room. A request enters an intake and discovery flow of auth request intake, coverage & eligibility check, clinical criteria lookup, case summary. Utilization Management Assist, the front door, understands the request, enriches and validates context, routes it to the best agent, orchestrates actions, monitors compliance, and synthesizes and delivers the response. Eight specialized sub-agents sit below: Auth Intake & Triage, Clinical Criteria Review, Medical Record Retrieval, Concurrent Review, Peer-to-Peer Scheduling, Determination Letters, Timeliness Monitoring, and Care Transitions. A governance control plane and shared platform services and integrations sit underneath, with human escalation to um nurses, medical directors, pharmacy reviewers, providers, appeals team, and compliance, and outcomes that matter on the right: faster determinations, consistent criteria, on-time compliance, less provider friction, more reviewer capacity.",
+    assist: {
+      name: "Utilization Management Assist",
+      line: "Your intelligent front door for utilization management and prior authorization",
+      ask: "I need help with a prior authorization request, a clinical review, a missing record, or a peer-to-peer.",
+      intake: ["Auth Request Intake: Capture and classify authorization requests from providers, facilities and members", "Coverage & Eligibility Check: Confirm member eligibility, benefits, authorization requirements and urgency", "Clinical Criteria Lookup: Retrieve clinical criteria, medical policies and prior authorization history", "Case Summary: Create an initial case summary and route to the right clinician or team"],
+      steps: ["Understand request", "Enrich and validate context", "Route to best agent", "Orchestrate actions", "Monitor compliance", "Synthesize and deliver response"]
+    },
+    agents: [
+      ["Auth Intake & Triage Agent", ["Receive requests by fax, portal and phone", "Identify services needing authorization", "Triage by urgency and type", "Route to the right review team", "Flag incomplete submissions"]],
+      ["Clinical Criteria Review Agent", ["Match clinical information to criteria", "Summarize supporting documentation", "Highlight met and unmet criteria", "Prepare cases for clinician review", "Note applicable medical policies"]],
+      ["Medical Record Retrieval Agent", ["Request records from providers", "Extract relevant clinical details", "Track outstanding record requests", "Organize documents in the case file"]],
+      ["Concurrent Review Agent", ["Track inpatient admissions and stays", "Review ongoing need for continued stay", "Monitor length of stay against guidelines", "Prepare concurrent review summaries", "Flag discharge planning needs"]],
+      ["Peer-to-Peer Scheduling Agent", ["Schedule physician discussions", "Prepare case summaries for medical directors", "Coordinate availability across parties", "Track call outcomes", "Document peer-to-peer results"]],
+      ["Determination Letters Agent", ["Draft approval and denial notices", "Include required rights and language", "Tailor letters to member and provider", "Check content against regulatory rules", "Track letter delivery"]],
+      ["Timeliness Monitoring Agent", ["Track decision deadlines by case", "Alert reviewers to approaching limits", "Monitor turnaround performance", "Prepare compliance reports", "Flag cases at risk of delay"]],
+      ["Care Transitions Agent", ["Identify members leaving the hospital", "Link members to case management", "Coordinate post-acute service approvals", "Track follow-up care needs", "Support safe discharge planning"]]
+    ],
+    governance: ["Agent catalog (discover, reuse, manage agents)", "Approval workflows (review and approve actions and changes)", "Audit logging (traceability for actions and decisions)", "Clinician Final Decision", "Regulatory Timelines"],
+    systems: ["Microsoft 365", "UM / Auth Platform", "Clinical Guidelines", "Claims & Eligibility", "Provider Portals", "EHR Exchange"],
+    humans: ["UM Nurses", "Medical Directors", "Pharmacy Reviewers", "Providers", "Appeals Team", "Compliance"],
+    outcomes: ["Faster Determinations", "Consistent Criteria", "On-Time Compliance", "Less Provider Friction", "More Reviewer Capacity"],
+    principles: ["Secure by design", "Governed by policy", "Built for trust", "Focused on people", "Delivered at scale", "Faster decisions with clinicians in charge"]
+  },
+  network: {
+    image: 'assets/provider-network-management-operations-room-agentic-team.webp',
+    width: 1536,
+    height: 1024,
+    title: "Provider Network Management Operations Room",
+    subtitle: "AI-powered provider data, credentialing and contracting for adequate, accurate networks.",
+    alt: "Architecture diagram of the Provider Network Management Operations Room. A request enters an intake and discovery flow of provider request intake, contract & status check, directory & data lookup, case summary. Provider Network Assist, the front door, understands the request, enriches and validates context, routes it to the best agent, orchestrates actions, monitors compliance, and synthesizes and delivers the response. Eight specialized sub-agents sit below: Provider Onboarding, Credentialing, Directory Accuracy, Contract & Rates, Network Adequacy, Provider Inquiries, Performance & Quality, and Dispute Coordination. A governance control plane and shared platform services and integrations sit underneath, with human escalation to network managers, credentialing specialists, contract negotiators, provider relations, legal, and compliance, and outcomes that matter on the right: faster onboarding, accurate directories, stronger network adequacy, fewer provider disputes, lower admin burden.",
+    assist: {
+      name: "Provider Network Assist",
+      line: "Your intelligent front door for provider network management",
+      ask: "I need help with a provider onboarding, a credentialing status, a directory error, or a contract rate question.",
+      intake: ["Provider Request Intake: Capture and classify requests from providers, facilities, contracting and network teams", "Contract & Status Check: Confirm provider status, contract terms, credentialing state and network participation", "Directory & Data Lookup: Retrieve provider records, directory data, contracts and prior correspondence", "Case Summary: Create an initial summary and route to the right agent or team"],
+      steps: ["Understand request", "Enrich and validate context", "Route to best agent", "Orchestrate actions", "Monitor compliance", "Synthesize and deliver response"]
+    },
+    agents: [
+      ["Provider Onboarding Agent", ["Collect provider onboarding documents", "Verify required application information", "Track onboarding steps by provider", "Coordinate system and contract setup", "Notify providers of next steps"]],
+      ["Credentialing Agent", ["Verify licenses and board certifications", "Check sanctions and exclusion lists", "Track credentialing committee readiness", "Monitor expiring credentials", "Maintain primary source verification"]],
+      ["Directory Accuracy Agent", ["Validate provider demographics and locations", "Compare directory data across sources", "Flag outdated phone and address details", "Prepare provider data attestations", "Track corrections to completion"]],
+      ["Contract & Rates Agent", ["Retrieve contract terms and amendments", "Compare rates to fee schedules", "Track negotiation requests", "Monitor renewal and termination dates", "Flag configuration mismatches"]],
+      ["Network Adequacy Agent", ["Compare provider access to standards", "Identify specialty and geographic gaps", "Map member locations to providers", "Support regulator network filings", "Recommend recruitment priorities"]],
+      ["Provider Inquiries Agent", ["Answer provider policy and billing questions", "Explain contract and participation details", "Route issues to the right team", "Track inquiry resolution"]],
+      ["Performance & Quality Agent", ["Compile provider quality and cost metrics", "Review performance against benchmarks", "Prepare provider scorecards", "Identify improvement opportunities", "Support value-based contract reviews"]],
+      ["Dispute Coordination Agent", ["Assemble dispute records and contracts", "Track dispute status and deadlines", "Coordinate with claims and legal teams", "Summarize positions for review", "Document dispute resolutions"]]
+    ],
+    governance: ["Agent catalog (discover, reuse, manage agents)", "Approval workflows (review and approve actions and changes)", "Audit logging (traceability for actions and decisions)", "Credentialing Compliance", "Contract Controls", "Regulatory Attestation"],
+    systems: ["Microsoft 365", "Provider Data Management", "Credentialing Systems", "Contract Management", "Claims Systems", "CRM"],
+    humans: ["Network Managers", "Credentialing Specialists", "Contract Negotiators", "Provider Relations", "Legal", "Compliance"],
+    outcomes: ["Faster Onboarding", "Accurate Directories", "Stronger Network Adequacy", "Fewer Provider Disputes", "Lower Admin Burden"],
+    principles: ["Secure by design", "Governed by policy", "Built for trust", "Focused on people", "Delivered at scale", "Building networks members can count on"]
+  },
+  member: {
+    image: 'assets/member-services-experience-operations-room-agentic-team.webp',
+    width: 1536,
+    height: 1024,
+    title: "Member Services & Experience Operations Room",
+    subtitle: "AI-powered member support, benefits guidance and proactive engagement.",
+    alt: "Architecture diagram of the Member Services & Experience Operations Room. A request enters an intake and discovery flow of member inquiry intake, identity & plan check, benefits & claims lookup, case summary. Member Services Assist, the front door, understands the request, enriches and validates context, routes it to the best agent, orchestrates actions, monitors compliance, and synthesizes and delivers the response. Eight specialized sub-agents sit below: Benefits Explanation, Claim Status, ID Cards & Enrollment, Provider Search, Care Navigation, Complaint Routing, Proactive Outreach, and Call Summary & Follow-Up. A governance control plane and shared platform services and integrations sit underneath, with human escalation to member service reps, nurse line, care managers, appeals & grievances, supervisors, and privacy office, and outcomes that matter on the right: faster resolution, first-contact resolution, higher member satisfaction, lower handle time, better retention.",
+    assist: {
+      name: "Member Services Assist",
+      line: "Your intelligent front door for health plan member services and experience",
+      ask: "I need help understanding my benefits, checking a claim, replacing my ID card, or finding a doctor.",
+      intake: ["Member Inquiry Intake: Capture and classify inquiries from members, caregivers and advocates across phone, chat and portal", "Identity & Plan Check: Verify member identity, enrollment status, plan type and coverage dates", "Benefits & Claims Lookup: Retrieve benefits, claims, authorizations and prior interaction history", "Case Summary: Create an initial case summary and route to the right agent or team"],
+      steps: ["Understand request", "Enrich and validate context", "Route to best agent", "Orchestrate actions", "Monitor compliance", "Synthesize and deliver response"]
+    },
+    agents: [
+      ["Benefits Explanation Agent", ["Explain covered services in plain language", "Describe copays, deductibles and limits", "Clarify in-network and out-of-network costs", "Answer plan-specific benefit questions", "Summarize accumulator balances"]],
+      ["Claim Status Agent", ["Look up claim status for members", "Explain how claims were processed", "Clarify what members owe", "Route disputed claims for review"]],
+      ["ID Cards & Enrollment Agent", ["Request and reissue member ID cards", "Answer enrollment and effective date questions", "Support changes in coverage", "Guide members through open enrollment", "Confirm dependent and household details"]],
+      ["Provider Search Agent", ["Find in-network providers and facilities", "Filter by specialty, location and language", "Confirm provider network status", "Suggest nearby alternatives", "Share accurate directory information"]],
+      ["Care Navigation Agent", ["Connect members to care management", "Help members find needed services", "Explain referral and authorization steps", "Identify social and access barriers", "Schedule follow-up outreach"]],
+      ["Complaint Routing Agent", ["Classify complaints and grievances", "Route issues to the right team", "Track response timelines", "Document member concerns accurately", "Escalate urgent or sensitive cases"]],
+      ["Proactive Outreach Agent", ["Identify members for timely outreach", "Send reminders for preventive care", "Share renewal and enrollment notices", "Prepare outreach scripts and messages", "Track member responses"]],
+      ["Call Summary & Follow-Up Agent", ["Summarize member calls and chats", "Capture commitments and next steps", "Create follow-up tasks", "Update member records accurately", "Share summaries with care teams"]]
+    ],
+    governance: ["Agent catalog (discover, reuse, manage agents)", "Approval workflows (review and approve actions and changes)", "Audit logging (traceability for actions and decisions)", "Member Privacy", "Identity Verification", "Script Controls"],
+    systems: ["Microsoft 365", "Contact Center CRM", "Enrollment & Eligibility", "Claims Systems", "Provider Directory", "Member Portal"],
+    humans: ["Member Service Reps", "Nurse Line", "Care Managers", "Appeals & Grievances", "Supervisors", "Privacy Office"],
+    outcomes: ["Faster Resolution", "First-Contact Resolution", "Higher Member Satisfaction", "Lower Handle Time", "Better Retention"],
+    principles: ["Secure by design", "Governed by policy", "Built for trust", "Focused on people", "Delivered at scale", "Making every member interaction easier"]
+  },
+  raq: {
+    image: 'assets/risk-adjustment-quality-operations-room-agentic-team.webp',
+    width: 1536,
+    height: 1024,
+    title: "Risk Adjustment & Quality Operations Room",
+    subtitle: "AI-powered Stars, HEDIS and risk adjustment accuracy with audit-ready evidence.",
+    alt: "Architecture diagram of the Risk Adjustment & Quality Operations Room. A request enters an intake and discovery flow of gap or chart request, member & measure check, records & evidence lookup, case summary. Risk Adjustment & Quality Assist, the front door, understands the request, enriches and validates context, routes it to the best agent, orchestrates actions, monitors compliance, and synthesizes and delivers the response. Eight specialized sub-agents sit below: HCC Coding Support, Chart Retrieval, HEDIS Gap Closure, Stars Measure Tracking, Provider Outreach, Medical Record Review, Audit Readiness, and Supplemental Data. A governance control plane and shared platform services and integrations sit underneath, with human escalation to certified coders, quality nurses, provider reps, medical directors, compliance, and quality leaders, and outcomes that matter on the right: accurate risk scores, closed care gaps, stronger quality performance, audit-ready documentation, less chart chase.",
+    assist: {
+      name: "Risk Adjustment & Quality Assist",
+      line: "Your intelligent front door for risk adjustment and quality",
+      ask: "I need help with a care gap, a chart retrieval, a risk adjustment review, or an audit request.",
+      intake: ["Gap or Chart Request: Capture and classify gap, chart and audit requests from quality, coding and provider teams", "Member & Measure Check: Identify the member, quality measure, program year and documentation requirements", "Records & Evidence Lookup: Retrieve medical records, claims, supplemental data and measure specifications", "Case Summary: Create an initial case summary and route to the right agent or team"],
+      steps: ["Understand request", "Enrich and validate context", "Route to best agent", "Orchestrate actions", "Monitor compliance", "Synthesize and deliver response"]
+    },
+    agents: [
+      ["HCC Coding Support Agent", ["Review documentation for supported diagnoses", "Identify possible missed conditions", "Check coding against guidelines", "Prepare queries for provider clarification", "Track coding accuracy findings"]],
+      ["Chart Retrieval Agent", ["Identify charts needed for review", "Request records from provider offices", "Track retrieval status and follow-ups", "Organize received records by member", "Report on retrieval completion"]],
+      ["HEDIS Gap Closure Agent", ["Identify members with open quality gaps", "Prioritize gaps by measure and member", "Coordinate outreach for screenings", "Verify gap closure from claims and records", "Track measure performance by provider"]],
+      ["Stars Measure Tracking Agent", ["Monitor performance on Stars measures", "Project year-end measure results", "Identify measures needing attention", "Compare results to prior years", "Prepare leadership performance updates"]],
+      ["Provider Outreach Agent", ["Share gap lists with provider practices", "Prepare provider-specific measure summaries", "Coordinate documentation education", "Track practice engagement", "Schedule follow-up with practices"]],
+      ["Medical Record Review Agent", ["Read charts for relevant clinical evidence", "Extract supporting documentation", "Confirm diagnoses meet requirements", "Flag unsupported coding", "Record review findings"]],
+      ["Audit Readiness Agent", ["Assemble documentation for validation audits", "Track audit requests and deadlines", "Identify documentation weaknesses", "Prepare corrective action plans", "Maintain audit-ready evidence"]],
+      ["Supplemental Data Agent", ["Ingest lab and clinical data feeds", "Reconcile data with claims", "Validate data against measure specifications", "Track supplemental data submissions", "Flag data quality issues"]]
+    ],
+    governance: ["Agent catalog (discover, reuse, manage agents)", "Approval workflows (review and approve actions and changes)", "Audit logging (traceability for actions and decisions)", "Coding Compliance", "Audit Evidence", "PHI Minimum Necessary"],
+    systems: ["Microsoft 365", "Claims & Encounter Data", "EHR / HIE Feeds", "Quality Platform", "Chart Retrieval", "Analytics"],
+    humans: ["Certified Coders", "Quality Nurses", "Provider Reps", "Medical Directors", "Compliance", "Quality Leaders"],
+    outcomes: ["Accurate Risk Scores", "Closed Care Gaps", "Stronger Quality Performance", "Audit-Ready Documentation", "Less Chart Chase"],
+    principles: ["Secure by design", "Governed by policy", "Built for trust", "Focused on people", "Delivered at scale", "Turning evidence into better outcomes"]
+  },
+  appeals: {
+    image: 'assets/appeals-grievances-operations-room-agentic-team.webp',
+    width: 1536,
+    height: 1024,
+    title: "Appeals & Grievances Operations Room",
+    subtitle: "AI-powered case intake, evidence assembly and timely resolution.",
+    alt: "Architecture diagram of the Appeals & Grievances Operations Room. A request enters an intake and discovery flow of appeal or grievance intake, type & timeliness check, case history lookup, case summary. Appeals & Grievances Assist, the front door, understands the request, enriches and validates context, routes it to the best agent, orchestrates actions, monitors compliance, and synthesizes and delivers the response. Eight specialized sub-agents sit below: Case Classification, Evidence Assembly, Timeline Tracking, Clinical Review Prep, Resolution Letters, Member Communication, Trend Analysis, and External Review Coordination. A governance control plane and shared platform services and integrations sit underneath, with human escalation to appeals analysts, medical directors, legal, compliance, member advocates, and operations leaders, and outcomes that matter on the right: faster resolution, on-time compliance, clearer communication, root-cause insight, less case prep time.",
+    assist: {
+      name: "Appeals & Grievances Assist",
+      line: "Your intelligent front door for appeals and grievances",
+      ask: "I need help with a member appeal, a grievance, a case deadline, or an external review.",
+      intake: ["Appeal or Grievance Intake: Capture and classify appeals and grievances from members, providers and representatives", "Type & Timeliness Check: Determine case type, filing timeliness, member eligibility and applicable requirements", "Case History Lookup: Retrieve original decisions, claim and authorization records and prior case history", "Case Summary: Create an initial case summary and route to the right agent or team"],
+      steps: ["Understand request", "Enrich and validate context", "Route to best agent", "Orchestrate actions", "Monitor compliance", "Synthesize and deliver response"]
+    },
+    agents: [
+      ["Case Classification Agent", ["Distinguish appeals from grievances", "Identify standard and expedited cases", "Apply the correct regulatory pathway", "Route cases to the right unit", "Confirm valid filing and representation"]],
+      ["Evidence Assembly Agent", ["Gather original decision documents", "Collect medical records and policy language", "Organize evidence by issue", "Identify missing information", "Build complete case files"]],
+      ["Timeline Tracking Agent", ["Calculate case deadlines", "Alert staff to approaching due dates", "Track extensions and notifications", "Monitor timeliness by case", "Prepare compliance timeliness reports"]],
+      ["Clinical Review Prep Agent", ["Summarize clinical history for reviewers", "Match facts to coverage criteria", "Highlight key points in the record", "Prepare questions for medical directors", "Organize materials for physician review"]],
+      ["Resolution Letters Agent", ["Draft decision and acknowledgment letters", "Include required notices and rights", "Explain outcomes in plain language", "Check letters against regulatory rules", "Track letter delivery"]],
+      ["Member Communication Agent", ["Update members on case status", "Explain next steps and options", "Respond to member questions", "Document all member contacts", "Tailor communication by language"]],
+      ["Trend Analysis Agent", ["Identify recurring appeal and grievance causes", "Track overturn rates by issue", "Compare patterns by provider and service", "Prepare quality committee reports", "Recommend process improvements"]],
+      ["External Review Coordination Agent", ["Prepare files for independent review", "Track external review submissions", "Monitor reviewer decisions and deadlines", "Coordinate implementation of overturned decisions", "Document outcomes for reporting"]]
+    ],
+    governance: ["Agent catalog (discover, reuse, manage agents)", "Approval workflows (review and approve actions and changes)", "Audit logging (traceability for actions and decisions)", "Regulatory Timeliness", "Human Decision Authority"],
+    systems: ["Microsoft 365", "Case Management", "Claims & Auth Systems", "Member Records", "Letter Generation", "Regulatory Reporting"],
+    humans: ["Appeals Analysts", "Medical Directors", "Legal", "Compliance", "Member Advocates", "Operations Leaders"],
+    outcomes: ["Faster Resolution", "On-Time Compliance", "Clearer Communication", "Root-Cause Insight", "Less Case Prep Time"],
+    principles: ["Secure by design", "Governed by policy", "Built for trust", "Focused on people", "Delivered at scale", "Resolving every case fairly and on time"]
+  },
+  integrity: {
+    image: 'assets/payment-integrity-fwa-operations-room-agentic-team.webp',
+    width: 1536,
+    height: 1024,
+    title: "Payment Integrity & FWA Operations Room",
+    subtitle: "AI-powered claim accuracy, fraud detection and recovery.",
+    alt: "Architecture diagram of the Payment Integrity & FWA Operations Room. A request enters an intake and discovery flow of lead or alert intake, risk & priority check, claims & provider lookup, case summary. Payment Integrity Assist, the front door, understands the request, enriches and validates context, routes it to the best agent, orchestrates actions, monitors compliance, and synthesizes and delivers the response. Eight specialized sub-agents sit below: Pre-Pay Review, Post-Pay Audit, Fraud Pattern Detection, Duplicate & Overpayment, Coding Validation, Recovery Management, SIU Case Support, and Provider Education. A governance control plane and shared platform services and integrations sit underneath, with human escalation to siu investigators, claims auditors, medical directors, legal, compliance, and provider relations, and outcomes that matter on the right: fewer improper payments, faster recoveries, stronger fraud detection, fewer false positives, audit-ready cases.",
+    assist: {
+      name: "Payment Integrity Assist",
+      line: "Your intelligent front door for payment integrity and fraud, waste and abuse",
+      ask: "I need help with a suspicious claim, an overpayment, a coding question, or a recovery case.",
+      intake: ["Lead or Alert Intake: Capture and classify leads, alerts and tips from claims, audit, compliance and external sources", "Risk & Priority Check: Gauge financial risk, provider history and priority for investigation", "Claims & Provider Lookup: Retrieve claims, provider profiles, contract terms and prior investigation records", "Case Summary: Create an initial case summary and route to the right agent or team"],
+      steps: ["Understand request", "Enrich and validate context", "Route to best agent", "Orchestrate actions", "Monitor compliance", "Synthesize and deliver response"]
+    },
+    agents: [
+      ["Pre-Pay Review Agent", ["Review claims before payment", "Flag likely billing errors", "Check claims against coverage and contracts", "Hold claims for further review", "Document pre-payment findings"]],
+      ["Post-Pay Audit Agent", ["Select claims for retrospective audit", "Compare payments to documentation", "Identify payment errors", "Calculate overpayment amounts", "Prepare audit findings"]],
+      ["Fraud Pattern Detection Agent", ["Spot unusual billing patterns", "Compare providers against their peers", "Flag suspicious service combinations", "Identify patterns across members", "Prioritize leads for investigation"]],
+      ["Duplicate & Overpayment Agent", ["Find duplicate claim payments", "Identify payments after coverage ended", "Detect incorrect fee schedule pricing", "Flag payments to excluded providers", "Quantify recoverable amounts"]],
+      ["Coding Validation Agent", ["Check procedure and diagnosis coding", "Detect unbundling and upcoding", "Review modifier and place-of-service use", "Compare coding to medical records", "Identify coding education needs"]],
+      ["Recovery Management Agent", ["Generate provider overpayment notices", "Track recovery requests and responses", "Monitor refunds and offsets", "Reconcile recovered dollars", "Report recovery performance"]],
+      ["SIU Case Support Agent", ["Organize evidence for investigations", "Build provider and claim timelines", "Prepare case documentation", "Track referrals to law enforcement", "Support regulatory fraud reporting"]],
+      ["Provider Education Agent", ["Share common billing error findings", "Prepare provider-specific education", "Explain correct coding and billing", "Track provider follow-up", "Reduce repeat billing errors"]]
+    ],
+    governance: ["Agent catalog (discover, reuse, manage agents)", "Approval workflows (review and approve actions and changes)", "Audit logging (traceability for actions and decisions)", "Fraud Controls", "SIU Oversight", "Evidence Chain"],
+    systems: ["Microsoft 365", "Claims Systems", "Fraud Analytics", "Provider Data", "Recovery Systems", "Analytics"],
+    humans: ["SIU Investigators", "Claims Auditors", "Medical Directors", "Legal", "Compliance", "Provider Relations"],
+    outcomes: ["Fewer Improper Payments", "Faster Recoveries", "Stronger Fraud Detection", "Fewer False Positives", "Audit-Ready Cases"],
+    principles: ["Secure by design", "Governed by policy", "Built for trust", "Focused on people", "Delivered at scale", "Protecting dollars so care stays affordable"]
+  },
+  reg: {
+    image: 'assets/regulatory-government-programs-operations-room-agentic-team.webp',
+    width: 1536,
+    height: 1024,
+    title: "Regulatory & Government Programs Operations Room",
+    subtitle: "AI-powered compliance for Medicare, Medicaid and ACA programs.",
+    alt: "Architecture diagram of the Regulatory & Government Programs Operations Room. A request enters an intake and discovery flow of regulatory request intake, program & deadline check, policy & contract lookup, case summary. Regulatory Assist, the front door, understands the request, enriches and validates context, routes it to the best agent, orchestrates actions, monitors compliance, and synthesizes and delivers the response. Eight specialized sub-agents sit below: Regulatory Change Monitoring, CMS & State Reporting, Audit Response, Contract Compliance, Materials Review, Network Filings, Corrective Action Tracking, and Policy Attestation. A governance control plane and shared platform services and integrations sit underneath, with human escalation to compliance officers, legal, government program leaders, privacy, operations, and executive leaders, and outcomes that matter on the right: timely filings, audit readiness, fewer compliance gaps, faster regulatory response, clear accountability.",
+    assist: {
+      name: "Regulatory Assist",
+      line: "Your intelligent front door for regulatory and government programs compliance",
+      ask: "I need help with a new CMS requirement, a state report, an audit response, or a marketing material review.",
+      intake: ["Regulatory Request Intake: Capture and classify requests from compliance, operations, legal and program teams", "Program & Deadline Check: Identify the program, regulation, filing requirement and applicable deadline", "Policy & Contract Lookup: Retrieve regulatory guidance, state and federal contracts, and prior filings", "Case Summary: Create an initial summary and route to the right agent or team"],
+      steps: ["Understand request", "Enrich and validate context", "Route to best agent", "Orchestrate actions", "Monitor compliance", "Synthesize and deliver response"]
+    },
+    agents: [
+      ["Regulatory Change Monitoring Agent", ["Track new CMS and state guidance", "Summarize changes in plain language", "Identify affected policies and processes", "Assign follow-up to business owners", "Maintain a regulatory change log"]],
+      ["CMS & State Reporting Agent", ["Build calendars of required reports", "Compile data for scheduled submissions", "Check reports against specifications", "Track submission and confirmation", "Flag late or missing reports"]],
+      ["Audit Response Agent", ["Organize documents for program audits", "Draft responses to audit requests", "Track audit timelines and findings", "Coordinate evidence from departments", "Monitor audit remediation"]],
+      ["Contract Compliance Agent", ["Compare operations to contract requirements", "Track contract deliverables and deadlines", "Flag potential compliance gaps", "Summarize state contract obligations", "Support readiness reviews"]],
+      ["Materials Review Agent", ["Review marketing and member materials", "Check content against CMS and state rules", "Track submission and approval status", "Flag required disclaimers and language", "Maintain version history"]],
+      ["Network Filings Agent", ["Prepare provider network submissions", "Check network data against requirements", "Track filing deadlines and approvals", "Document network adequacy support", "Coordinate corrections with regulators"]],
+      ["Corrective Action Tracking Agent", ["Log findings and corrective actions", "Assign owners and due dates", "Track progress to closure", "Verify evidence of completion", "Report status to compliance leadership"]],
+      ["Policy Attestation Agent", ["Track required annual attestations", "Send reminders to responsible staff", "Collect and file signed attestations", "Maintain policy versions and approvals", "Report completion status"]]
+    ],
+    governance: ["Agent catalog (discover, reuse, manage agents)", "Approval workflows (review and approve actions and changes)", "Audit logging (traceability for actions and decisions)", "Regulatory Attestation", "Source Traceability", "Human Sign-Off"],
+    systems: ["Microsoft 365", "Compliance Management", "Policy Repository", "Claims & Enrollment Data", "Regulator Portals", "Document Management"],
+    humans: ["Compliance Officers", "Legal", "Government Program Leaders", "Privacy", "Operations", "Executive Leaders"],
+    outcomes: ["Timely Filings", "Audit Readiness", "Fewer Compliance Gaps", "Faster Regulatory Response", "Clear Accountability"],
+    principles: ["Secure by design", "Governed by policy", "Built for trust", "Focused on people", "Delivered at scale", "Staying ready for every regulator"]
   }
 };
