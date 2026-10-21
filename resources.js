@@ -1,5 +1,15 @@
 window.HAIN_RESOURCES = [
   {
+    id: 'ca',
+    title: 'Copilot Academy',
+    kind: 'Guided learning',
+    icon: 'cap',
+    url: 'https://support.microsoft.com/en-us/microsoft-365-copilot/copilot-academy-guided-learning-for-microsoft-365-copilot',
+    desc: 'The central learning hub for getting started with Microsoft 365 Copilot: short courses, videos and real-world scenarios in guided learning paths, in Viva Learning on the web or in Microsoft Teams. Take the courses in any order.',
+    inside: ['Get started with Copilot', 'Copilot in Word, Excel, PowerPoint, Teams, Outlook, OneDrive and SharePoint', 'Pre-built agents such as Researcher and Analyst', 'Role-based paths for Communications, Customer service, Executives, Finance, HR, IT, Legal, Marketing, Operations and Sales', 'Progress tracking, bookmarks and shareable course links', 'Admins can tailor content for their teams'],
+    kw: 'copilot academy microsoft 365 copilot getting started beginner guided learning viva learning courses videos learning paths role-based prompting agents researcher analyst word excel powerpoint teams outlook onedrive sharepoint adoption training'
+  },
+  {
     id: 'yt',
     title: 'Microsoft Healthcare AI BPS video library',
     kind: 'Demo videos',
