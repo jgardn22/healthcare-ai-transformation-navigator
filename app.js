@@ -828,6 +828,22 @@
     const TEAMS = window.HAIN_TEAMS || {};
     let current = TEAMS.finance ? 'finance' : LOBS[0].id;
     let variant = 0;
+    const PICK_KEY = 'hain-tm-lobs';
+    const ALL_IDS = LOBS.map((l) => l.id);
+    let picked = null;
+    try {
+      const raw = JSON.parse(localStorage.getItem(PICK_KEY) || 'null');
+      if (Array.isArray(raw)) {
+        const ok = raw.filter((id) => lobById.has(id));
+        picked = ok.length && ok.length < ALL_IDS.length ? new Set(ok) : null;
+      }
+    } catch (e) {}
+    const isOn = (id) => !picked || picked.has(id);
+    const shownLobs = () => LOBS.filter((l) => isOn(l.id));
+    const savePicked = () => {
+      try { if (picked) localStorage.setItem(PICK_KEY, JSON.stringify([...picked])); else localStorage.removeItem(PICK_KEY); } catch (e) {}
+    };
+    if (!isOn(current) && shownLobs().length) current = shownLobs()[0].id;
     const hasTeam = (id) => Object.prototype.hasOwnProperty.call(TEAMS, id);
     const teamsFor = (id) => (hasTeam(id) ? [].concat(TEAMS[id]) : []);
     const chips = (items) => `<div class="tm-chips">${items.map((x) => `<span>${esc(x)}</span>`).join('')}</div>`;
@@ -837,16 +853,22 @@
         <button type="button" class="domain-tab" role="radio" data-id="${l.id}" aria-checked="${l.id === current}" tabindex="${l.id === current ? 0 : -1}">
           <span class="ico" aria-hidden="true">${l.icon}</span><span class="nm">${esc(l.name)}</span>${hasTeam(l.id) ? '<span class="tm-badge" title="Architecture diagram available">Diagram</span>' : ''}
         </button>`;
-      listEl.innerHTML = GROUPS.map((g) => {
-        const items = LOBS.filter((l) => l.t === g.key);
+      const shown = shownLobs();
+      listEl.innerHTML = shown.length ? GROUPS.map((g) => {
+        const items = shown.filter((l) => l.t === g.key);
         return items.length ? `<p class="dg-label" role="presentation">${g.label}</p>` + items.map(row).join('') : '';
-      }).join('');
+      }).join('') : '<p class="tm-none">No lines selected. Use Choose lines to show to pick at least one.</p>';
       selEl.innerHTML = GROUPS.map((g) => {
-        const items = LOBS.filter((l) => l.t === g.key);
+        const items = shown.filter((l) => l.t === g.key);
         return items.length ? `<optgroup label="${g.label}">${items.map((l) => `<option value="${l.id}">${esc(l.name)}${hasTeam(l.id) ? ' (diagram)' : ''}</option>`).join('')}</optgroup>` : '';
       }).join('');
-      selEl.value = current;
-      $('#tmCount').textContent = `${LOBS.length} lines`;
+      selEl.disabled = !shown.length;
+      if (shown.length) selEl.value = current;
+      $('#tmCount').textContent = picked ? `${shown.length} of ${LOBS.length}` : `${LOBS.length} lines`;
+      const sum = $('#tmPickSum');
+      if (sum) sum.textContent = picked ? `${shown.length} of ${LOBS.length}` : 'All';
+      const pb = $('#tmPickBtn');
+      if (pb) pb.classList.toggle('on', !!picked);
     }
 
     function howCards(lob, team) {
@@ -876,6 +898,10 @@
     }
 
     function renderPanel() {
+      if (!shownLobs().length) {
+        panel.innerHTML = '<div class="tm-empty glass"><p>No lines of business are selected.</p><p><button type="button" class="btn small primary" data-act="pick-all">Show all lines</button></p></div>';
+        return;
+      }
       const lob = LOBS.find((l) => l.id === current);
       const variants = teamsFor(current);
       const team = variants.length ? variants[Math.min(variant, variants.length - 1)] : null;
@@ -931,7 +957,76 @@
     });
     selEl.addEventListener('change', () => select(selEl.value));
 
+    const pickBtn = $('#tmPickBtn');
+    const pickPanel = $('#tmPickPanel');
+    const pickList = $('#tmPickList');
+    const pickSearch = $('#tmPickSearch');
+
+    function matching(groupKey) {
+      const q = pickSearch.value.trim().toLowerCase();
+      return LOBS.filter((l) => (!groupKey || l.t === groupKey) && (!q || l.name.toLowerCase().indexOf(q) !== -1));
+    }
+
+    function renderPicker() {
+      const top = pickList.scrollTop;
+      const focusId = document.activeElement && pickList.contains(document.activeElement) ? (document.activeElement.dataset.id || ('g' + document.activeElement.dataset.g)) : null;
+      pickList.innerHTML = GROUPS.map((g) => {
+        const items = matching(g.key);
+        if (!items.length) return '';
+        const allOn = items.every((l) => isOn(l.id));
+        return `<div class="tm-pick-group"><div class="tm-pick-gh"><span class="dg-label">${g.label}</span><button type="button" class="tm-link" data-g="${g.key}">${allOn ? 'Clear' : 'Select all'}</button></div>`
+          + items.map((l) => `<label class="tm-pick-row"><input type="checkbox" data-id="${l.id}"${isOn(l.id) ? ' checked' : ''}><span class="ico" aria-hidden="true">${l.icon}</span><span class="nm">${esc(l.name)}</span></label>`).join('')
+          + '</div>';
+      }).join('') || '<p class="tm-none">No lines match your filter.</p>';
+      pickList.scrollTop = top;
+      if (focusId) {
+        const el = focusId.indexOf('g') === 0 && !lobById.has(focusId) ? $('[data-g="' + focusId.slice(1) + '"]', pickList) : $('input[data-id="' + focusId + '"]', pickList);
+        if (el) el.focus();
+      }
+    }
+
+    function commitPick() {
+      if (picked && picked.size === ALL_IDS.length) picked = null;
+      savePicked();
+      if (!isOn(current) && shownLobs().length) { current = shownLobs()[0].id; variant = 0; }
+      renderList();
+      renderPanel();
+      renderPicker();
+    }
+
+    function setPick(ids, on) {
+      if (!picked) picked = new Set(ALL_IDS);
+      ids.forEach((id) => { if (on) picked.add(id); else picked.delete(id); });
+      commitPick();
+    }
+
+    function setPicking(on) {
+      pickPanel.hidden = !on;
+      listEl.hidden = on;
+      selEl.hidden = on;
+      pickBtn.setAttribute('aria-expanded', String(on));
+      if (on) { renderPicker(); pickSearch.focus(); } else { pickSearch.value = ''; pickBtn.focus(); }
+    }
+
+    pickBtn.addEventListener('click', () => setPicking(pickPanel.hidden));
+    $('#tmPickDone').addEventListener('click', () => setPicking(false));
+    $('#tmPickAll').addEventListener('click', () => setPick(matching().map((l) => l.id), true));
+    $('#tmPickNone').addEventListener('click', () => setPick(matching().map((l) => l.id), false));
+    pickSearch.addEventListener('input', renderPicker);
+    pickPanel.addEventListener('keydown', (e) => { if (e.key === 'Escape') { e.preventDefault(); setPicking(false); } });
+    pickList.addEventListener('change', (e) => {
+      const cb = e.target.closest('input[data-id]');
+      if (cb) setPick([cb.dataset.id], cb.checked);
+    });
+    pickList.addEventListener('click', (e) => {
+      const g = e.target.closest('button[data-g]');
+      if (!g) return;
+      const items = matching(g.dataset.g);
+      setPick(items.map((l) => l.id), !items.every((l) => isOn(l.id)));
+    });
+
     panel.addEventListener('click', (e) => {
+      if (e.target.closest('[data-act="pick-all"]')) { picked = null; commitPick(); return; }
       const vb = e.target.closest('[data-act="variant"]');
       if (vb) {
         variant = Number(vb.dataset.i);
