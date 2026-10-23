@@ -30,6 +30,16 @@ window.HAIN_RESOURCES = [
     kw: 'ai skills navigator microsoft learn training courses curriculum career skills credentials certification learning partner instructor-led labs videos role learning path'
   },
   {
+    id: 'cred',
+    title: 'Microsoft Credentials',
+    kind: 'Certifications',
+    icon: 'badge',
+    url: 'https://learn.microsoft.com/en-us/credentials/',
+    desc: 'Earn Microsoft-verified credentials to show your skills: role-based Certifications for AI, cloud, security and business roles, and lab-based Applied Skills for real-world scenarios. New credentials for business professionals help you lead with AI.',
+    inside: ['Certifications from Fundamentals to Associate, Expert and Specialty', 'Applied Skills earned through short, on-demand, lab-based assessments', 'New credentials for business professionals', 'Browse by Microsoft product or job role', 'Renew eligible Certifications annually at no cost', 'Share your credential on LinkedIn'],
+    kw: 'microsoft credentials certifications certification applied skills exam microsoft learn fundamentals associate expert specialty role-based badge career ai cloud security business professionals linkedin renew'
+  },
+  {
     id: 'da',
     title: 'Digital Accelerator',
     kind: 'Guided program',
