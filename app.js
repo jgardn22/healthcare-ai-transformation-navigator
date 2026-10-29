@@ -460,7 +460,7 @@
       });
     });
 
-    (window.HAIN_CATALOG || []).forEach((c) => {
+    [].concat(window.HAIN_CATALOG || [], window.HAIN_AIBAST || []).forEach((c) => {
       const lobs = c[6].filter((id) => lobById.has(id));
       if (!lobs.length) return;
       const tracks = new Set(lobs.map((id) => lobTrack(lobById.get(id))));
