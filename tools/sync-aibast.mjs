@@ -25,6 +25,10 @@ const OUT = path.join(ROOT, 'aibast.js');
 const INDEX = path.join(ROOT, 'index.html');
 const INDUSTRY = /health/i;
 
+/* Permanent exclusion: never publish Dynamics 365 Business Central agents (owner decision, Oct 30, 2026). */
+const EXCLUDE = /business central/i;
+const isExcluded = (...parts) => parts.some((p) => EXCLUDE.test(String(p || '')));
+
 /* lobs use the Navigator line-of-business ids; impacts use capture, cash, cost, risk, experience, capacity */
 const PLACEMENT = {
   'patient-intake': { lobs: ['access', 'ambulatory'], impacts: ['capacity', 'experience'] },
@@ -37,16 +41,13 @@ const PLACEMENT = {
 const FP_PLACEMENT = {
   'sales-development-agent': { lobs: ['growth'], impacts: ['capture', 'capacity'] },
   'customer-intent-agent-voice': { lobs: ['access', 'member'], impacts: ['experience', 'capacity'] },
-  'quality-management-agent': { lobs: ['access', 'member'], impacts: ['risk', 'experience'] },
-  'expense-agent-business-central': { lobs: ['finance'], impacts: ['cost', 'capacity'] },
-  'sales-order-agent': { lobs: ['growth', 'supply'], impacts: ['capture', 'capacity'] },
-  'payables-agent': { lobs: ['finance'], impacts: ['cash', 'cost'] }
+  'quality-management-agent': { lobs: ['access', 'member'], impacts: ['risk', 'experience'] }
 };
 const FP_PRODUCT_LOBS = [
   [/sales|agent 365/i, ['growth']],
   [/customer service|contact center/i, ['access', 'member']],
   [/supply chain/i, ['supply']],
-  [/finance|business central/i, ['finance']],
+  [/finance/i, ['finance']],
   [/project operations/i, ['pmo']]
 ];
 
@@ -119,6 +120,7 @@ const catalog = (await getJson('solutions/catalog.json')).solutions || {};
 
 const agents = (registry.agents || []).filter((a) => {
   const s = a._solution || {};
+  if (isExcluded(a.name, a.display_name, s.advertised_name, (s.featured_tools || []).join(' '), (s.agent_requirements || []).join(' '))) return false;
   return INDUSTRY.test(a.category || '') || (s.industries || []).some((i) => INDUSTRY.test(i));
 }).sort((a, b) => ((a._solution || {}).slot || 999) - ((b._solution || {}).slot || 999) || a.name.localeCompare(b.name));
 
@@ -153,7 +155,7 @@ for (const a of agents) {
 /* ---- first-party agents ---- */
 const firstParty = await getJson('first_party.json');
 const catalogRows = loadCatalogRows();
-const fpNew = (firstParty.agents || []).filter((a) => !alreadyInCatalog(a, catalogRows));
+const fpNew = (firstParty.agents || []).filter((a) => !isExcluded(a.id, a.name, a.product) && !alreadyInCatalog(a, catalogRows));
 for (const a of fpNew) {
   const fixed = FP_PLACEMENT[a.id];
   const byProduct = FP_PRODUCT_LOBS.find(([re]) => re.test(a.product));
