@@ -597,6 +597,13 @@
   });
 
   const ex = { aud: 'all', pats: new Set(), ims: new Set(), lob: 'all', q: '', shown: PAGE_SIZE };
+  let viewRows = [];
+  let viewMulti = false;
+  let viewPatCounts = [];
+  let renderedN = 0;
+  let lastPat = -1;
+  let sentinelIO = null;
+  const sentinelEl = $('#ucSentinel');
   const imEl = $('#impactFilter');
   const lobListEl = $('#domainTabs');
   const lobSelectEl = $('#lobSelect');
@@ -672,18 +679,32 @@
     const d = dispPat(u);
     const extra = u.ps.filter((n) => n !== d);
     const trackTag = ex.aud === 'all' ? `<span class="uc-track tr-${u.track}">${TRACK_LABEL[u.track]}</span>` : '';
+    const detail = agents.length || u.output
+      ? `<div class="uc-detail">
+          ${agents.length ? `<div class="uc-agents"><em>Named agents in the Executive Guide</em><ul>${agents.map((a) => `<li><strong>${esc(a.n)}</strong>${a.d ? `<span>${esc(a.d)}</span>` : ''}</li>`).join('')}</ul></div>` : ''}
+          ${u.output ? `<p><b>Output.</b> ${esc(u.output)}</p><p><b>Human review.</b> ${esc(u.review)}</p>` : ''}
+        </div>` : '';
     return `
       <article class="uc s${d + 1}">
         <div class="uc-top"><span class="uc-pat">Pattern ${d + 1} \u00B7 ${esc(STAGES[d].short)}</span>${trackTag}</div>
         ${extra.length ? `<p class="uc-also">Also fits ${extra.map((n) => `<b class="s${n + 1}">Pattern ${n + 1}</b>`).join(' ')}</p>` : ''}
-        <h4>${esc(u.title)}</h4>
+        <h4><button type="button" class="uc-toggle" aria-expanded="false">${esc(u.title)}</button></h4>
         <p class="uc-sub">${esc(u.sub)}${ex.lob === 'all' && u.kind !== 'overview' ? ` <span class="uc-lob">\u00B7 ${esc(lobLabel)}</span>` : ''}</p>
         <p class="uc-desc">${esc(u.desc)}</p>
-        ${agents.length ? `<div class="uc-agents"><em>Named agents in the Executive Guide</em><ul>${agents.map((a) => `<li><strong>${esc(a.n)}</strong>${a.d ? `<span>${esc(a.d)}</span>` : ''}</li>`).join('')}</ul></div>` : ''}
-        ${u.output ? `<details class="uc-more"><summary>Output and human review</summary><p><b>Output.</b> ${esc(u.output)}</p><p><b>Human review.</b> ${esc(u.review)}</p></details>` : ''}
+        ${detail}
         <div class="uc-impact"><em>Impact</em>${u.im.map((k) => { const i = IMPACT_BY_KEY.get(k); return `<b class="${ex.ims.has(k) ? 'on' : ''}" title="${esc(i.def)}"><span aria-hidden="true">${i.icon}</span>${esc(i.label)}</b>`; }).join('')}</div>
         <div class="uc-foot"><span class="uc-tools"><em>Products</em>${u.tools.map((t) => `<i>${esc(t)}</i>`).join('')}</span><span class="uc-src${u.kind !== 'overview' ? ' sourced' : ''}">${esc(u.src)}</span></div>
+        <div class="uc-cue" aria-hidden="true"><span class="uc-cue-t">Show details</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></div>
       </article>`;
+  }
+
+  function setOpen(card, on) {
+    card.classList.toggle('open', on);
+    const b = $('.uc-toggle', card);
+    if (b) b.setAttribute('aria-expanded', String(on));
+    const t = $('.uc-cue-t', card);
+    if (t) t.textContent = on ? 'Show less' : 'Show details';
+    if (on) card.scrollIntoView({ block: 'nearest', behavior: reduceMotion ? 'auto' : 'smooth' });
   }
 
   function summaryText(n) {
@@ -696,30 +717,66 @@
   }
 
   function renderResults(resetScroll) {
-    const rows = USE_CASES.filter((u) => audOk(u) && patOk(u) && lobOk(u) && qOk(u) && imOk(u))
+    viewRows = USE_CASES.filter((u) => audOk(u) && patOk(u) && lobOk(u) && qOk(u) && imOk(u))
       .sort((a, b) => dispPat(a) - dispPat(b) || lobOrder.get(a.lob) - lobOrder.get(b.lob) || a.seq - b.seq);
-    const shown = rows.slice(0, ex.shown);
     const patCounts = STAGES.map(() => 0);
-    rows.forEach((u) => { patCounts[dispPat(u)] += 1; });
-    const multi = patCounts.filter(Boolean).length > 1;
-    let html = '';
-    let prev = -1;
-    shown.forEach((u) => {
-      const d = dispPat(u);
-      if (multi && d !== prev) {
-        html += `<h3 class="uc-group s${d + 1}"><b>Pattern ${d + 1}</b><span>${esc(STAGES[d].name)}</span><em>${patCounts[d]} use case${patCounts[d] === 1 ? '' : 's'}</em></h3>`;
-        prev = d;
-      }
-      html += cardHTML(u);
-    });
-    gridEl.innerHTML = rows.length ? html : `<div class="uc-empty"><p><strong>No use cases match these filters.</strong></p><p>Try a different line of business, or clear the search.</p><button type="button" class="btn small ghost" data-act="reset">Reset filters</button></div>`;
-    moreBtn.hidden = shown.length >= rows.length;
-    moreBtn.textContent = `Show ${Math.min(PAGE_SIZE, rows.length - shown.length)} more (${rows.length - shown.length} remaining)`;
-    $('#resultCount').innerHTML = `<strong>${rows.length}</strong> use case${rows.length === 1 ? '' : 's'}`;
-    $('#resultSummary').textContent = summaryText(rows.length);
+    viewRows.forEach((u) => { patCounts[dispPat(u)] += 1; });
+    viewMulti = patCounts.filter(Boolean).length > 1;
+    viewPatCounts = patCounts;
+    renderedN = 0;
+    lastPat = -1;
+    gridEl.innerHTML = '';
+    if (viewRows.length) appendCards();
+    else gridEl.innerHTML = `<div class="uc-empty"><p><strong>No use cases match these filters.</strong></p><p>Try a different line of business, or clear the search.</p><button type="button" class="btn small ghost" data-act="reset">Reset filters</button></div>`;
+    updateMore();
+    $('#resultCount').innerHTML = `<strong>${viewRows.length}</strong> use case${viewRows.length === 1 ? '' : 's'}`;
+    $('#resultSummary').textContent = summaryText(viewRows.length);
     const dirty = ex.aud !== 'all' || ex.pats.size || ex.ims.size || ex.lob !== 'all' || ex.q;
     $('#clearFilters').hidden = !dirty;
-    if (resetScroll) scrollEl.scrollTop = 0;
+    if (resetScroll) {
+      const bar = $('.ex-bar');
+      const navH = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--nav-h')) || 64;
+      if (bar && bar.getBoundingClientRect().top < navH + 10) bar.scrollIntoView({ block: 'start', behavior: 'instant' });
+    }
+    watchSentinel();
+  }
+
+  function appendCards() {
+    const end = Math.min(ex.shown, viewRows.length);
+    let html = '';
+    for (let i = renderedN; i < end; i++) {
+      const u = viewRows[i];
+      const d = dispPat(u);
+      if (viewMulti && d !== lastPat) {
+        html += `<h3 class="uc-group s${d + 1}"><b>Pattern ${d + 1}</b><span>${esc(STAGES[d].name)}</span><em>${viewPatCounts[d]} use case${viewPatCounts[d] === 1 ? '' : 's'}</em></h3>`;
+      }
+      lastPat = d;
+      html += cardHTML(u);
+    }
+    if (html) gridEl.insertAdjacentHTML('beforeend', html);
+    renderedN = end;
+  }
+
+  function updateMore() {
+    const left = viewRows.length - renderedN;
+    moreBtn.hidden = left <= 0;
+    moreBtn.textContent = `Show ${Math.min(PAGE_SIZE, left)} more`;
+    const showing = $('#ucShowing');
+    if (showing) showing.textContent = !viewRows.length ? '' : left > 0 ? `Showing ${renderedN} of ${viewRows.length}. More load as you scroll.` : `All ${viewRows.length} use cases shown.`;
+  }
+
+  function loadMore() {
+    if (renderedN >= viewRows.length) return;
+    ex.shown = renderedN + PAGE_SIZE;
+    appendCards();
+    updateMore();
+    watchSentinel();
+  }
+
+  function watchSentinel() {
+    if (!sentinelIO) return;
+    sentinelIO.unobserve(sentinelEl);
+    sentinelIO.observe(sentinelEl);
   }
 
   function refresh(opts = {}) {
@@ -798,7 +855,11 @@
       clearTimeout(timer);
       timer = setTimeout(() => { ex.q = searchEl.value.trim().toLowerCase(); ex.shown = PAGE_SIZE; refresh(); }, 160);
     });
-    moreBtn.addEventListener('click', () => { ex.shown += PAGE_SIZE; renderResults(false); });
+    moreBtn.addEventListener('click', loadMore);
+    if ('IntersectionObserver' in window && sentinelEl) {
+      sentinelIO = new IntersectionObserver((entries) => { if (entries.some((en) => en.isIntersecting)) loadMore(); }, { rootMargin: '0px 0px 900px 0px' });
+      watchSentinel();
+    }
     $('#clearFilters').addEventListener('click', resetFilters);
     $('#jumpFilters').addEventListener('click', () => {
       const f = $('.ex-filters');
@@ -806,7 +867,23 @@
       const q = $('#ucSearch');
       if (q) setTimeout(() => q.focus({ preventScroll: true }), reduceMotion ? 0 : 450);
     });
-    gridEl.addEventListener('click', (e) => { if (e.target.closest('[data-act="reset"]')) resetFilters(); });
+    gridEl.addEventListener('click', (e) => {
+      if (e.target.closest('[data-act="reset"]')) { resetFilters(); return; }
+      const card = e.target.closest('.uc');
+      if (!card || e.target.closest('a, summary, input, select, textarea')) return;
+      const isOpen = card.classList.contains('open');
+      if (isOpen && !e.target.closest('.uc-toggle, .uc-cue')) return;
+      if (!isOpen && window.getSelection && String(window.getSelection()).length) return;
+      setOpen(card, !isOpen);
+    });
+    gridEl.addEventListener('keydown', (e) => {
+      if (e.key !== 'Escape') return;
+      const card = e.target.closest('.uc.open');
+      if (!card) return;
+      setOpen(card, false);
+      const b = $('.uc-toggle', card);
+      if (b) b.focus();
+    });
     refresh();
   }
 
