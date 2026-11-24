@@ -34,7 +34,8 @@ const PLACEMENT = {
   'patient-intake': { lobs: ['access', 'ambulatory'], impacts: ['capacity', 'experience'] },
   'care-gap-closure': { lobs: ['poph', 'raq'], impacts: ['capture', 'experience'] },
   'clinical-notes-summarizer': { lobs: ['ambulatory', 'acute', 'periop'], impacts: ['capacity', 'risk'] },
-  'prior-authorization': { lobs: ['um', 'access', 'revenue'], impacts: ['cash', 'capacity'] }
+  'prior-authorization': { lobs: ['um', 'access', 'revenue'], impacts: ['cash', 'capacity'] },
+  'tiered-huddle-board': { lobs: ['nursing', 'acute', 'quality'], impacts: ['capacity', 'risk'] }
 };
 
 /* First-party agents: placement by library id, otherwise by product family (see FP_PRODUCT_LOBS). */
