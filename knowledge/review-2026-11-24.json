@@ -1,0 +1,76 @@
+{
+  "reviewedAt": "2026-11-24",
+  "kind": "initial full baseline refresh",
+  "candidates": [
+    {
+      "change": "Retain Copilot Cowork for reviewed multi-step deliverables.",
+      "sourceUrl": "https://learn.microsoft.com/copilot/cowork/cowork-admin-governance",
+      "sourceDate": null,
+      "decision": "included",
+      "reason": "Official Learn explicitly says Cowork is generally available. No billing, access or compliance claims copied."
+    },
+    {
+      "change": "Keep Agent Builder knowledge retrieval ahead of action-oriented builds.",
+      "sourceUrl": "https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/agent-builder",
+      "sourceDate": null,
+      "decision": "included",
+      "reason": "Official overview documents focused knowledge assistants and says external-service actions are not authored in Agent Builder."
+    },
+    {
+      "change": "Prefer a deterministic flow or structured app before an agent.",
+      "sourceUrl": "https://learn.microsoft.com/en-us/power-automate/flow-types",
+      "sourceDate": null,
+      "decision": "included",
+      "reason": "Cloud flows handle defined workflows; preview generative actions excluded. Decision order is owner-supplied."
+    },
+    {
+      "change": "Include agent evaluation as a step before expanding responsibilities.",
+      "sourceUrl": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/whats-new",
+      "sourceDate": "2026-03",
+      "decision": "included",
+      "reason": "Agent evaluations explicitly GA in March 2026. No preview custom metrics promoted."
+    },
+    {
+      "change": "Use the current Foundry Agent Service overview for custom engineering.",
+      "sourceUrl": "https://learn.microsoft.com/en-us/azure/foundry/agents/overview",
+      "sourceDate": null,
+      "decision": "included",
+      "reason": "Current official platform guidance. Does not imply GA for every agent type, model or tool."
+    },
+    {
+      "change": "Native Copilot Studio connection to Foundry.",
+      "sourceUrl": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-add-other-agents",
+      "sourceDate": "2026-11-12",
+      "decision": "excluded",
+      "reason": "Latest Learn explicitly marks Foundry, Fabric and Agents SDK connections as preview. Generic hybrid decision step retained without this recommendation."
+    },
+    {
+      "change": "Autopilot and preview-only integrations.",
+      "sourceUrl": "https://learn.microsoft.com/en-us/copilot/autopilot/overview",
+      "sourceDate": null,
+      "decision": "excluded",
+      "reason": "Official discovery identified Frontier documentation; no verified GA evidence for this refresh."
+    },
+    {
+      "change": "Cowork local Edge browser tasks.",
+      "sourceUrl": "https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes",
+      "sourceDate": "2026-11-17",
+      "decision": "not added",
+      "reason": "GA release notes support the capability, but the existing reviewed-deliverable path does not need a new browser feature claim."
+    },
+    {
+      "change": "Legacy Business Apps/Cowork/report-derived shelves and library demos.",
+      "sourceUrl": "https://microsoft.github.io/aibast-agents-library",
+      "sourceDate": null,
+      "decision": "excluded pending evidence",
+      "reason": "Legacy lifecycle labels and report provenance are not capability-level official GA evidence. Upstream audit found 24 pending candidates; none auto-published."
+    },
+    {
+      "change": "Foundry What's new and Power Platform release-plan index links.",
+      "sourceUrl": "https://learn.microsoft.com/en-us/azure/foundry/whats-new-foundry",
+      "sourceDate": "2026-10-30",
+      "decision": "corrected source manifest",
+      "reason": "Guessed Foundry /whats-new URL was 404. Power Platform release-plan index redirects to a 2025 wave 2 archive; labeled historical, not current."
+    }
+  ]
+}

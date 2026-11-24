@@ -1,0 +1,26 @@
+{
+  "sources": [
+    { "id": "m365", "url": "https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-overview" },
+    { "id": "m365-release", "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes" },
+    { "id": "cowork", "url": "https://learn.microsoft.com/copilot/cowork/use-cowork" },
+    { "id": "cowork-admin", "url": "https://learn.microsoft.com/copilot/cowork/cowork-admin-governance" },
+    { "id": "agent-builder", "url": "https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/agent-builder" },
+    { "id": "sharepoint", "url": "https://learn.microsoft.com/en-us/sharepoint/manage-access-agents-in-sharepoint" },
+    { "id": "power-automate", "url": "https://learn.microsoft.com/en-us/power-automate/flow-types" },
+    { "id": "power-apps", "url": "https://learn.microsoft.com/en-us/power-apps/maker/canvas-apps/working-with-flows" },
+    { "id": "power-platform-plans-archive", "url": "https://learn.microsoft.com/en-us/previous-versions/power-platform/release-plan/2025wave2/", "use": "Historical GA evidence only. The former release-plan index redirects to this archive; not a current-release source." },
+    { "id": "studio", "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/fundamentals-what-is-copilot-studio" },
+    { "id": "studio-new", "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/whats-new" },
+    { "id": "studio-evaluation", "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/analytics-agent-evaluation-overview" },
+    { "id": "studio-connected", "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-add-other-agents" },
+    { "id": "foundry", "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/overview" },
+    { "id": "foundry-new", "url": "https://learn.microsoft.com/en-us/azure/foundry/whats-new-foundry" },
+    { "id": "healthcare", "url": "https://learn.microsoft.com/en-us/industry/healthcare/overview" },
+    { "id": "healthcare-new", "url": "https://learn.microsoft.com/en-us/industry/healthcare/whats-new" },
+    { "id": "m365-blog", "url": "https://www.microsoft.com/en-us/microsoft-365/blog/" },
+    { "id": "power-platform-blog", "url": "https://www.microsoft.com/en-us/power-platform/blog/" },
+    { "id": "trust", "url": "https://www.microsoft.com/en-us/trust-center" },
+    { "id": "estimator", "url": "https://microsoft.github.io/copilot-studio-estimator/" },
+    { "id": "roadmap", "url": "https://www.microsoft.com/en-us/microsoft-365/roadmap", "use": "Confirm explicit GA only. Never use estimated dates, upcoming features or disappearance from the roadmap as GA evidence." }
+  ]
+}

@@ -13,8 +13,8 @@
   const STAGES = [
     {
       short: 'Assistants',
-      name: 'Humans Working with AI Assistants',
-      anchor: 'Microsoft 365 Copilot, Dragon Copilot',
+      name: 'Draft, summarize and find information',
+      anchor: 'Microsoft 365 Copilot, Agent Builder, SharePoint agents',
       tag: 'Humans perform the work. AI helps.',
       desc: 'The user remains the primary worker. AI supports each task on request, and the person reviews and decides.',
       assists: ['Drafting', 'Summarization', 'Analysis', 'Information retrieval', 'Content generation'],
@@ -25,11 +25,11 @@
         'Summarizing long Teams threads and meetings for care-team huddles',
         'Drafting policy communications and patient-education materials for review',
         'Analyzing staffing and volume trends in Excel',
-        'Ambient clinical documentation and point-of-care guidance with Dragon Copilot',
+        'Finding approved onboarding and policy information with a focused knowledge assistant',
         'Triaging and replying to a heavy Outlook inbox',
         'Drafting procedures, board materials, and presentations'
       ],
-      tech: ['Microsoft 365 Copilot', 'Dragon Copilot', 'Outlook', 'Teams', 'Word', 'Excel', 'PowerPoint'],
+      tech: ['Microsoft 365 Copilot', 'Agent Builder', 'SharePoint agents', 'Outlook', 'Teams', 'Word', 'Excel', 'PowerPoint'],
       value: 'Broad individual productivity, less time spent drafting and searching, and lower cognitive load. Value depends on adoption and skills.',
       role: 'Practitioner with an assistant',
       aiRole: 'Assistant, on request',
@@ -38,8 +38,8 @@
     },
     {
       short: 'Delegation',
-      name: 'Humans Delegating to AI Teammates',
-      anchor: 'Copilot Cowork, Microsoft Autopilot',
+      name: 'Delegate a deliverable, then review it',
+      anchor: 'Copilot Cowork',
       tag: 'Humans own outcomes. AI completes assigned work.',
       desc: 'People delegate complete projects and outcomes to AI, then review, refine, and approve the result.',
       assists: ['Research', 'Analysis', 'Document creation', 'Information gathering', 'Project execution'],
@@ -52,10 +52,10 @@
         'Strategic analysis of quality, access, or margin trends',
         'Audit and accreditation evidence packages',
         'Project status and decision packages',
-        'An always-on agent that tracks follow-ups, deadlines and recurring issues, and tells the owner what needs attention'
+        'A draft work handoff with source references and unresolved questions'
       ],
-      tech: ['Copilot Cowork', 'Microsoft Autopilot', 'Researcher and Analyst agents', 'Microsoft 365 Copilot', 'Work IQ', 'Microsoft Graph'],
-      value: 'The unit of value moves from minutes saved to hours or days of finished work returned, so leaders review more and draft less.',
+      tech: ['Copilot Cowork'],
+      value: 'Measure the quality of the reviewed deliverable and the effort needed to prepare it, rather than assuming a time saving.',
       role: 'Manager of AI contributors',
       aiRole: 'Contributor owning assigned work',
       humans: 'Setting the outcome, reviewing the result and deciding what happens next.',
@@ -63,14 +63,14 @@
     },
     {
       short: 'Agentic teams',
-      name: 'Agentic Teams Executing Business Processes',
+      name: 'Coordinate a process with clear approvals',
       anchor: 'Copilot Studio',
-      tag: 'Agent teams execute business processes while humans govern.',
-      desc: 'Multiple agents coordinate work autonomously. Humans define goals, policies, approvals, and governance.',
+      tag: 'Start with one agent. Add specialists only when needed.',
+      desc: 'An agent can combine approved knowledge and configured tools. People define its boundaries, review results and approve consequential actions.',
       assists: ['Orchestration', 'Tool use across systems', 'Exception handling', 'Continuous monitoring'],
-      what: 'Specialized agents, coordinated by an orchestrator, run a business process end to end inside policy guardrails, and hand off to people for exceptions and approvals.',
+      what: 'A configured agent answers questions and uses tools to carry out defined work. A team of specialists is an optional design when one agent cannot meet the requirement.',
       owner: 'Agents execute the steps. Humans own goals, policies, exceptions, and accountability.',
-      participates: 'Orchestration, actions across systems, decisions within defined thresholds, escalation to people, and continuous monitoring.',
+      participates: 'Knowledge retrieval, configured tool calls and handoff to people. Test the exact tools, permissions and exception paths before deployment.',
       uses: [
         'Clinical operations coordination such as bed flow and discharge readiness, with clinician oversight',
         'Revenue cycle automation: eligibility, prior authorization, denials',
@@ -79,8 +79,8 @@
         'Finance operations: reconciliations and close support',
         'Legal assist and compliance triage'
       ],
-      tech: ['Copilot Studio', 'Multi-agent orchestration', 'Microsoft Foundry', 'Power Automate', 'Dataverse', 'Entra, Purview, and Defender', 'Agent governance and identity'],
-      value: 'Process-level redesign: shorter cycle times, higher service levels, extended coverage, and people redeployed to higher-value work. Requires governance maturity.',
+      tech: ['Copilot Studio', 'Power Automate', 'Dataverse'],
+      value: 'Evaluate cycle time, rework and successful handoffs against a baseline. A more complex agent design is not automatically a better result.',
       role: 'Governor of agent teams',
       aiRole: 'Agent team running the process',
       humans: 'Goals, policy, approvals and the exceptions that need real expertise.',
@@ -88,49 +88,49 @@
     },
     {
       short: 'In the app',
-      name: 'AI Inside Business Applications',
-      anchor: 'Dynamics 365, Power Platform',
-      tag: 'AI helps users inside the systems they already use.',
-      desc: 'Users interact with business applications. AI enhances workflows, recommendations, insights, and automation directly inside the application experience.',
-      assists: ['Recommendations', 'Insights', 'Automation', 'Predictions'],
-      what: 'AI capabilities built directly into line-of-business and clinical applications, so intelligence appears on the screen where the work already happens.',
+      name: 'Keep structured work in an app or workflow',
+      anchor: 'Power Automate, Power Apps',
+      tag: 'Use defined rules before adding an agent.',
+      desc: 'An app can collect structured information and a workflow can route it for review. Known steps may not need AI.',
+      assists: ['Structured intake', 'Routing', 'Approvals', 'Notifications'],
+      what: 'A canvas app and cloud flow give staff a place to submit, review and act on structured work. Check existing application features before building.',
       owner: 'The application user and the process owner. The application defines the workflow.',
-      participates: 'Inside the application: suggestions, predictions, auto-completion, anomaly flags, and automated steps.',
+      participates: 'Through explicitly configured steps and rules. Add AI only where a stated requirement needs it.',
       uses: [
-        'Case summaries and suggested replies in Dynamics 365 Customer Service',
-        'Predictive work orders and scheduling in Field Service',
-        'Natural-language insight in Power BI',
-        'Low-code apps with AI actions in Power Apps',
-        'Exception handling in ERP and finance workflows'
+        'Routing an intake request to its reviewer',
+        'A structured queue for claims or invoice exceptions',
+        'An app for educator review of competency assessments',
+        'Approval and notification steps with a named owner',
+        'Tracking work status without an autonomous agent'
       ],
-      tech: ['Dynamics 365', 'Power Apps', 'Power BI', 'Power Automate', 'Azure AI services'],
-      value: 'Fast time to value with limited change management, because people stay in familiar tools. Better consistency, fewer clicks, and cleaner data.',
+      tech: ['Power Automate', 'Power Apps'],
+      value: 'Measure completion, errors and rework. A straightforward app or flow may meet the outcome with less ongoing complexity.',
       role: 'Application user',
-      aiRole: 'Intelligence inside the app',
+      aiRole: 'Optional assistance inside defined steps',
       humans: 'The work on screen, with clinical and business judgment at the decision.',
-      aiTakes: 'Data entry, summaries, suggestions and clean-up inside the application.'
+      aiTakes: 'Only the tasks explicitly configured for AI; deterministic steps stay in the workflow.'
     },
     {
       short: 'Custom build',
-      name: 'Custom AI Built by Professional Developers',
-      anchor: 'GitHub Copilot, Microsoft Foundry, Visual Studio Code',
-      filterName: 'GitHub Copilot, Microsoft Foundry',
+      name: 'Engineer what simpler tools cannot cover',
+      anchor: 'Microsoft Foundry',
+      filterName: 'Microsoft Foundry',
       tag: 'Developers build what off-the-shelf products do not cover.',
       desc: 'Professional developers use code-first Microsoft tools to build custom AI applications and agents, and to modernize the software behind them.',
       assists: ['Coding', 'Debugging', 'Testing', 'Modernization', 'Retrieval and grounding', 'Safety controls'],
-      what: 'AI solutions engineered in code: GitHub Copilot speeds the build, and Microsoft Foundry, search, MCP and safety services run the solution.',
+      what: 'An engineered agent experience using Foundry Agent Service when custom logic, model selection or integration requirements rule out a simpler approach.',
       owner: 'The engineering team owns design, testing, security and operations. Business owners set requirements and accept the result.',
       participates: 'In the developer\u2019s workflow, writing and testing code, and inside the finished solution as models, agents and retrieval.',
       uses: [
         'Modernizing older claims, scheduling and interface code',
         'Policy and guideline assistants with cited answers',
         'Multi-agent apps across clinical, financial and operational systems, with approval gates',
-        'Controlled agent access to Azure resources through MCP',
+        'Controlled tool access with explicit permissions',
         'Safety checks on patient-facing and member-facing AI apps',
         'Model evaluation on de-identified samples'
       ],
-      tech: ['GitHub Copilot', 'Microsoft Foundry', 'VS Code', 'Azure MCP Server', 'Azure AI Search', 'Foundry Models', 'Semantic Kernel', 'Agent Framework', 'AI Toolkit', 'Content Safety'],
-      value: 'Fit and control over experience, logic, data and IP, at enterprise scale. The trade-off is engineering effort and long-term ownership.',
+      tech: ['Microsoft Foundry'],
+      value: 'Custom fit where it is required. The trade-off is engineering effort, evaluation and long-term operational ownership.',
       role: 'Builder and owner of the solution',
       aiRole: 'Developer assistant, and the engine inside the custom solution',
       humans: 'Architecture, security, testing, release, and accountability for the running solution.',
@@ -138,119 +138,45 @@
     }
   ];
 
-  /* Lines of business. l = the first four pattern narratives (illustrative); ag = agents named in the AI Apps & Agents Executive Guide. */
+  /* Lines of business shared by the Explorer and illustrative team diagrams. */
   const LOBS = [
-    {id:"exec",name:"Executive & Strategy",icon:"🧭",t:"b",
-     l:["Executives use Microsoft 365 Copilot to summarize meetings, draft leadership updates, and prepare for partner conversations.", "A chief of staff delegates a board packet, a strategy pre-read, or an evidence-linked decision brief to AI, then reviews and approves it.", "Reporting and escalation agents keep leadership metrics consistent and route cross-functional exceptions to the right owner within set guardrails.", "Power BI and Dynamics 365 put narrative insight and anomaly flags directly into the dashboards and reviews leaders already open."],
-     ag:[{"n": "Executive Reporting & KPI Consistency Agent", "t": "both"}, {"n": "Enterprise Exception & Escalation Orchestrator", "t": "both"}]},
-    {id:"finance",name:"Finance & Planning",icon:"📊",t:"b",
-     l:["Analysts use Excel and Word Copilot to explore variances, draft commentary, and prepare budget narratives.", "A finance leader delegates close tracking, budget consolidation, or a forecast refresh and reconciliation, then reviews and signs off.", "Agents monitor budget variance, coordinate reconciliations and accruals, and surface cost opportunities, with controllers approving postings and exceptions.", "Dynamics 365 Finance and Power BI embed anomaly detection, forecasting, and variance insight in reporting and approval flows."],
-     ag:[{"n": "Budget Variance & Forecast Agent", "t": "provider"}, {"n": "Margin Recovery & Cost-Opportunity Agent", "t": "both"}]},
-    {id:"hr",name:"HR & Workforce",icon:"👥",t:"b",
-     l:["HR partners use Copilot to draft job descriptions, summarize engagement feedback, and prepare manager guidance.", "An HR leader delegates onboarding coordination packs, aggregate workforce planning, or benefits communications, then reviews the results.", "HR service, onboarding, and scheduling-exception agents resolve routine requests and hand sensitive cases to people.", "HR and workforce applications embed AI for case routing, suggested answers, and onboarding task automation."],
-     ag:[{"n": "Employee HR Self-Service Agent", "t": "both", "d": "Pay, PTO, and benefits for 100% of staff"}, {"n": "Onboarding Orchestration Agent", "t": "both", "d": "Every new hire, across every department"}, {"n": "Staff Scheduling Exception Agent", "t": "provider"}, {"n": "Training & Policy Assistant", "t": "both", "d": "Org-wide training and policy answers"}, {"n": "Learning & Competency Path Agent", "t": "both", "d": "Mandatory training for all staff"}, {"n": "Leave & Absence Management Agent", "t": "both", "d": "Every employee's leave requests"}, {"n": "Occupational Health & Workers Comp Q&A Agent", "t": "both", "d": "Safety and injury questions for all staff"}, {"n": "Performance Review Assistant Agent", "t": "both", "d": "Every employee and manager, annually"}]},
-    {id:"legal",name:"Legal, Risk & Compliance",icon:"⚖️",t:"b",
-     l:["Legal and compliance staff use Copilot to summarize contracts, compare policy versions, and draft first-pass language for review.", "Counsel delegates an evidence inventory, a policy revision reconciliation, or a regulatory submission package, then validates the output.", "Policy question-and-answer and legal-assist agents answer routine questions and triage intake, with attorneys approving every material decision.", "Embedded controls and insights in data and productivity platforms highlight risk, policy matches, and anomalies in context."],
-     ag:[{"n": "Policy & Procedure Q&A Agent", "t": "both", "d": "Trusted policy answers across the whole org"}]},
-    {id:"it",name:"IT, Data & Digital Operations",icon:"🖥️",t:"b",
-     l:["Engineers use Copilot to summarize incidents, draft runbooks and communications, and analyze logs and reports.", "A technology leader delegates incident record reviews, implementation status reconciliation, or continuity document refreshes.", "Service desk, identity lifecycle, and downtime-communication agents resolve common requests, with human approval for production changes.", "Service and monitoring tools embed AI for ticket summaries, suggested fixes, and incident correlation."],
-     ag:[{"n": "IT Service Desk & Access Agent", "t": "both", "d": "Tickets, password resets, and access for every employee"}, {"n": "Identity & Access Lifecycle Agent", "t": "both", "d": "Hire, role change, and offboarding for all"}, {"n": "Downtime & Incident Communications Agent", "t": "both", "d": "Broadcasts to the entire workforce"}, {"n": "Application Support & Knowledge Retrieval Agent", "t": "both", "d": "Help for everyone who uses enterprise apps"}]},
-    {id:"supply",name:"Supply Chain & Procurement",icon:"📦",t:"b",
-     l:["Buyers use Copilot to summarize supplier messages, draft negotiation points, and analyze spend in Excel.", "A supply chain leader delegates sourcing evaluations, supplier performance reviews, or supply planning evidence packs.", "Agents watch shortage and supplier signals, propose substitutions and replenishment, and handle routine order exceptions inside approval thresholds.", "Dynamics 365 Supply Chain Management and Power BI surface demand signals, shortage risk, and suggested orders in context."],
-     ag:[{"n": "Supply Chain Shortage & Substitution Agent", "t": "provider"}]},
-    {id:"growth",name:"Marketing, Sales & Growth",icon:"📣",t:"b",
-     l:["Sellers and marketers use Copilot to research accounts, draft outreach and campaign copy, and summarize customer meetings.", "A growth leader delegates employer and partner account research, enrollment campaign readiness, or a proposal sign-off workbook.", "Referral growth and broker and group sales support agents prepare accounts, track follow-ups, and coordinate hand-offs, with people owning relationships.", "Dynamics 365 Sales and Customer Insights bring AI summaries, next-best actions, and pipeline risk into the seller and marketer workflow."],
-     ag:[{"n": "Physician Referral Growth Agent", "t": "provider"}, {"n": "Broker & Group Sales Support Agent", "t": "payer"}]},
-    {id:"pmo",name:"Project & Portfolio Management",icon:"🗂️",t:"b",
-     l:["Project managers use Copilot to summarize status threads, draft updates, and prepare steering materials.", "A PMO lead delegates demand balancing reviews, project initiation governance packs, or project baseline planning packs.", "Intake and prioritization agents score requests, track dependencies, and flag risk, with the PMO approving prioritization decisions.", "Project and Power Platform applications embed AI for risk flags, status roll-ups, and resource insights."],
-     ag:[{"n": "Project Intake & Prioritization Agent", "t": "provider"}]},
-    {id:"facilities",name:"Facilities & Asset Management",icon:"🏢",t:"b",
-     l:["Facilities leaders use Copilot to summarize service requests, draft vendor communications, and prepare operating reviews.", "A facilities manager delegates demand and capacity analysis, a service request dispatch board, or a deployment and closeout pack.", "Coordinated agents triage requests, schedule vendors, and track closeout against service levels, escalating exceptions to managers.", "Field Service and asset applications embed AI for scheduling, predictive maintenance signals, and work-order summaries."],
-     ag:[]},
-    {id:"poph",name:"Care & Population Health",icon:"🌐",t:"b",
-     l:["Care team members use Copilot to summarize patient or member history and draft outreach messages for review.", "A population health lead delegates contract performance reporting, community needs evidence, or a cohort outreach task register.", "Risk stratification and social-needs agents identify who needs outreach and match resources, with clinicians owning care decisions.", "Care management applications embed AI for risk insight, task prioritization, and outreach recommendations."],
-     ag:[{"n": "Population Risk Stratification Agent", "t": "payer"}, {"n": "SDOH Screening & Resource Matching Agent", "t": "provider"}]},
-    {id:"personal",name:"Personal Productivity",icon:"⚡",t:"b",
-     l:["Everyone uses Microsoft 365 Copilot to catch up on email and meetings, draft documents, and prepare for the day.", "A professional delegates a workday context briefing, a calendar conflict review, or an absence coverage handoff.", "An employee concierge agent answers common workplace questions and coordinates routine requests across systems.", "Copilot appears inside Outlook, Teams, Word, Excel, and PowerPoint, where the work already happens."],
-     ag:[{"n": "Employee Concierge Orchestrator", "t": "both"}]},
-    {id:"revenue",name:"Revenue Cycle",icon:"💳",t:"p",
-     l:["Billing specialists use Copilot to summarize payer correspondence, draft appeal letters, and analyze denial trends in Excel.", "A revenue integrity lead delegates an operating-review package, a receivables priority worklist, or cost-report support assembly.", "Payer follow-up agents work eligibility, status, and denial triage, escalating exceptions to specialists under defined rules.", "Workflow and finance applications flag likely errors, missing documentation, and next best actions in the work queue."],
-     ag:[{"n": "Payer Follow-Up Workbench", "t": "provider"}]},
-    {id:"access",name:"Patient Access & Contact Center",icon:"📞",t:"p",
-     l:["Access and contact center staff use Copilot to summarize patient history for handoff and draft clear replies for review.", "An access director delegates a service-request briefing, an approved-knowledge response pack, or a patient access operating review.", "A contact center self-service agent resolves common requests across channels and warm-hands complex or sensitive calls to people with context.", "Dynamics 365 Contact Center and Customer Service embed AI summaries, suggested responses, and scheduling guidance for agents."],
-     ag:[{"n": "Contact Center Self-Service Agent", "t": "provider"}]},
-    {id:"pxp",name:"Patient Experience & Digital Front Door",icon:"💬",t:"p",
-     l:["Experience teams use Copilot to summarize survey comments and draft patient communications for review.", "A patient experience leader delegates a patient feedback theme workbook and improvement briefs, then reviews the findings.", "Digital front door, wayfinding, and patient financial experience agents guide patients to the right next step across channels.", "Customer-facing applications embed AI for personalized guidance, case summaries, and sentiment cues."],
-     ag:[{"n": "Digital Front Door & Wayfinding Assistant", "t": "provider"}, {"n": "Patient Financial Experience Agent", "t": "provider"}]},
-    {id:"nursing",name:"Nursing Leadership",icon:"🩺",t:"p",
-     l:["Nurse managers use Copilot to summarize huddle threads, draft shift handoff notes, and prepare policy updates for review.", "A nurse leader delegates rounding follow-up reconciliation, a nursing standards narrative, or a nursing council pack.", "Scheduling-exception agents propose coverage options within policy, and managers approve changes and govern staffing rules.", "Clinical workflow applications bring summaries and prompts into the nursing and clinical workflow."],
-     ag:[{"n": "Staff Scheduling Exception Agent", "t": "provider"}]},
-    {id:"quality",name:"Quality & Patient Safety",icon:"✅",t:"p",
-     l:["Quality staff use Copilot to summarize event reports, compare standards, and draft improvement narratives for review.", "A quality leader delegates standards evidence navigation, survey preparation coordination, or an improvement project progress pack.", "Quality measure and regulatory reporting agents assemble evidence and flag gaps, with quality leaders owning submission decisions.", "Quality and safety applications embed AI for event trends, measure tracking, and evidence retrieval."],
-     ag:[{"n": "Quality Measure & Regulatory Reporting Agent", "t": "provider"}]},
-    {id:"acute",name:"Acute & Inpatient Care",icon:"🏥",t:"p",
-     l:["Care teams use Copilot to summarize huddles and draft handoff notes for review.", "A unit or service line leader delegates a patient-flow and staffing analysis to AI and reviews the brief.", "Inpatient progression agents watch for barriers to progress and discharge readiness and propose next actions, with clinicians approving and governing.", "Clinical applications bring summaries and prompts into the clinical workflow."],
-     ag:[{"n": "Inpatient Progression Agent", "t": "provider"}]},
-    {id:"ed",name:"Emergency Department Operations",icon:"🚑",t:"p",
-     l:["ED staff use Copilot to summarize shift handoffs and draft communications for review.", "An ED operations leader delegates a throughput and boarding analysis and a staffing recommendation brief.", "A throughput command center agent watches flow signals and proposes actions, with charge nurses and physicians deciding.", "Dashboards and clinical applications surface capacity and throughput signals in context."],
-     ag:[{"n": "ED Throughput Command Center Agent", "t": "provider"}]},
-    {id:"periop",name:"Perioperative & Surgical Services",icon:"🧑‍⚕️",t:"p",
-     l:["Periop leaders use Copilot to summarize scheduling threads and draft updates for review.", "A perioperative director delegates a block utilization analysis and a service line performance brief.", "Block utilization agents track release, fill, and scheduling gaps and propose changes, with surgical leaders approving them.", "Scheduling and analytics applications embed AI for utilization insight and case-time signals."],
-     ag:[{"n": "OR Block Utilization Agent", "t": "provider"}]},
-    {id:"ambulatory",name:"Ambulatory & Specialty Care Coordination",icon:"🗓️",t:"p",
-     l:["Care coordinators use Copilot to summarize referral history and draft patient outreach for review.", "A clinic or service line leader delegates a referral leakage analysis and a care gap follow-up brief.", "Referral, care gap, and oncology care coordination agents track open loops and prompt follow-up, with clinicians owning care decisions.", "Referral and scheduling applications embed AI summaries and next-best-action prompts."],
-     ag:[{"n": "Referral & Care Gaps Follow-Up Agent", "t": "provider"}, {"n": "Oncology Care Coordination Agent", "t": "provider"}]},
-    {id:"pharmacy",name:"Pharmacy Operations",icon:"💊",t:"p",
-     l:["Pharmacy staff use Copilot to summarize payer requirements and draft authorization documentation for review.", "A pharmacy leader delegates a drug shortage impact analysis and a utilization review brief.", "Prior authorization support agents assemble packets and track status, with pharmacists approving submissions.", "Pharmacy and supply applications embed AI for inventory signals and exception flags."],
-     ag:[{"n": "Pharmacy Prior Authorization Support Agent", "t": "provider"}]},
-    {id:"diagnostics",name:"Diagnostics & Imaging",icon:"🩻",t:"p",
-     l:["Scheduling staff use Copilot to summarize order details and draft patient instructions for review.", "An imaging leader delegates a capacity and no-show analysis and a scheduling improvement brief.", "Imaging scheduling optimization agents match orders to capacity and prompt rescheduling, with staff approving changes.", "Scheduling and analytics applications embed AI for utilization insight and reminders."],
-     ag:[{"n": "Imaging Scheduling Optimization Agent", "t": "provider"}]},
-    {id:"hah",name:"Hospital-at-Home & Remote Care",icon:"🏠",t:"p",
-     l:["Remote care staff use Copilot to summarize patient trends and draft check-in notes for review.", "A program leader delegates a program performance and escalation analysis and a staffing brief.", "Remote patient monitoring orchestrators triage alerts and coordinate visits and supplies, with clinicians deciding on care.", "Monitoring and care applications embed AI for alert prioritization and patient summaries."],
-     ag:[{"n": "Remote Patient Monitoring Orchestrator", "t": "provider"}]},
-    {id:"burnout",name:"Provider Experience & Burnout Reduction",icon:"🌿",t:"p",
-     l:["Clinicians use Copilot to summarize messages and draft routine replies for review.", "A clinical operations leader delegates a documentation burden analysis and a clinician experience brief.", "Ambient documentation and note drafting agents prepare notes for clinician review and signature.", "Clinical workflow applications bring documentation prompts and summaries into the clinical workflow, so notes are drafted where care happens."],
-     ag:[{"n": "Ambient Documentation & Note Drafting Agent", "t": "provider"}]},
-    {id:"safety",name:"Infection Prevention & Device Safety",icon:"🛡️",t:"p",
-     l:["Safety staff use Copilot to summarize event reports and draft notices for review.", "A safety leader delegates recall impact and surveillance trend reports for committee review.", "Infection surveillance and patient safety event and recall agents monitor signals and route alerts, with safety leaders owning response.", "Safety and asset applications embed AI for signal detection and event summaries."],
-     ag:[{"n": "Infection Surveillance & Outbreak Detection Agent", "t": "provider"}, {"n": "Patient Safety Event & Recall Agent", "t": "provider"}]},
-    {id:"research",name:"Clinical Trials & Research",icon:"🔬",t:"p",
-     l:["Research staff use Copilot to summarize protocols and draft grant narratives for review.", "A research administrator delegates grant package coordination and a study document collection inventory.", "Clinical research and trial matching agents screen records against criteria and surface candidates for coordinator review.", "Research and care applications embed AI summaries and matching signals."],
-     ag:[{"n": "Clinical Research & Trial Matching Agent", "t": "provider"}]},
-    {id:"gme",name:"Graduate Medical Education",icon:"🎓",t:"p",
-     l:["Program staff use Copilot to summarize applicant files and draft communications for review.", "A program director delegates recruitment review coordination and accreditation evidence preparation.", "Education coordination agents track evaluations and deadlines and prompt owners, with program leaders governing decisions.", "Education applications embed AI summaries and deadline tracking."],
-     ag:[]},
-    {id:"orch",name:"Cross-Enterprise Orchestration",icon:"🔗",t:"p",
-     l:["Process owners use Copilot to summarize cross-team threads and draft escalation notes.", "An operations executive delegates an automation opportunity scan or a cost-opportunity review across departments.", "Enterprise orchestrators route exceptions across departments and keep owners informed, within governance set by leaders.", "Process and workflow applications embed AI for exception detection and routing."],
-     ag:[{"n": "Enterprise Exception & Escalation Orchestrator", "t": "provider"}, {"n": "Automation Opportunity Finder", "t": "provider"}, {"n": "Employee Concierge Orchestrator", "t": "provider"}]},
-    {id:"actuarial",name:"Actuarial & Underwriting",icon:"📈",t:"y",
-     l:["Analysts use Copilot to summarize experience reports and draft commentary for review.", "An actuarial lead delegates a reserve review assembly, an underwriting intake dossier, or pricing cycle checkpoints.", "Underwriting intake agents collect, check, and route submissions, with underwriters owning every pricing and risk decision.", "Analytics and workflow applications embed AI for anomaly flags and document summaries."],
-     ag:[]},
-    {id:"claims",name:"Claims Operations",icon:"🧾",t:"y",
-     l:["Claims staff use Copilot to summarize pended claims and draft provider correspondence for review.", "A claims leader delegates a claims queue brief, a pend evidence workbench, or authorized recovery follow-ups.", "Claims adjudication exception agents resolve routine exceptions within policy and escalate the rest to adjudicators.", "Claims platforms embed AI for exception flags, suggested actions, and claim summaries."],
-     ag:[{"n": "Claims Adjudication Exception Agent", "t": "payer"}]},
-    {id:"um",name:"Utilization Management & Prior Authorization",icon:"📋",t:"y",
-     l:["Reviewers use Copilot to summarize clinical documentation and draft review notes for human review.", "A utilization management leader delegates an authorization queue readout and turnaround analysis.", "Prior authorization intake and triage agents classify, route, and assemble requests, with clinicians making every determination.", "Utilization management applications embed AI summaries and routing logic."],
-     ag:[{"n": "Prior Authorization Intake & Triage Agent", "t": "payer"}]},
-    {id:"network",name:"Provider Network Management",icon:"🤝",t:"y",
-     l:["Network staff use Copilot to summarize provider files and draft outreach for review.", "A network leader delegates a credential document receipt pack, a provider launch checklist, or a renewal review calendar.", "Provider data management agents check and reconcile provider data, with network teams approving changes.", "Network applications embed AI for data quality flags and onboarding task prompts."],
-     ag:[{"n": "Provider Data Management Agent", "t": "payer"}]},
-    {id:"member",name:"Member Services & Experience",icon:"🙋",t:"y",
-     l:["Representatives use Copilot to summarize member history and draft empathetic replies for review.", "A member experience leader delegates a member welcome coordination plan, an escalation follow-up desk, or campaign preparation.", "Member virtual assistant agents resolve common questions across channels and warm-hand sensitive conversations to people with context.", "Dynamics 365 Contact Center and Customer Service embed case summarization, knowledge suggestions, and sentiment cues."],
-     ag:[{"n": "Member Virtual Assistant Agent", "t": "payer"}]},
-    {id:"raq",name:"Risk Adjustment & Quality (Stars and HEDIS)",icon:"⭐",t:"y",
-     l:["Analysts use Copilot to summarize chart evidence and draft quality narratives for review.", "A risk and quality leader delegates a RADV evidence receipt pack, a risk vendor delivery review, or an encounter rejection worklist.", "Risk adjustment coding capture agents find documented opportunities and queue them for certified coder review.", "Quality and risk applications embed AI for gap detection and evidence retrieval."],
-     ag:[{"n": "Risk-Adjustment Coding Capture Agent", "t": "payer"}]},
-    {id:"appeals",name:"Appeals & Grievances",icon:"📨",t:"y",
-     l:["Case staff use Copilot to summarize case files and draft acknowledgment letters for review.", "An appeals leader delegates an appeal coordination desk that tracks open cases against deadlines.", "Appeals and grievance intake and triage agents classify and route cases, with reviewers making every decision.", "Case management applications embed AI summaries and deadline tracking."],
-     ag:[{"n": "Appeals & Grievance Intake & Triage Agent", "t": "payer"}]},
-    {id:"integrity",name:"Payment Integrity & FWA",icon:"🔍",t:"y",
-     l:["Investigators use Copilot to summarize case notes and draft referral documentation for review.", "An integrity leader delegates a pattern analysis and a recovery opportunity brief for review.", "Fraud, waste, and abuse detection agents flag patterns and assemble evidence, with investigators owning every conclusion.", "Claims and analytics applications embed AI for anomaly detection and case prioritization."],
-     ag:[{"n": "Fraud, Waste & Abuse Detection Agent", "t": "payer"}]},
-    {id:"reg",name:"Regulatory & Government Programs",icon:"🏛️",t:"y",
-     l:["Compliance staff use Copilot to summarize regulatory notices and draft filing narratives for review.", "A regulatory leader delegates audit evidence assembly, a filing calendar desk, or an approved change action map.", "Government-program reimbursement integrity agents check program rules and flag exceptions, with compliance leaders approving responses.", "Compliance applications embed AI for deadline tracking and evidence retrieval."],
-     ag:[{"n": "Government-Program Reimbursement Integrity Agent", "t": "payer"}]}
+    {"id":"exec","name":"Executive & Strategy","icon":"🧭","t":"b","ag":[]},
+    {"id":"finance","name":"Finance & Planning","icon":"📊","t":"b","ag":[]},
+    {"id":"hr","name":"HR & Workforce","icon":"👥","t":"b","ag":[]},
+    {"id":"legal","name":"Legal, Risk & Compliance","icon":"⚖️","t":"b","ag":[]},
+    {"id":"it","name":"IT, Data & Digital Operations","icon":"🖥️","t":"b","ag":[]},
+    {"id":"supply","name":"Supply Chain & Procurement","icon":"📦","t":"b","ag":[]},
+    {"id":"growth","name":"Marketing, Sales & Growth","icon":"📣","t":"b","ag":[]},
+    {"id":"pmo","name":"Project & Portfolio Management","icon":"🗂️","t":"b","ag":[]},
+    {"id":"facilities","name":"Facilities & Asset Management","icon":"🏢","t":"b","ag":[]},
+    {"id":"poph","name":"Care & Population Health","icon":"🌐","t":"b","ag":[]},
+    {"id":"personal","name":"Personal Productivity","icon":"⚡","t":"b","ag":[]},
+    {"id":"revenue","name":"Revenue Cycle","icon":"💳","t":"p","ag":[]},
+    {"id":"access","name":"Patient Access & Contact Center","icon":"📞","t":"p","ag":[]},
+    {"id":"pxp","name":"Patient Experience & Digital Front Door","icon":"💬","t":"p","ag":[]},
+    {"id":"nursing","name":"Nursing Leadership","icon":"🩺","t":"p","ag":[]},
+    {"id":"quality","name":"Quality & Patient Safety","icon":"✅","t":"p","ag":[]},
+    {"id":"acute","name":"Acute & Inpatient Care","icon":"🏥","t":"p","ag":[]},
+    {"id":"ed","name":"Emergency Department Operations","icon":"🚑","t":"p","ag":[]},
+    {"id":"periop","name":"Perioperative & Surgical Services","icon":"🧑‍⚕️","t":"p","ag":[]},
+    {"id":"ambulatory","name":"Ambulatory & Specialty Care Coordination","icon":"🗓️","t":"p","ag":[]},
+    {"id":"pharmacy","name":"Pharmacy Operations","icon":"💊","t":"p","ag":[]},
+    {"id":"diagnostics","name":"Diagnostics & Imaging","icon":"🩻","t":"p","ag":[]},
+    {"id":"hah","name":"Hospital-at-Home & Remote Care","icon":"🏠","t":"p","ag":[]},
+    {"id":"burnout","name":"Provider Experience & Burnout Reduction","icon":"🌿","t":"p","ag":[]},
+    {"id":"safety","name":"Infection Prevention & Device Safety","icon":"🛡️","t":"p","ag":[]},
+    {"id":"research","name":"Clinical Trials & Research","icon":"🔬","t":"p","ag":[]},
+    {"id":"gme","name":"Graduate Medical Education","icon":"🎓","t":"p","ag":[]},
+    {"id":"orch","name":"Cross-Enterprise Orchestration","icon":"🔗","t":"p","ag":[]},
+    {"id":"actuarial","name":"Actuarial & Underwriting","icon":"📈","t":"y","ag":[]},
+    {"id":"claims","name":"Claims Operations","icon":"🧾","t":"y","ag":[]},
+    {"id":"um","name":"Utilization Management & Prior Authorization","icon":"📋","t":"y","ag":[]},
+    {"id":"network","name":"Provider Network Management","icon":"🤝","t":"y","ag":[]},
+    {"id":"member","name":"Member Services & Experience","icon":"🙋","t":"y","ag":[]},
+    {"id":"raq","name":"Risk Adjustment & Quality (Stars and HEDIS)","icon":"⭐","t":"y","ag":[]},
+    {"id":"appeals","name":"Appeals & Grievances","icon":"📨","t":"y","ag":[]},
+    {"id":"integrity","name":"Payment Integrity & FWA","icon":"🔍","t":"y","ag":[]},
+    {"id":"reg","name":"Regulatory & Government Programs","icon":"🏛️","t":"y","ag":[]}
   ];
 
   /* ------------------------------------------------------------------ */
@@ -349,7 +275,7 @@
           <span class="stage-num">Pattern ${i + 1}</span>
         </div>
         <h3 class="stage-title"><button type="button" aria-expanded="false" aria-controls="stage-more-${i}">${s.name}</button></h3>
-        <p class="anchor">${s.anchor}</p>
+        <p class="anchor">Products featured: ${s.anchor}</p>
         <p class="tagline">${s.tag}</p>
         <div class="metaphor">${METAPHORS[i]}</div>
         <div class="stage-more" id="stage-more-${i}" role="region" aria-label="${s.name} details">
@@ -366,7 +292,7 @@
               <section class="detail"><h4>Where AI participates</h4><p>${s.participates}</p></section>
               <section class="detail"><h4>Expected business value</h4><p>${s.value}</p></section>
               <section class="detail uses"><h4>Typical healthcare use cases</h4><ul>${s.uses.map(u => `<li>${u}</li>`).join('')}</ul></section>
-              <section class="detail tech"><h4>Technologies involved</h4><div class="chips">${s.tech.map(t => `<span class="chip">${t}</span>`).join('')}</div></section>
+              <section class="detail tech"><h4>Products featured</h4><div class="chips">${s.tech.map(t => `<span class="chip">${t}</span>`).join('')}</div></section>
             </div>
           </div>
         </div>
@@ -430,7 +356,7 @@
     { key: 'p', label: 'Provider organizations' },
     { key: 'y', label: 'Health plans' }
   ];
-  const PRODUCT_TERMS = ['Microsoft 365 Copilot', 'Copilot Cowork', 'Dragon Copilot', 'Dynamics 365', 'Power BI', 'Power Apps', 'Power Automate', 'Power Platform', 'Copilot Studio', 'Field Service', 'Customer Service', 'Contact Center', 'Customer Insights', 'Dataverse'];
+  const PRODUCT_TERMS = ['Microsoft 365 Copilot', 'Agent Builder', 'SharePoint agents', 'Copilot Cowork', 'Power Apps', 'Power Automate', 'Copilot Studio', 'Microsoft Foundry', 'Dataverse'];
 
   const esc = (t) => String(t == null ? '' : t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
   const lobOrder = new Map(LOBS.map((l, i) => [l.id, i]));
@@ -445,18 +371,16 @@
   function buildUseCases() {
     const list = [];
     const cowork = window.HAIN_COWORK || [];
-    const haveCowork = new Set();
 
     cowork.forEach((c) => {
       const [track, code] = c[0].split('-');
       const lob = COWORK_LOB[track] && COWORK_LOB[track][code];
       if (!lob) return;
       const tr = track === 'PRV' ? 'provider' : 'payer';
-      haveCowork.add(lob + '|' + tr);
       list.push({
         id: c[0], p: 1, lob, lobs: [lob].concat((c[8] || []).filter((id) => lobById.has(id) && id !== lob)), track: tr, kind: 'cowork',
         title: c[2], sub: c[3], desc: c[4], output: c[5], review: c[6],
-        tools: ['Copilot Cowork'], src: c[7] || 'Cowork library \u00B7 ' + c[0], guideIm: c[9] || null
+        tools: ['Copilot Cowork'], src: c[7], guideIm: c[9] || null
       });
     });
 
@@ -468,41 +392,7 @@
       list.push({
         id: c[0], p: c[7] == null ? 3 : c[7], lob: lobs[0], lobs, track: tr, kind: 'catalog',
         title: c[4], sub: c[1] + ' \u00B7 ' + c[2] + (c[3] ? ' \u00B7 ' + c[3] : ''), desc: c[5],
-        status: c[3], tools: [c[1]].concat(c[8] || []), src: c[9] || 'Business Apps catalog', guideIm: c[10] || null
-      });
-    });
-
-    LOBS.forEach((l) => {
-      const tr = lobTrack(l);
-      const tracks = tr === 'both' ? ['provider', 'payer'] : [tr];
-      const sharedNote = 'Illustrative overview';
-
-      list.push({
-        id: l.id + '-p1', p: 0, lob: l.id, track: tr, kind: 'overview',
-        title: l.name, sub: 'Humans working with AI assistants', desc: l.l[0],
-        tools: ['Microsoft 365 Copilot'], src: sharedNote
-      });
-
-      tracks.forEach((t) => {
-        if (haveCowork.has(l.id + '|' + t)) return;
-        list.push({
-          id: l.id + '-p2-' + t, p: 1, lob: l.id, track: t, kind: 'overview',
-          title: l.name, sub: 'Humans delegating to AI teammates', desc: l.l[1],
-          tools: ['Copilot Cowork'], src: sharedNote
-        });
-      });
-
-      list.push({
-        id: l.id + '-p3', p: 2, lob: l.id, track: tr, kind: 'overview',
-        title: l.name, sub: 'Agentic teams executing business processes', desc: l.l[2],
-        agents: l.ag, tools: ['Copilot Studio'], src: sharedNote
-      });
-
-      const apps = PRODUCT_TERMS.filter((t) => l.l[3].indexOf(t) !== -1);
-      list.push({
-        id: l.id + '-p4', p: 3, lob: l.id, track: tr, kind: 'overview',
-        title: l.name, sub: 'AI inside business applications', desc: l.l[3],
-        tools: apps.length ? apps : ['Dynamics 365', 'Power Platform'], src: sharedNote
+        status: c[3], tools: [c[1]].concat(c[8] || []), src: c[9], guideIm: c[10] || null
       });
     });
 
@@ -513,12 +403,12 @@
 
 
   const IMPACTS = [
-    { k: 'capture', label: 'Capture revenue', icon: '\uD83D\uDCC8', def: 'Revenue captured or protected.', haven: 'HAVEN: grows, captures and protects revenue' },
-    { k: 'cash', label: 'Accelerate cash', icon: '\uD83D\uDCB5', def: 'Faster collections, lower A/R.', haven: 'HAVEN: recovers cash' },
-    { k: 'cost', label: 'Reduce cost', icon: '\u2702\uFE0F', def: 'Labor and non-labor savings.', haven: 'HAVEN: avoids cost, improves margin' },
-    { k: 'risk', label: 'Reduce risk', icon: '\uD83D\uDEE1\uFE0F', def: 'Audit, safety, and compliance.', haven: 'HAVEN: avoids penalties, improves safety, reduces defects' },
-    { k: 'experience', label: 'Improve experience', icon: '\uD83D\uDE4C', def: 'Patient, member, and staff experience.', haven: '' },
-    { k: 'capacity', label: 'Improve capacity', icon: '\u26A1', def: 'Throughput and access.', haven: 'HAVEN: productivity value (hours saved, FTE capacity)' }
+    { k: 'capture', label: 'Capture revenue', icon: '\uD83D\uDCC8', def: 'Potential revenue outcome to evaluate.' },
+    { k: 'cash', label: 'Accelerate cash', icon: '\uD83D\uDCB5', def: 'Potential collection-cycle improvement to evaluate.' },
+    { k: 'cost', label: 'Reduce cost', icon: '\u2702\uFE0F', def: 'Potential effort and rework reduction to evaluate.' },
+    { k: 'risk', label: 'Reduce risk', icon: '\uD83D\uDEE1\uFE0F', def: 'Potential quality and exception-handling improvement to evaluate.' },
+    { k: 'experience', label: 'Improve experience', icon: '\uD83D\uDE4C', def: 'Potential patient, member or staff experience improvement to evaluate.' },
+    { k: 'capacity', label: 'Improve capacity', icon: '\u26A1', def: 'Potential throughput improvement to evaluate, not a product capacity claim.' }
   ];
   const IMPACT_BY_KEY = new Map(IMPACTS.map((i) => [i.k, i]));
 
@@ -543,22 +433,6 @@
     capacity: /throughput|capacity|ambient|registration|discharge|patient flow|bed |command center|handoff|wait time|turnaround|backlog|queue|triage|access to care|scheduling|clinician time|documentation burden/gi
   };
 
-  const AGENT_IMPACT = {
-    'denial prevention agent': ['capture'], 'charge capture integrity agent': ['capture'], 'underpayment recovery agent': ['capture', 'cash'],
-    'referral leakage & network retention agent': ['capture'], 'oncology treatment navigator agent': ['capture'],
-    'automated payer follow-up agent': ['cash'], 'collections & cash flow agent': ['cash'], 'insurance eligibility & prior-auth orchestrator': ['cash'],
-    'specialty pharmacy coordination agent': ['cash'],
-    'contact center virtual agent': ['cost'], 'inventory optimization agent': ['cost'], 'clinical fax & document intake agent': ['cost'],
-    'accounts payable & invoice agent': ['cost'], 'intelligent staff scheduling agent': ['cost'],
-    'policy & procedure q&a agent': ['risk'], 'audit preparation & documentation agent': ['risk'], 'quality & safety monitoring agent': ['risk'],
-    'medication safety & interaction screening agent': ['risk'], 'employee immunization compliance agent': ['risk'],
-    'symptom triage & virtual nurse agent': ['experience'], 'patient financial experience agent': ['experience'],
-    'digital front door & wayfinding assistant': ['experience'], 'employee hr self-service agent': ['experience'],
-    'orthopedic surgery recovery coach agent': ['experience'],
-    'ambient documentation & note drafting agent': ['capacity'], 'self-service scheduling & registration agent': ['capacity'],
-    'hospital command center agent': ['capacity'], 'inpatient care progression agent': ['capacity'], 'nursing documentation & handoff agent': ['capacity']
-  };
-
   function tagImpacts(u) {
     if (u.guideIm && u.guideIm.length) {
       u.im = IMPACTS.map((i) => i.k).filter((k) => u.guideIm.indexOf(k) !== -1);
@@ -573,18 +447,16 @@
       score[i.k] = (m ? m.length : 0) * 2;
     });
     prior.forEach((k, idx) => { score[k] += idx === 0 ? 3 : 1; });
-    const named = new Set();
-    (u.agents || []).forEach((a) => (AGENT_IMPACT[a.n.toLowerCase()] || []).forEach((k) => named.add(k)));
     const ranked = IMPACTS.map((i) => i.k).filter((k) => score[k] > 0).sort((a, b) => score[b] - score[a]);
-    const out = new Set(named);
+    const out = new Set();
     ranked.slice(0, 2).forEach((k, idx) => { if (idx === 0 || score[k] >= 3) out.add(k); });
     u.im = IMPACTS.map((i) => i.k).filter((k) => out.has(k));
-    u.imNamed = named.size > 0;
+    u.imNamed = false;
   }
 
   const USE_CASES = buildUseCases();
-  const PRODUCT_PATTERN = { 'Microsoft 365 Copilot': 0, 'Dragon Copilot': 0, 'Copilot Cowork': 1, 'Microsoft Autopilot': 1, 'Copilot Studio': 2, 'GitHub Copilot': 4, 'Microsoft developer tools': 4, 'Microsoft Foundry': 4, 'Visual Studio Code': 4, 'Azure MCP Server': 4, 'Azure AI Search': 4, 'Azure OpenAI and Foundry Models': 4, 'Semantic Kernel': 4, 'Microsoft Agent Framework': 4, 'AI Toolkit for VS Code': 4, 'Azure AI Content Safety': 4 };
-  const SUPPORTING_PRODUCTS = ['Power Automate', 'Dataverse'];
+  const PRODUCT_PATTERN = { 'Microsoft 365 Copilot': 0, 'Agent Builder': 0, 'SharePoint agents': 0, 'Copilot Cowork': 1, 'Copilot Studio': 2, 'Power Automate': 3, 'Power Apps': 3, 'Microsoft Foundry': 4 };
+  const SUPPORTING_PRODUCTS = ['Dataverse'];
   const patternOfProduct = (name) => (name in PRODUCT_PATTERN ? PRODUCT_PATTERN[name] : SUPPORTING_PRODUCTS.indexOf(name) !== -1 ? -1 : 3);
   USE_CASES.forEach((u) => {
     const text = [u.desc, u.output, (u.agents || []).map((a) => a.n + ' ' + (a.d || '')).join(' ')].join(' ');
@@ -641,7 +513,7 @@
     const base = USE_CASES.filter((u) => audOk(u) && patOk(u) && lobOk(u) && qOk(u));
     imEl.innerHTML = IMPACTS.map((i) => {
       const n = base.filter((u) => u.im.indexOf(i.k) !== -1).length;
-      const tip = i.def + (i.haven ? ' ' + i.haven + '.' : '');
+      const tip = i.def;
       return `<button type="button" class="im-chip" data-k="${i.k}" aria-pressed="${ex.ims.has(i.k)}" title="${esc(tip)}" aria-label="${esc(i.label)}. ${esc(tip)} ${n} use cases">
         <span class="im-ico" aria-hidden="true">${i.icon}</span><span class="im-nm">${esc(i.label)}</span><em>${n}</em>
       </button>`;
@@ -681,7 +553,7 @@
     const trackTag = ex.aud === 'all' ? `<span class="uc-track tr-${u.track}">${TRACK_LABEL[u.track]}</span>` : '';
     const detail = agents.length || u.output
       ? `<div class="uc-detail">
-          ${agents.length ? `<div class="uc-agents"><em>Named agents in the Executive Guide</em><ul>${agents.map((a) => `<li><strong>${esc(a.n)}</strong>${a.d ? `<span>${esc(a.d)}</span>` : ''}</li>`).join('')}</ul></div>` : ''}
+          ${agents.length ? `<div class="uc-agents"><em>Illustrative specialist responsibilities</em><ul>${agents.map((a) => `<li><strong>${esc(a.n)}</strong>${a.d ? `<span>${esc(a.d)}</span>` : ''}</li>`).join('')}</ul></div>` : ''}
           ${u.output ? `<p><b>Output.</b> ${esc(u.output)}</p><p><b>Human review.</b> ${esc(u.review)}</p>` : ''}
         </div>` : '';
     return `
@@ -693,7 +565,7 @@
         <p class="uc-desc">${esc(u.desc)}</p>
         ${detail}
         <div class="uc-impact"><em>Impact</em>${u.im.map((k) => { const i = IMPACT_BY_KEY.get(k); return `<b class="${ex.ims.has(k) ? 'on' : ''}" title="${esc(i.def)}"><span aria-hidden="true">${i.icon}</span>${esc(i.label)}</b>`; }).join('')}</div>
-        <div class="uc-foot"><span class="uc-tools"><em>Products</em>${u.tools.map((t) => `<i>${esc(t)}</i>`).join('')}</span><span class="uc-src${u.kind !== 'overview' ? ' sourced' : ''}">${esc(u.src)}</span></div>
+        <div class="uc-foot"><span class="uc-tools"><em>Products featured:</em>${u.tools.map((t) => `<i>${esc(t)}</i>`).join('')}</span><span class="uc-src${u.kind !== 'overview' ? ' sourced' : ''}">${/^https:\/\/learn\.microsoft\.com\//.test(u.src) ? `<a href="${esc(u.src)}" target="_blank" rel="noopener noreferrer">Official guidance<span class="sr-only"> (opens in a new tab)</span></a>` : esc(u.src)}</span></div>
         <div class="uc-cue" aria-hidden="true"><span class="uc-cue-t">Show details</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></div>
       </article>`;
   }
@@ -957,18 +829,18 @@
       const specBody = team
         ? team.agents.map((a) => `<details class="tm-agent"><summary>${esc(a[0])}</summary><ul>${a[1].map((s) => `<li>${esc(s)}</li>`).join('')}</ul></details>`).join('')
         : (lob.ag.length
-          ? `<p>Named in the Executive Guide for this line of business. Each agent owns a domain task and works autonomously.</p>${chips(lob.ag.map((a) => a.n))}`
-          : '<p>Specialist agents each own a domain task and work autonomously. No named agents are listed for this line of business in the Executive Guide yet. The Explorer shows the use cases that could become agents.</p>');
+          ? `<p>Illustrative specialist responsibilities, not packaged products.</p>${chips(lob.ag.map((a) => a.n))}`
+          : '<p>Add a specialist only when one agent cannot meet a specific requirement. Define its tools, boundaries and handoff before building.</p>');
       const sysBody = team
         ? `<p>Specialist agents work with the business operation systems your teams already use.</p>${chips(team.systems)}`
-        : '<p>Specialist agents work inside the business operation systems your teams already use, through governed integrations, with every action logged.</p>';
+        : '<p>Configure only the integrations needed for the outcome. Validate permissions, logging and approval boundaries before connecting business systems.</p>';
       const humanBody = team
         ? `<p>Agents handle the routine coordination. People spend their time on approvals, exceptions and judgment calls that need real expertise, and the assist agent hands off with a case summary.</p>${chips(team.humans)}<h5>Governance control plane</h5>${chips(team.governance)}`
         : `<p>${esc(lob.name)} professionals approve actions, resolve exceptions and own outcomes. Agents hand off with a case summary when expertise or authority is needed.</p>`;
       return `
         <div class="tm-cards">
           <section class="tm-card s1"><span class="tm-num">1</span><h4>${esc(name)}</h4><p class="tm-role">Orchestrator agent</p>${assistBody}</section>
-          <section class="tm-card s2"><span class="tm-num">2</span><h4>Specialist agents</h4><p class="tm-role">Autonomous domain agents</p>${specBody}</section>
+          <section class="tm-card s2"><span class="tm-num">2</span><h4>Specialist agents</h4><p class="tm-role">Optional specialist responsibilities</p>${specBody}</section>
           <section class="tm-card s3"><span class="tm-num">3</span><h4>Business systems</h4><p class="tm-role">Where the work happens</p>${sysBody}</section>
           <section class="tm-card s4"><span class="tm-num">4</span><h4>Humans in the loop</h4><p class="tm-role">Where expertise is concentrated</p>${humanBody}</section>
         </div>`;
@@ -997,11 +869,11 @@
             </button>
           </figure>
           ${howCards(lob, team)}
-          <div class="tm-outcomes glass"><h4>Outcomes that matter</h4>${chips(team.outcomes)}</div>`;
+          <div class="tm-outcomes glass"><h4>Outcomes to evaluate, not claimed results</h4>${chips(team.outcomes)}</div>`;
       } else {
         html = `
           <header class="tm-ph"><p class="eyebrow">${esc(lob.name)}</p><h3>${esc(lob.name)} agentic team</h3></header>
-          <div class="tm-empty glass"><p>The agentic team for this line of business is coming soon.</p></div>`;
+          <div class="tm-empty glass"><p>No reviewed diagram is included for this line of business. Start with the least complex option that meets the outcome.</p></div>`;
       }
       panel.innerHTML = html;
       panel.scrollTop = 0;

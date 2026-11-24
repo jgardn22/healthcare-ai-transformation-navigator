@@ -19,7 +19,7 @@
       } catch (e) {}
     })();
   </script>
-  <link rel="stylesheet" href="styles.css?v=93">
+  <link rel="stylesheet" href="styles.css?v=94">
 </head>
 <body>
   <a class="skip-link" href="#slides">Skip to main content</a>
@@ -53,7 +53,8 @@
         <p class="eyebrow reveal">Microsoft Healthcare</p>
         <h1 id="heroTitle" class="reveal">The Microsoft Healthcare <span class="grad">AI Transformation Navigator</span></h1>
         <p class="subtitle reveal">An Interactive Guide to AI in Your Flow of Work</p>
-        <p class="lede reveal"><strong>The right agentic pattern shifts your operating model toward people.</strong> Explore the five ways AI can join your flow of work.</p>
+        <p class="lede reveal"><strong>Start with the outcome, not the agent.</strong> Choose the least complex approach that meets the need, and keep people accountable for decisions.</p>
+        <p class="fine reveal">Last reviewed: 2026-11-24</p>
         <div class="shift reveal" role="group" aria-label="The operating model shift">
           <div class="shift-col people"><span class="shift-k">People focus on</span><b>High-value work that needs real expertise</b></div>
           <div class="shift-mid" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 9h13M14 5l4 4-4 4M19 15H6M10 11l-4 4 4 4"/></svg></div>
@@ -79,7 +80,7 @@
           </ol>
           <div class="track-ends">
             <span>AI beside the individual</span>
-            <span>AI inside systems of record, and custom builds</span>
+            <span>Patterns to compare, not steps to complete</span>
           </div>
         </div>
       </div>
@@ -89,10 +90,24 @@
     <section class="screen" id="journey" data-label="AI Patterns" tabindex="-1" aria-labelledby="journeyTitle">
       <div class="container wide">
         <header class="section-head reveal">
-          <p class="eyebrow">The flow of AI in work</p>
-          <h2 id="journeyTitle">Five patterns of AI in your flow of work</h2>
-          <p class="section-lede">From AI that helps one person, to AI built into your business applications, to AI your own developers build. Hover or tap a pattern to open it.</p>
+          <p class="eyebrow">Choose the simplest fit</p>
+          <h2 id="journeyTitle">Match the approach to the outcome</h2>
+          <p class="section-lede">These five patterns describe ways of working, not a maturity ladder. Use the decision path first, then hover or tap a pattern to explore it.</p>
         </header>
+
+        <details class="ex-sources reveal" open>
+          <summary>Decision path: stop when the requirement is met</summary>
+          <ol>
+            <li><strong>Help with everyday work:</strong> start with Microsoft 365 Copilot for drafting, summarizing, analysis and finding information.</li>
+            <li><strong>A reviewed multi-step deliverable:</strong> consider Copilot Cowork when a person can delegate a defined task and check the result.</li>
+            <li><strong>Repeatable knowledge questions:</strong> use Agent Builder or SharePoint agents over approved content. External-service actions require another approach.</li>
+            <li><strong>Known steps or structured intake:</strong> use Power Automate and Power Apps. A deterministic workflow may not need AI.</li>
+            <li><strong>Conversation plus configured actions:</strong> consider Copilot Studio if simpler options cannot meet the requirement. Start with one agent.</li>
+            <li><strong>Custom engineering requirements:</strong> consider Foundry or pro-code for logic, integration or model needs the earlier options cannot meet.</li>
+            <li><strong>A requirement that needs both:</strong> use a hybrid only when a specific boundary or integration calls for it.</li>
+          </ol>
+          <p class="fine">Define the outcome, approved data, action boundary, exception owner and success measure first. <a href="knowledge/advisor-reference.md">Read the advisor reference</a>.</p>
+        </details>
 
         <div class="rail reveal" id="rail" role="group" aria-label="AI pattern selector">
           <div class="rail-axis"><span>Individual work</span><span>Enterprise systems and custom builds</span></div>
@@ -113,12 +128,7 @@
           <p class="eyebrow">Use case explorer</p>
           <h2 id="explorerTitle">Find the use cases that fit your work</h2>
           <p class="section-lede">Filter by audience, line of business, and AI pattern, then scroll through the use cases. Select any card to expand it.</p>
-          <!-- HAVEN link hidden pending approval; restore from git commit fd50c94
-          <a class="ex-haven" href="https://jgardn22.github.io/haven/" target="_blank" rel="noopener noreferrer">
-            <span class="ex-haven-ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V9M10 19V5M16 19v-7M22 19H2"/><path d="M14 6l3-3 3 3"/></svg></span>
-            <span class="ex-haven-copy"><b>Ready to plan your first agent?</b><span>Start estimating your agent impact with the H.A.V.E.N. tool (Health Agentic Value Enablement Network).</span></span>
-            <span class="ex-haven-go">Open HAVEN<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg><span class="sr-only"> (opens in a new tab)</span></span>
-          </a> -->
+          <!-- HAVEN remains hidden. -->
         </header>
 
         <div class="explorer reveal">
@@ -150,7 +160,7 @@
               <div class="pat-filter" id="patFilter" role="group" aria-labelledby="fPat"></div>
             </div>
             <div class="im-wrap">
-              <h3 class="f-label" id="fImpact">Filter by impact <span class="f-hint">Value levers from the Executive Guide. Select one or more.</span></h3>
+              <h3 class="f-label" id="fImpact">Filter by impact <span class="f-hint">Potential outcomes to evaluate. Select one or more.</span></h3>
               <div class="im-filter" id="impactFilter" role="group" aria-labelledby="fImpact"></div>
             </div>
             <div class="ex-bar">
@@ -167,7 +177,7 @@
                 <button type="button" class="btn ghost small" id="moreBtn" hidden>Show more</button>
               </div>
             </div>
-            <details class="ex-sources"><summary>About these sources</summary><p class="fine ex-fine">Cowork library cards come from the Microsoft Copilot Cowork Healthcare Use-Case Library. Business Apps catalog cards come from the Microsoft Business Applications Pre-Built Agents and Capabilities report; they cover first-party Dynamics 365, Power Platform and Copilot Studio capabilities mapped to healthcare lines of business, and preview features may change. Dragon Copilot cards are drawn from Microsoft Learn documentation. Copilot Studio agent use cases and named agents come from the AI Apps and Agents for Healthcare Providers and Payers Executive Guide. Every agent use case in the Executive Guide is listed under Copilot Studio; each card’s footer shows the guide’s likely build, and many are Power App builds that a Copilot Studio agent can front. Impact tags use the six value levers from the Executive Guide, which line up with HAVEN's value lines. Named agents carry the guide's own tags; other tags are inferred from the use case text. Lateetud cards come from a partner solution shelf at field.lateetud.com; they are vendor-described, not Microsoft products, and should be validated before customer use. Clinical and nursing cards also draw on a nurse Build-A-Thon customer story, the Nursing Operations Assist multi-agent team, and a nursing capacity executive brief. Cards marked "Navigator addition" were drafted for the PMO line of business from the PMO Reimagined session and the Executive Guide, and should be validated before customer use. Supply chain cards marked “Supply chain webinar” were drafted from the October 1, 2026 Supply Chain Modernization session and its demo; they are illustrative and should be validated before customer use. Cards marked “Cowork + Copilot Studio provider portfolio” were drafted from an October 8, 2026 portfolio report for U.S. healthcare providers; the report’s statistics are not reproduced here, and the cards should be validated before customer use. Engineering team cards (Copilot Studio IDs starting EN-, and Cowork cards marked “engineering team scenario”) are scenarios built on Microsoft Learn documentation for the Azure DevOps MCP Server and Copilot Studio; they are illustrative, not product commitments, and should be validated before customer use. Pattern 5 cards describe Microsoft developer tools, drawn from Microsoft Learn documentation and Microsoft developer-tool positioning; the custom solution scenarios (IDs starting PC-) are illustrative designs, not product commitments, and should be validated before customer use. Cards marked “Copilot Chat, Cowork and Autopilot in Healthcare deck” were adapted from an October 2026 deck that pairs Copilot Chat, Copilot Cowork and Microsoft Autopilot across care-facing and corporate services functions; they are illustrative scenarios, have been adapted to U.S. providers, and should be validated before customer use. Microsoft Autopilot cards sit in Pattern 2 because Autopilot is an always-on agent that works on a person’s behalf. Marketing cards marked “Navigator addition” were drafted from the marketing line of an October 14, 2026 portfolio report for U.S. healthcare provider enterprises, the Cowork library marketing cases, the Executive Guide marketing agents, and the Business Applications report, including the Dynamics 365 CRM skills for Copilot Cowork announced October 8, 2026. They apply the Copilot Chat, Cowork and Autopilot pattern to marketing, are illustrative, and should be validated before customer use. Marketing use cases should use consented, approved data and avoid health-data targeting unless it is lawful and governed. The Nurse Competency App card (NV-NUR-01) is an anonymized customer example shared on October 21, 2026; its figures are customer-reported and should be validated before use. Cowork scenario cards with IDs starting NV-CW- were adapted from a public LinkedIn deck of Cowork prompts and skills for leaders and executives, rewritten in our own words for healthcare; they are illustrative, are meant for organizational work rather than patient or member information, and should be validated before customer use. Cards with IDs starting AB- come from the AIBAST Agents Library (microsoft.github.io/aibast-agents-library, MIT licensed): healthcare agents in Pattern 3, which are runnable demos on synthetic data, and Microsoft first-party agents (AB-FP-) in Pattern 4 that the Business Apps catalog did not already list. A scheduled job checks the library weekly and proposes new cards for review. Validate fit, data and product status before customer use. Illustrative overviews are conversation starters, not Microsoft product commitments.</p></details>
+            <details class="ex-sources"><summary>About these sources</summary><p class="fine ex-fine">Cards link to current official Microsoft guidance. Healthcare examples are illustrative designs, not packaged products or claims of results. Product-level guidance does not establish GA for every feature or integration. Preview and unsupported report-derived entries have been removed. Use synthetic or approved aggregate inputs, validate outputs and keep clinical decisions with clinicians. Impact tags are potential outcomes to evaluate, not measured benefits. Library entries require explicit capability-level GA evidence and placement review before publication.</p></details>
           </div>
         </div>
       </div>
@@ -178,8 +188,9 @@
       <div class="container wide tm-wrap">
         <header class="section-head tm-head reveal">
           <p class="eyebrow">Agentic teams</p>
-          <h2 id="teamsTitle">Meet the agentic team for your line of business</h2>
-          <p class="section-lede">One assist agent is the front door. It calls specialist agents that handle the routine coordination autonomously in your business systems, so people focus on the approvals, exceptions and judgment that need real expertise. Choose a line of business to see its team, or use Choose lines to show to keep only the lines you care about.</p>
+          <h2 id="teamsTitle">Explore a team design only when it is needed</h2>
+          <p class="section-lede">These diagrams are illustrative responsibilities and design goals, not deployed products or validated results. Start with one agent or a simpler workflow. Add specialists only for a stated requirement; validate every integration, approval and clinical boundary before building.</p>
+          <p class="fine">Products featured: Copilot Studio, Power Automate. <a href="https://learn.microsoft.com/en-us/microsoft-copilot-studio/fundamentals-what-is-copilot-studio" target="_blank" rel="noopener noreferrer">Review current agent guidance</a>.</p>
         </header>
 
         <div class="tm reveal">
@@ -208,41 +219,36 @@
       <div class="container wide">
         <header class="tk-head center reveal">
           <p class="eyebrow">The big idea</p>
-          <h2 id="takeawayTitle" class="tk-quote">AI is not a single product. It is a flow from <span class="c1">assistants</span>, to <span class="c2">delegation</span>, to <span class="c3">agentic teams</span>, to <span class="c4">intelligence inside the applications you already use</span>, to <span class="c5">custom solutions your own developers build</span>.</h2>
+          <h2 id="takeawayTitle" class="tk-quote">Choose the <span class="c1">least complex approach</span> that meets the outcome. An assistant, a reviewed deliverable or a simple workflow may be enough.</h2>
         </header>
 
         <div class="tk-summary reveal" id="tkSummary" role="list" aria-label="Summary of the big ideas">
           <article class="tk-card" role="listitem">
             <span class="tk-num" aria-hidden="true">1</span>
-            <h3>Five patterns, one evolution</h3>
-            <p>Each pattern changes who does the work, from AI beside one person to AI built into the systems of record, and to AI your own developers build.</p>
+            <h3>Five patterns, not a maturity ladder</h3>
+            <p>Compare ways of working. Do not move to an agent team or custom build unless a specific requirement calls for it.</p>
             <ol class="tk-chain" id="tkChain" aria-label="The five patterns"></ol>
           </article>
           <article class="tk-card" role="listitem">
             <span class="tk-num" aria-hidden="true">2</span>
-            <h3>The operating model shifts toward people</h3>
-            <p>The right pattern moves your people to the high-value work that needs real expertise, and gives AI the low-value work that still needs coordination.</p>
+            <h3>Keep people accountable</h3>
+            <p>Agree who checks the result, approves actions and resolves exceptions before introducing AI into a process.</p>
           </article>
           <article class="tk-card" role="listitem">
             <span class="tk-num" aria-hidden="true">3</span>
-            <h3>Agentic teams make it repeatable</h3>
-            <p>One assist agent is the front door. Specialist agents work across your business systems, and humans stay in the loop for approvals and exceptions.</p>
+            <h3>Measure before expanding</h3>
+            <p>Compare quality, cycle time and rework against a baseline. Expand only when the evidence supports it.</p>
           </article>
         </div>
 
         <div class="tk-next reveal">
           <p class="tk-label">Your next step</p>
           <div class="tk-actions">
-            <!-- HAVEN link hidden pending approval
-            <a class="tk-cta primary" href="https://jgardn22.github.io/haven/" target="_blank" rel="noopener noreferrer">
-              <span class="tk-cta-ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></span>
-              <span class="tk-cta-copy"><b>Find your highest-impact ROI use cases</b><span>Explore HAVEN, the Health Agentic Value Enablement Network, to see where agentic AI creates value across your P&amp;L.</span></span>
-              <span class="tk-cta-go">Open HAVEN<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span class="sr-only"> (opens in a new tab)</span></span>
-            </a> -->
-            <a class="tk-cta secondary" href="https://www.youtube.com/@Microsoft-Healthcare-AI-BPS/playlists" target="_blank" rel="noopener noreferrer">
+            <!-- HAVEN remains hidden. -->
+            <a class="tk-cta secondary" href="https://learn.microsoft.com/en-us/industry/healthcare/overview" target="_blank" rel="noopener noreferrer">
               <span class="tk-cta-ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"/></svg></span>
-              <span class="tk-cta-copy"><b>See agentic use cases in action</b><span>Watch short demo videos of agentic teams at work in healthcare processes.</span></span>
-              <span class="tk-cta-go">Watch the videos<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span class="sr-only"> (opens YouTube in a new tab)</span></span>
+              <span class="tk-cta-copy"><b>Explore official healthcare guidance</b><span>Review scenarios and requirements with your Microsoft account team and compliance team.</span></span>
+              <span class="tk-cta-go">Read the guidance<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span class="sr-only"> (opens in a new tab)</span></span>
             </a>
           </div>
           <nav class="tk-links" aria-label="Keep exploring">
@@ -252,7 +258,7 @@
             <a href="#top">Back to the start</a>
           </nav>
         </div>
-        <p class="fine disclaimer reveal">This guide is an illustrative conversation tool, not a Microsoft product commitment or a statement of results. Product names, capabilities, and availability change; confirm current details with your Microsoft account team and Microsoft documentation. Clinicians remain accountable for clinical decisions.</p>
+        <p class="fine disclaimer reveal">This guide includes illustrative designs, not Microsoft product commitments or claims of results. Use only approved data. Confirm requirements with your Microsoft account team, compliance team and official documentation. Clinicians remain accountable for clinical decisions. Consult the <a href="https://www.microsoft.com/en-us/trust-center" target="_blank" rel="noopener noreferrer">Microsoft Trust Center</a> and the <a href="https://microsoft.github.io/copilot-studio-estimator/" target="_blank" rel="noopener noreferrer">official estimator</a>; this page makes no compliance-status or commercial claims.</p>
       </div>
     </section>
 
@@ -262,7 +268,7 @@
         <header class="section-head reveal">
           <p class="eyebrow">Keep learning</p>
           <h2 id="resourcesTitle">Learning resources to accelerate your AI journey</h2>
-          <p class="section-lede">Hand-picked guides, frameworks and templates. Each card tells you in one sentence what is inside.</p>
+          <p class="section-lede">Official guidance for choosing, building and reviewing the approach. Each card tells you what to expect.</p>
         </header>
         <div class="rs-bar reveal">
           <label class="sr-only" for="rsSearch">Search resources</label>
@@ -291,11 +297,11 @@
     <img id="tmDialogImg" alt="">
   </dialog>
 
-  <script src="usecases.js?v=93"></script>
-  <script src="catalog.js?v=93"></script>
-  <script src="aibast.js?v=93"></script>
-  <script src="teams.js?v=93"></script>
-  <script src="resources.js?v=93"></script>
-  <script src="app.js?v=93"></script>
+  <script src="usecases.js?v=94"></script>
+  <script src="catalog.js?v=94"></script>
+  <script src="aibast.js?v=94"></script>
+  <script src="teams.js?v=94"></script>
+  <script src="resources.js?v=94"></script>
+  <script src="app.js?v=94"></script>
 </body>
 </html>
